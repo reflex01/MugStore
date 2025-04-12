@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
-const ShippingMethod = () => {
-  const [shippingMethod, setShippingMethod] = useState("free");
+interface ShippingMethodProps {
+  onMethodChange: (method: string) => void;
+}
+
+const ShippingMethod: React.FC<ShippingMethodProps> = ({ onMethodChange }) => {
+  const [shippingMethod, setShippingMethod] = React.useState("free");
+
+  const handleMethodChange = (method: string) => {
+    setShippingMethod(method);
+    onMethodChange(method);
+  };
+
   return (
     <div className="bg-white shadow-1 rounded-[10px] mt-7.5">
       <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
@@ -21,7 +31,7 @@ const ShippingMethod = () => {
                 name="free"
                 id="free"
                 className="sr-only"
-                onChange={() => setShippingMethod("free")}
+                onChange={() => handleMethodChange("free")}
               />
               {/* selectShipping === 'free' ? 'border-4 border-blue' : 'border border-gray-4' */}
               <div
@@ -45,7 +55,7 @@ const ShippingMethod = () => {
                 name="fedex"
                 id="fedex"
                 className="sr-only"
-                onChange={() => setShippingMethod("fedex")}
+                onChange={() => handleMethodChange("fedex")}
               />
               <div
                 className={`flex h-4 w-4 items-center justify-center rounded-full ${
@@ -85,7 +95,7 @@ const ShippingMethod = () => {
                 name="dhl"
                 id="dhl"
                 className="sr-only"
-                onChange={() => setShippingMethod("dhl")}
+                onChange={() => handleMethodChange("dhl")}
               />
               <div
                 className={`flex h-4 w-4 items-center justify-center rounded-full ${

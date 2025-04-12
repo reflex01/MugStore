@@ -1,5 +1,6 @@
 import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { getLocalStorage, setLocalStorage } from "@/utils/localStorage";
 
 type InitialState = {
   items: CartItem[];
@@ -17,9 +18,15 @@ type CartItem = {
   };
 };
 
-const initialState: InitialState = {
-  items: [],
+// Load initial state from localStorage
+const loadInitialState = (): InitialState => {
+  const savedCart = getLocalStorage('cart');
+  return {
+    items: savedCart?.items || [],
+  };
 };
+
+const initialState: InitialState = loadInitialState();
 
 export const cart = createSlice({
   name: "cart",
@@ -42,10 +49,14 @@ export const cart = createSlice({
           imgs,
         });
       }
+      // Save to localStorage after adding item
+      setLocalStorage('cart', state);
     },
     removeItemFromCart: (state, action: PayloadAction<number>) => {
       const itemId = action.payload;
       state.items = state.items.filter((item) => item.id !== itemId);
+      // Save to localStorage after removing item
+      setLocalStorage('cart', state);
     },
     updateCartItemQuantity: (
       state,
@@ -57,10 +68,13 @@ export const cart = createSlice({
       if (existingItem) {
         existingItem.quantity = quantity;
       }
+      // Save to localStorage after updating quantity
+      setLocalStorage('cart', state);
     },
-
     removeAllItemsFromCart: (state) => {
       state.items = [];
+      // Save to localStorage after clearing cart
+      setLocalStorage('cart', state);
     },
   },
 });

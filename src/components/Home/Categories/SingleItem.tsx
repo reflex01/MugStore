@@ -1,10 +1,20 @@
 import { Category } from "@/types/category";
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const SingleItem = ({ item }: { item: Category }) => {
+  const router = useRouter();
+
+  const handleCategoryClick = (category: string) => {
+    router.push(`/shop-with-sidebar?category=${category.toLowerCase()}`);
+  };
+
   return (
-    <a href="#" className="group flex flex-col items-center">
+    <div 
+      onClick={() => handleCategoryClick(item.title)}
+      className="group flex flex-col items-center cursor-pointer"
+    >
       <div className="max-w-[130px] w-full bg-[#F2F3F8] h-32.5 rounded-full flex items-center justify-center mb-4">
         <Image src={item.img} alt="Category" width={82} height={62} />
       </div>
@@ -14,7 +24,7 @@ const SingleItem = ({ item }: { item: Category }) => {
           {item.title}
         </h3>
       </div>
-    </a>
+    </div>
   );
 };
 

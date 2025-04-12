@@ -1,141 +1,174 @@
 import { Product } from "@/types/product";
+
 const shopData: Product[] = [
   {
-    title: "Havit HV-G69 USB Gamepad",
-    reviews: 15,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 1,
+    title: "Windows 10 Home",
+    price: 119.99,
+    discountedPrice: 99.99,
+    reviews: 4.5,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-1-sm-1.png",
-        "/images/products/product-1-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-1-bg-1.png",
-        "/images/products/product-1-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"]
+    }
   },
   {
-    title: "iPhone 14 Plus , 6/128GB",
-    reviews: 5,
-    price: 899.0,
-    discountedPrice: 99.0,
     id: 2,
+    title: "Windows 11 Pro 5PC",
+    price: 299.99,
+    discountedPrice: 249.99,
+    reviews: 4.7,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-2-sm-1.png",
-        "/images/products/product-2-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-2-bg-1.png",
-        "/images/products/product-2-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"]
+    }
   },
   {
-    title: "Apple iMac M1 24-inch 2021",
-    reviews: 5,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 3,
+    title: "Windows 10 Home 5PC",
+    price: 199.99,
+    discountedPrice: 179.99,
+    reviews: 4.6,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-3-sm-1.png",
-        "/images/products/product-3-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-3-bg-1.png",
-        "/images/products/product-3-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"]
+    }
   },
   {
-    title: "MacBook Air M1 chip, 8/256GB",
-    reviews: 6,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 4,
+    title: "Windows 11 Home 5PC",
+    price: 249.99,
+    discountedPrice: 219.99,
+    reviews: 4.5,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-4-sm-1.png",
-        "/images/products/product-4-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-4-bg-1.png",
-        "/images/products/product-4-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"]
+    }
   },
   {
-    title: "Apple Watch Ultra",
-    reviews: 3,
-    price: 99.0,
-    discountedPrice: 29.0,
     id: 5,
+    title: "Windows 10 Pro 5PC",
+    price: 279.99,
+    discountedPrice: 239.99,
+    reviews: 4.8,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-5-sm-1.png",
-        "/images/products/product-5-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-5-bg-1.png",
-        "/images/products/product-5-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"]
+    }
   },
   {
-    title: "Logitech MX Master 3 Mouse",
-    reviews: 15,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 6,
+    title: "Windows 11 Home",
+    price: 139.99,
+    discountedPrice: 119.99,
+    reviews: 4.4,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-6-sm-1.png",
-        "/images/products/product-6-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-6-bg-1.png",
-        "/images/products/product-6-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"]
+    }
   },
   {
-    title: "Apple iPad Air 5th Gen - 64GB",
-    reviews: 15,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 7,
+    title: "Windows 10 Enterprise LTSB 2016",
+    price: 399.99,
+    discountedPrice: 349.99,
+    reviews: 4.7,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-7-sm-1.png",
-        "/images/products/product-7-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-7-bg-1.png",
-        "/images/products/product-7-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"]
+    }
   },
   {
-    title: "Asus RT Dual Band Router",
-    reviews: 15,
-    price: 59.0,
-    discountedPrice: 29.0,
     id: 8,
+    title: "Windows 10 Pro",
+    price: 199.99,
+    discountedPrice: 179.99,
+    reviews: 4.6,
+    category: "Windows",
     imgs: {
-      thumbnails: [
-        "/images/products/product-8-sm-1.png",
-        "/images/products/product-8-sm-2.png",
-      ],
-      previews: [
-        "/images/products/product-8-bg-1.png",
-        "/images/products/product-8-bg-2.png",
-      ],
-    },
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"]
+    }
   },
+  {
+    id: 9,
+    title: "Windows 10 Enterprise LTSB 2019",
+    price: 449.99,
+    discountedPrice: 399.99,
+    reviews: 4.8,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"]
+    }
+  },
+  {
+    id: 10,
+    title: "Windows 8.1 Pro",
+    price: 149.99,
+    discountedPrice: 129.99,
+    reviews: 4.3,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"]
+    }
+  },
+  {
+    id: 11,
+    title: "Windows 10 Enterprise",
+    price: 299.99,
+    discountedPrice: 259.99,
+    reviews: 4.7,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"]
+    }
+  },
+  {
+    id: 12,
+    title: "Windows 10 Pro N",
+    price: 189.99,
+    discountedPrice: 169.99,
+    reviews: 4.5,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"]
+    }
+  },
+  {
+    id: 13,
+    title: "Windows 10 Enterprise LTSB 2021",
+    price: 499.99,
+    discountedPrice: 449.99,
+    reviews: 4.8,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"]
+    }
+  },
+  {
+    id: 14,
+    title: "Windows 11 Pro",
+    price: 199.99,
+    discountedPrice: 179.99,
+    reviews: 4.6,
+    category: "Windows",
+    imgs: {
+      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"],
+      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"]
+    }
+  }
 ];
 
 export default shopData;
