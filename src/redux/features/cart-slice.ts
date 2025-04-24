@@ -12,6 +12,7 @@ type CartItem = {
   price: number;
   discountedPrice: number;
   quantity: number;
+  category?: string;
   imgs?: {
     thumbnails: string[];
     previews: string[];
@@ -33,20 +34,24 @@ export const cart = createSlice({
   initialState,
   reducers: {
     addItemToCart: (state, action: PayloadAction<CartItem>) => {
-      const { id, title, price, quantity, discountedPrice, imgs } =
-        action.payload;
-      const existingItem = state.items.find((item) => item.id === id);
+      const { id, title, price, quantity, discountedPrice, imgs, category } = action.payload;
+      
+      // Generate a unique ID if one isn't provided
+      const itemId = id || Date.now();
+      
+      const existingItem = state.items.find((item) => item.id === itemId);
 
       if (existingItem) {
         existingItem.quantity += quantity;
       } else {
         state.items.push({
-          id,
+          id: itemId,
           title,
           price,
           quantity,
           discountedPrice,
           imgs,
+          category
         });
       }
       // Save to localStorage after adding item

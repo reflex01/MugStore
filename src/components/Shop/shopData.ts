@@ -3,6 +3,7 @@ import { Product } from "@/types/product";
 const shopData: Product[] = [
   {
     id: 1,
+    name: "windows-10-home",
     title: "Windows 10 Home",
     price: 119.99,
     discountedPrice: 99.99,
@@ -15,6 +16,7 @@ const shopData: Product[] = [
   },
   {
     id: 2,
+    name: "windows-11-pro-5pc",
     title: "Windows 11 Pro 5PC",
     price: 299.99,
     discountedPrice: 249.99,
@@ -27,6 +29,7 @@ const shopData: Product[] = [
   },
   {
     id: 3,
+    name: "windows-10-home-5pc",
     title: "Windows 10 Home 5PC",
     price: 199.99,
     discountedPrice: 179.99,
@@ -39,10 +42,11 @@ const shopData: Product[] = [
   },
   {
     id: 4,
+    name: "windows-11-home-5pc",
     title: "Windows 11 Home 5PC",
     price: 249.99,
     discountedPrice: 219.99,
-    reviews: 4.5,
+    reviews: 4.4,
     category: "Windows",
     imgs: {
       thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"],
@@ -51,6 +55,7 @@ const shopData: Product[] = [
   },
   {
     id: 5,
+    name: "windows-10-pro-5pc",
     title: "Windows 10 Pro 5PC",
     price: 279.99,
     discountedPrice: 239.99,
@@ -63,10 +68,11 @@ const shopData: Product[] = [
   },
   {
     id: 6,
+    name: "windows-11-home",
     title: "Windows 11 Home",
     price: 139.99,
     discountedPrice: 119.99,
-    reviews: 4.4,
+    reviews: 4.5,
     category: "Windows",
     imgs: {
       thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"],
@@ -75,10 +81,11 @@ const shopData: Product[] = [
   },
   {
     id: 7,
+    name: "windows-10-enterprise-ltsb-2016",
     title: "Windows 10 Enterprise LTSB 2016",
     price: 399.99,
     discountedPrice: 349.99,
-    reviews: 4.7,
+    reviews: 4.9,
     category: "Windows",
     imgs: {
       thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"],
@@ -87,9 +94,10 @@ const shopData: Product[] = [
   },
   {
     id: 8,
+    name: "windows-10-pro",
     title: "Windows 10 Pro",
-    price: 199.99,
-    discountedPrice: 179.99,
+    price: 169.99,
+    discountedPrice: 149.99,
     reviews: 4.6,
     category: "Windows",
     imgs: {
@@ -99,6 +107,7 @@ const shopData: Product[] = [
   },
   {
     id: 9,
+    name: "windows-10-enterprise-ltsb-2019",
     title: "Windows 10 Enterprise LTSB 2019",
     price: 449.99,
     discountedPrice: 399.99,
@@ -111,6 +120,7 @@ const shopData: Product[] = [
   },
   {
     id: 10,
+    name: "windows-8-1-pro",
     title: "Windows 8.1 Pro",
     price: 149.99,
     discountedPrice: 129.99,
@@ -123,6 +133,7 @@ const shopData: Product[] = [
   },
   {
     id: 11,
+    name: "windows-10-enterprise",
     title: "Windows 10 Enterprise",
     price: 299.99,
     discountedPrice: 259.99,
@@ -135,6 +146,7 @@ const shopData: Product[] = [
   },
   {
     id: 12,
+    name: "windows-10-pro-n",
     title: "Windows 10 Pro N",
     price: 189.99,
     discountedPrice: 169.99,
@@ -147,6 +159,7 @@ const shopData: Product[] = [
   },
   {
     id: 13,
+    name: "windows-10-enterprise-ltsb-2021",
     title: "Windows 10 Enterprise LTSB 2021",
     price: 499.99,
     discountedPrice: 449.99,
@@ -159,10 +172,11 @@ const shopData: Product[] = [
   },
   {
     id: 14,
+    name: "windows-11-pro",
     title: "Windows 11 Pro",
-    price: 199.99,
-    discountedPrice: 179.99,
-    reviews: 4.6,
+    price: 189.99,
+    discountedPrice: 159.99,
+    reviews: 4.7,
     category: "Windows",
     imgs: {
       thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"],

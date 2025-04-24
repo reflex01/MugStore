@@ -22,12 +22,20 @@ const SingleGridItem = ({ item }: { item: Product }) => {
 
   // add to cart
   const handleAddToCart = () => {
-    dispatch(
-      addItemToCart({
-        ...item,
-        quantity: 1,
-      })
-    );
+    const cartItem = {
+      id: item.id || Date.now(),
+      title: item.title,
+      price: item.price,
+      discountedPrice: item.discountedPrice,
+      quantity: 1,
+      category: item.category,
+      imgs: {
+        thumbnails: item.imgs?.thumbnails || [],
+        previews: item.imgs?.previews || []
+      }
+    };
+    
+    dispatch(addItemToCart(cartItem));
   };
 
   const handleItemToWishList = () => {
@@ -148,7 +156,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       </div>
 
       <h3 className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5">
-        <Link href="/shop-details"> {item.title} </Link>
+        <Link href={`/shop-details?name=${item.name}`}> {item.title} </Link>
       </h3>
 
       <span className="flex items-center gap-2 font-medium text-lg">

@@ -13,7 +13,6 @@ import Link from "next/link";
 
 const ProductItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
-
   const dispatch = useDispatch<AppDispatch>();
 
   // update the QuickView state
@@ -23,12 +22,20 @@ const ProductItem = ({ item }: { item: Product }) => {
 
   // add to cart
   const handleAddToCart = () => {
-    dispatch(
-      addItemToCart({
-        ...item,
-        quantity: 1,
-      })
-    );
+    const cartItem = {
+      id: item.id || Date.now(),
+      title: item.title,
+      price: item.price,
+      discountedPrice: item.discountedPrice,
+      quantity: 1,
+      category: item.category,
+      imgs: {
+        thumbnails: item.imgs?.thumbnails || [],
+        previews: item.imgs?.previews || []
+      }
+    };
+    
+    dispatch(addItemToCart(cartItem));
   };
 
   const handleItemToWishList = () => {
@@ -43,6 +50,8 @@ const ProductItem = ({ item }: { item: Product }) => {
 
   const handleProductDetails = () => {
     dispatch(updateproductDetails({ ...item }));
+    // Store in localStorage to persist between pages
+    localStorage.setItem("productDetails", JSON.stringify(item));
   };
 
   return (
@@ -156,7 +165,7 @@ const ProductItem = ({ item }: { item: Product }) => {
         className="font-medium text-dark ease-out duration-200 hover:text-blue mb-1.5"
         onClick={() => handleProductDetails()}
       >
-        <Link href="/shop-details"> {item.title} </Link>
+        <Link href={`/shop-details?name=${item.name}`}>{item.title}</Link>
       </h3>
 
       <span className="flex items-center gap-2 font-medium text-lg">

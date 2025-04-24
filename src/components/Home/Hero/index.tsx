@@ -29,7 +29,7 @@ const Hero = () => {
                 <div className="flex items-center gap-14">
                   <div>
                     <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> iPhone 14 Plus & 14 Pro Max </a>
+                      <a href="#"> Windows 11 Pro (5 PC License) </a>
                     </h2>
 
                     <div>
@@ -38,10 +38,10 @@ const Hero = () => {
                       </p>
                       <span className="flex items-center gap-3">
                         <span className="font-medium text-heading-5 text-red">
-                          $699
+                          $89
                         </span>
                         <span className="font-medium text-2xl text-dark-4 line-through">
-                          $999
+                          $199
                         </span>
                       </span>
                     </div>
@@ -49,8 +49,8 @@ const Hero = () => {
 
                   <div>
                     <Image
-                      src="/images/hero/hero-02.png"
-                      alt="mobile image"
+                      src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
+                      alt="Windows 11 Pro"
                       width={123}
                       height={161}
                     />
@@ -61,7 +61,7 @@ const Hero = () => {
                 <div className="flex items-center gap-14">
                   <div>
                     <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> Wireless Headphone </a>
+                      <a href="#"> Microsoft Office 2021 </a>
                     </h2>
 
                     <div>
@@ -70,10 +70,10 @@ const Hero = () => {
                       </p>
                       <span className="flex items-center gap-3">
                         <span className="font-medium text-heading-5 text-red">
-                          $699
+                          $59
                         </span>
                         <span className="font-medium text-2xl text-dark-4 line-through">
-                          $999
+                          $149
                         </span>
                       </span>
                     </div>
@@ -81,8 +81,8 @@ const Hero = () => {
 
                   <div>
                     <Image
-                      src="/images/hero/hero-01.png"
-                      alt="mobile image"
+                      src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/office-21-pro-plus-100x100_qpykty.png"
+                      alt="Microsoft Office"
                       width={123}
                       height={161}
                     />
