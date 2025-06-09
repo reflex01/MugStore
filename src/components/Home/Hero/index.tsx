@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-light-5 to-white pb-10 lg:pb-16 xl:pb-20 pt-32 sm:pt-36 lg:pt-40 xl:pt-44">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-light-5 to-white pb-10 lg:pb-16 xl:pb-20 pt-56 sm:pt-60 md:pt-64 lg:pt-40 xl:pt-44">
       <div className="absolute inset-0 bg-gradient-to-r from-blue-light-5/50 to-transparent"></div>
       
       <div className="relative z-1 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
