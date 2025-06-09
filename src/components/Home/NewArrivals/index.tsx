@@ -90,7 +90,7 @@ const NewArrival = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-300 via-orange-400 to-red-400 rounded-full px-6 py-2 mb-6 shadow-lg">
             <Sparkles style={{width: '20px', height: '20px', color: '#1f2937', fill: '#1f2937'}} className="animate-pulse" />
-            <span className="font-bold text-gray-800 text-lg">This Week's Hot Picks</span>
+            <span className="font-bold text-gray-800 text-lg">This Week&apos;s Hot Picks</span>
             <TrendingUp style={{width: '20px', height: '20px', color: '#1f2937', fill: '#1f2937'}} className="animate-bounce" />
           </div>
           

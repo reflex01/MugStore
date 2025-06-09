@@ -77,7 +77,7 @@ const BestSeller = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 rounded-full px-6 py-2 mb-6 shadow-lg">
             <Flame style={{width: '20px', height: '20px', color: '#1f2937', fill: '#1f2937'}} className="animate-pulse" />
-            <span className="font-bold text-gray-800 text-lg">This Month's Champions</span>
+            <span className="font-bold text-gray-800 text-lg">This Month&apos;s Champions</span>
             <Award style={{width: '20px', height: '20px', color: '#1f2937', fill: '#1f2937'}} className="animate-bounce" />
           </div>
           

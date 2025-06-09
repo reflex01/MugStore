@@ -117,10 +117,23 @@ const ProductItem = ({ item }: { item: Product }) => {
     >
       {/* Discount Badge */}
       {discountPercentage > 0 && (
-        <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl animate-pulse">
-          <span className="flex items-center gap-1">
+        <div style={{
+          position: 'absolute',
+          top: '16px',
+          left: '16px',
+          zIndex: 10,
+          background: 'linear-gradient(135deg, #fb923c 0%, #ef4444 50%, #ec4899 100%)',
+          color: '#ffffff',
+          padding: '8px 16px',
+          borderRadius: '9999px',
+          fontSize: '14px',
+          fontWeight: 'bold',
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+          animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+        }}>
+          <span style={{display: 'flex', alignItems: 'center', gap: '4px', color: '#ffffff'}}>
             <Zap style={{width: '14px', height: '14px', color: '#ffffff', fill: '#ffffff'}} />
-            -{discountPercentage}%
+            <span style={{color: '#ffffff'}}>-{discountPercentage}%</span>
           </span>
         </div>
       )}
@@ -138,14 +151,17 @@ const ProductItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square cursor-pointer"
+      <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square"
            style={{
              background: isHovered 
                ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
                : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-           }}
-           onClick={handleImageClick}>
-        <Link href={`/shop-details?name=${item.name}`}>
+           }}>
+        <Link 
+          href={`/shop-details?name=${item.name}`}
+          onClick={handleProductDetails}
+          className="block w-full h-full cursor-pointer"
+        >
           <Image 
             src={item.imgs.previews[0]} 
             alt={item.title}

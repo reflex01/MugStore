@@ -475,7 +475,7 @@ const ShopDetails = () => {
                   <div className="p-2 bg-gradient-to-r from-blue to-green rounded-full">
                     <Tag className="w-5 h-5 text-white" />
                   </div>
-                  <span className="bg-gradient-to-r from-blue to-green bg-clip-text text-transparent">What's Included</span>
+                  <span className="bg-gradient-to-r from-blue to-green bg-clip-text text-transparent">What&apos;s Included</span>
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[

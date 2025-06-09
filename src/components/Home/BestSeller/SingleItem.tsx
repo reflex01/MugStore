@@ -97,10 +97,22 @@ const SingleItem = ({ item }: { item: Product }) => {
       }}
     >
       {/* Best Seller Badge */}
-      <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl">
-        <span className="flex items-center gap-1">
+      <div style={{
+        position: 'absolute',
+        top: '16px',
+        left: '16px',
+        zIndex: 10,
+        background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%)',
+        color: '#ffffff',
+        padding: '8px 16px',
+        borderRadius: '9999px',
+        fontSize: '14px',
+        fontWeight: 'bold',
+        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
+      }}>
+        <span style={{display: 'flex', alignItems: 'center', gap: '4px', color: '#ffffff'}}>
           <Crown style={{width: '14px', height: '14px', color: '#ffffff', fill: '#ffffff'}} />
-          #1 Seller
+          <span style={{color: '#ffffff'}}>#1 Seller</span>
         </span>
       </div>
 
@@ -117,14 +129,17 @@ const SingleItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-3xl aspect-square bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8 cursor-pointer"
+      <div className="relative overflow-hidden rounded-t-3xl aspect-square bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8"
            style={{
              background: isHovered 
                ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
                : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-           }}
-           onClick={handleImageClick}>
-        <Link href={`/shop-details?name=${item.name}`}>
+           }}>
+        <Link 
+          href={`/shop-details?name=${item.name}`}
+          onClick={handleProductDetails}
+          className="block w-full h-full cursor-pointer"
+        >
           <Image 
             src={item.imgs.previews[0]} 
             alt={item.title}
@@ -198,8 +213,19 @@ const SingleItem = ({ item }: { item: Product }) => {
             </span>
           )}
           {discountPercentage > 0 && (
-            <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-100 text-green-700 text-xs font-bold">
-              {discountPercentage}% OFF
+            <span style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              padding: '4px 12px',
+              borderRadius: '9999px',
+              background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
+              color: '#ffffff',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)',
+              animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+            }}>
+              -{discountPercentage}% OFF
             </span>
           )}
         </div>
