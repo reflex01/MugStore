@@ -20,7 +20,6 @@ import {
   ShoppingCart,
   Share2,
   ZoomIn,
-  Truck,
   Shield,
   Clock,
   CheckCircle,
@@ -28,9 +27,7 @@ import {
   MessageCircle,
   Award,
   Download,
-  Lock,
   Zap,
-  Tag,
   Minus,
   Plus,
   Info,
@@ -334,46 +331,50 @@ const ShopDetails = () => {
       ]} />
 
       {/* Product Section */}
-      <section className="py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-6 sm:py-12 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16">
             
-            {/* Image Gallery */}
-            <div className="space-y-6">
+            {/* Image Gallery - Mobile Optimized */}
+            <div className="space-y-4 sm:space-y-6">
               {/* Main Image */}
               <div className="relative group">
-                <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden shadow-xl">
+                <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
                   <Image
                     src={product.imgs?.previews[selectedImage] || product.imgs?.previews[0]}
                     alt={product.title}
                     fill
-                    className="object-contain p-8 transition-transform duration-500 group-hover:scale-105"
+                    className="object-contain p-4 sm:p-8 transition-transform duration-500 group-hover:scale-105"
                     priority
                   />
                   
-                  {/* Zoom Button */}
+                  {/* Zoom Button - Hidden on mobile */}
                   <button
-                    className="absolute top-4 right-4 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
+                    className="hidden sm:block absolute top-4 right-4 p-3 bg-white/90 backdrop-blur-sm rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110"
                   >
                     <ZoomIn className="w-5 h-5 text-gray-700" />
                   </button>
 
-                  {/* Discount Badge */}
+                  {/* Professional Discount Badge */}
                   {discountPercentage > 0 && (
-                    <div className="absolute top-4 left-4 bg-red text-white px-4 py-2 rounded-full shadow-lg animate-pulse">
-                      <span className="font-bold">-{discountPercentage}%</span>
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
+                      <div className="bg-gradient-to-r from-green to-green-dark px-3 py-1 rounded-full shadow-md animate-bounce">
+                        <span className="!text-white font-bold text-sm" style={{color: '#ffffff'}}>
+                          Save ${(product.price - product.discountedPrice).toFixed(2)}
+                        </span>
+                      </div>
                     </div>
                   )}
                 </div>
               </div>
 
-              {/* Thumbnail Gallery */}
-              <div className="grid grid-cols-4 gap-4">
+              {/* Thumbnail Gallery - Mobile responsive */}
+              <div className="grid grid-cols-4 gap-2 sm:gap-4">
                 {product.imgs?.thumbnails.map((image: string, index: number) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
-                    className={`aspect-square bg-gray-100 rounded-xl overflow-hidden border-2 transition-all duration-200 ${
+                    className={`aspect-square bg-gray-100 rounded-lg sm:rounded-xl overflow-hidden border-2 transition-all duration-200 ${
                       selectedImage === index 
                         ? 'border-blue-500 shadow-lg scale-105' 
                         : 'border-gray-200 hover:border-gray-300'
@@ -384,84 +385,69 @@ const ShopDetails = () => {
                       alt={`${product.title} thumbnail ${index + 1}`}
                       width={100}
                       height={100}
-                      className="w-full h-full object-contain p-2"
+                      className="w-full h-full object-contain p-1 sm:p-2"
                     />
                   </button>
                 ))}
               </div>
 
-              {/* Trust Badges */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mt-8">
-                <div className="text-center p-4 bg-green-light-6 rounded-xl shadow-sm border border-green-light-3 hover:shadow-md transition-all duration-200">
-                  <Shield className="w-8 h-8 text-green mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-green-dark">100% Genuine</p>
-                  <p className="text-xs text-green">Microsoft Licensed</p>
-                </div>
-                <div className="text-center p-4 bg-blue-light-5 rounded-xl shadow-sm border border-blue-light-3 hover:shadow-md transition-all duration-200">
-                  <Zap className="w-8 h-8 text-blue mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-blue-dark">Instant Delivery</p>
-                  <p className="text-xs text-blue">Within 5 minutes</p>
-                </div>
-                <div className="text-center p-4 bg-gray-1 rounded-xl shadow-sm border border-gray-3 hover:shadow-md transition-all duration-200">
-                  <Award className="w-8 h-8 text-orange mx-auto mb-2" />
-                  <p className="text-sm font-semibold text-orange-dark">Lifetime Support</p>
-                  <p className="text-xs text-orange">Free technical help</p>
-                </div>
-              </div>
             </div>
 
-            {/* Product Information */}
-            <div className="space-y-8">
+            {/* Product Information - Mobile Optimized */}
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8">
               {/* Header */}
               <div>
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex-1">
-                    <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
+                <div className="flex items-start justify-between mb-3 sm:mb-4">
+                  <div className="flex-1 pr-3">
+                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 leading-tight">
                       {product.title}
                     </h1>
                     
-                    {/* Rating */}
-                    <div className="flex items-center gap-4 mb-4">
+                    {/* Rating - Mobile friendly */}
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3 sm:mb-4 text-sm">
                       <div className="flex items-center gap-1">
-                        {renderStars(4.8)}
+                        <div className="flex items-center gap-0.5">
+                          {renderStars(4.8)}
+                        </div>
+                        <span className="text-gray-600 ml-1">4.8 (127)</span>
                       </div>
-                      <span className="text-sm text-gray-600">4.8 (127 reviews)</span>
-                      <div className="flex items-center gap-1 text-green-dark bg-green-light-6 px-3 py-1 rounded-full">
-                        <CheckCircle className="w-4 h-4" />
-                        <span className="text-sm font-semibold">In Stock</span>
+                      <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
+                      <div className="flex items-center gap-1 text-green-600">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        <span className="font-medium">In Stock</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Share & Wishlist */}
-                  <div className="flex items-center gap-3">
+                  {/* Share & Wishlist - Mobile optimized */}
+                  <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                     <button
                       onClick={handleWishlist}
-                      className={`p-3 rounded-full border-2 transition-all duration-200 ${
+                      className={`p-2 sm:p-3 rounded-full border-2 transition-all duration-200 ${
                         isWishlisted 
                           ? 'bg-red-50 border-red-200 text-red-500' 
                           : 'bg-white border-gray-200 text-gray-400 hover:border-red-200 hover:text-red-500'
                       }`}
                     >
-                      <Heart className={`w-6 h-6 ${isWishlisted ? 'fill-current' : ''}`} />
+                      <Heart className={`w-5 h-5 sm:w-6 sm:h-6 ${isWishlisted ? 'fill-current' : ''}`} />
                     </button>
-                    <button className="p-3 rounded-full border-2 border-gray-200 text-gray-400 hover:border-blue-200 hover:text-blue-500 transition-all duration-200">
-                      <Share2 className="w-6 h-6" />
+                    <button className="p-2 sm:p-3 rounded-full border-2 border-gray-200 text-gray-400 hover:border-blue-200 hover:text-blue-500 transition-all duration-200">
+                      <Share2 className="w-5 h-5 sm:w-6 sm:h-6" />
                     </button>
                   </div>
                 </div>
 
-                {/* Price */}
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="text-4xl font-bold text-gray-900">
+                {/* Price - Mobile responsive */}
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4 sm:mb-6">
+                  <span className="text-3xl sm:text-4xl font-bold text-gray-900">
                     ${product.discountedPrice}
                   </span>
                   {product.price !== product.discountedPrice && (
                     <>
-                      <span className="text-2xl text-gray-400 line-through">
+                      <span className="text-xl sm:text-2xl text-gray-400 line-through">
                         ${product.price}
                       </span>
-                      <div className="bg-gradient-to-r from-green to-green-dark text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-bounce">
+                      <div className="bg-gradient-to-r from-green to-green-dark text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-bounce w-fit">
                         Save ${(product.price - product.discountedPrice).toFixed(2)}
                       </div>
                     </>
@@ -469,140 +455,120 @@ const ShopDetails = () => {
                 </div>
               </div>
 
-              {/* Key Features */}
-              <div className="bg-gradient-to-br from-blue-light-5 to-green-light-6 rounded-2xl p-6 border border-blue-light-3 shadow-lg">
-                <h3 className="font-bold text-lg text-dark mb-6 flex items-center gap-2">
-                  <div className="p-2 bg-gradient-to-r from-blue to-green rounded-full">
-                    <Tag className="w-5 h-5 text-white" />
+              {/* Enhanced Value Proposition with Color Psychology */}
+              <div className="bg-gray-50 rounded-xl p-4 shadow-sm">
+                <div className="space-y-3">
+                  {/* Conversion-focused badges with color psychology */}
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {/* Trust Badge - Green psychology for security */}
+                    <div className="inline-flex items-center gap-2 bg-emerald-100 px-3 py-2 rounded-lg hover:bg-emerald-200 transition-all transform hover:scale-105">
+                      <Shield className="w-4 h-4 !text-emerald-600" style={{color: '#059669'}} />
+                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>🛡️ 100% Genuine</span>
+                    </div>
+                    
+                    {/* Urgency Badge - Orange psychology for immediate action */}
+                    <div className="inline-flex items-center gap-2 bg-orange-100 px-3 py-2 rounded-lg hover:bg-orange-200 transition-all transform hover:scale-105">
+                      <Zap className="w-4 h-4 !text-orange-600" style={{color: '#ea580c'}} />
+                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>⚡ Instant Delivery</span>
+                    </div>
+                    
+                    {/* Value Badge - Purple psychology for premium feel */}
+                    <div className="inline-flex items-center gap-2 bg-purple-100 px-3 py-2 rounded-lg hover:bg-purple-200 transition-all transform hover:scale-105">
+                      <Award className="w-4 h-4 !text-purple-600" style={{color: '#9333ea'}} />
+                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>👑 Lifetime License</span>
+                    </div>
                   </div>
-                  <span className="bg-gradient-to-r from-blue to-green bg-clip-text text-transparent">What&apos;s Included</span>
-                </h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {[
-                    { text: "Genuine license key", color: "green", bg: "green-light-6", icon: "shield" },
-                    { text: "Instant email delivery", color: "blue", bg: "blue-light-5", icon: "zap" },
-                    { text: "Lifetime activation", color: "orange", bg: "yellow-light-4", icon: "clock" },
-                    { text: "24/7 support included", color: "teal", bg: "blue-light-5", icon: "support" },
-                    { text: "Money-back guarantee", color: "green", bg: "green-light-6", icon: "shield" },
-                    { text: "All future updates", color: "blue", bg: "blue-light-5", icon: "update" }
-                  ].map((feature, index) => (
-                    <div key={index} className={`flex items-center gap-3 p-3 bg-${feature.bg} rounded-xl border border-${feature.color}-light-3 hover:shadow-md hover:scale-105 transition-all duration-200 cursor-pointer`}>
-                      <div className={`p-2 bg-${feature.color} rounded-full shadow-sm`}>
-                        {feature.icon === "shield" && <CheckCircle className="w-4 h-4 text-white" />}
-                        {feature.icon === "zap" && <Zap className="w-4 h-4 text-white" />}
-                        {feature.icon === "clock" && <Clock className="w-4 h-4 text-white" />}
-                        {feature.icon === "support" && <CheckCircle className="w-4 h-4 text-white" />}
-                        {feature.icon === "update" && <CheckCircle className="w-4 h-4 text-white" />}
-                      </div>
-                      <span className={`text-sm font-semibold text-${feature.color}-dark`}>{feature.text}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                {/* Psychological Trigger Banner */}
-                <div className="mt-6 p-4 bg-gradient-to-r from-red-light-6 to-orange-light bg-white rounded-xl border-2 border-red-light-3 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-red opacity-10 rounded-full -mr-8 -mt-8"></div>
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-red rounded-full animate-pulse">
-                      <Zap className="w-5 h-5 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-red-dark">Limited Time Offer!</p>
-                      <p className="text-sm text-red font-medium">Join 10,000+ satisfied customers</p>
+                  
+                  {/* Enhanced savings highlight with urgency */}
+                  <div className="text-center">
+                    <div className="inline-flex items-center gap-2 bg-red-100 px-4 py-2 rounded-lg animate-pulse">
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+                      <span className="font-bold !text-red-700 text-sm" style={{color: '#b91c1c'}}>🔥 LIMITED TIME: Save ${(product.price - product.discountedPrice).toFixed(2)} Today!</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Quantity & Add to Cart */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center border-2 border-gray-200 rounded-xl">
+              {/* Quantity & Add to Cart - Mobile optimized */}
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                  <div className="flex items-center border-2 border-gray-200 rounded-lg sm:rounded-xl w-fit">
                     <button
                       onClick={() => quantity > 1 && setQuantity(quantity - 1)}
-                      className="p-3 hover:bg-gray-50 transition-colors duration-200"
+                      className="p-2 sm:p-3 hover:bg-gray-50 transition-colors duration-200"
                     >
-                      <Minus className="w-5 h-5" />
+                      <Minus className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
-                    <span className="px-6 py-3 border-x border-gray-200 font-semibold">
+                    <span className="px-4 sm:px-6 py-2 sm:py-3 border-x border-gray-200 font-semibold min-w-[60px] text-center">
                       {quantity}
                     </span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
-                      className="p-3 hover:bg-gray-50 transition-colors duration-200"
+                      className="p-2 sm:p-3 hover:bg-gray-50 transition-colors duration-200"
                     >
-                      <Plus className="w-5 h-5" />
+                      <Plus className="w-4 h-4 sm:w-5 sm:h-5" />
                     </button>
                   </div>
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-gray-600 font-medium">
                     ${(product.discountedPrice * quantity).toFixed(2)} total
                   </span>
                 </div>
 
                 <button
                   onClick={handleAddToCart}
-                  className="w-full bg-gradient-to-r from-green to-green-dark text-white hover:from-green-dark hover:to-green font-bold py-4 px-8 rounded-xl shadow-lg hover:shadow-xl ease-out duration-200 transform hover:scale-105 flex items-center justify-center gap-3 relative overflow-hidden"
+                  className="w-full btn-green-override font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg"
+                  style={{backgroundColor: '#10b981', color: '#ffffff'}}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-yellow-light-4 to-orange-light opacity-20 animate-pulse"></div>
-                  <ShoppingCart className="w-6 h-6 relative z-10" />
-                  <span className="relative z-10 text-lg">🚀 Buy Now - Save ${(product.price - product.discountedPrice).toFixed(2)}</span>
+                  <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#ffffff'}} />
+                  <span style={{color: '#ffffff'}}>🚀 Buy Now - Save ${(product.price - product.discountedPrice).toFixed(2)}</span>
                 </button>
                 
-                {/* Urgency Indicators */}
-                <div className="flex items-center justify-between text-sm">
-                  <div className="flex items-center gap-2 text-red">
-                    <div className="w-2 h-2 bg-red rounded-full animate-ping"></div>
-                    <span className="font-semibold">🔥 23 people viewing this</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-orange">
-                    <Clock className="w-4 h-4" />
-                    <span className="font-semibold">⏰ Only 3 left in stock!</span>
+                {/* Enhanced Social Proof with Color Psychology */}
+                <div className="bg-orange-50 rounded-lg p-3">
+                  <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
+                    {/* Live activity with urgency colors */}
+                    <div className="flex items-center gap-2 bg-red-100 px-3 py-1.5 rounded-lg">
+                      <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
+                      <span className="text-xs sm:text-sm font-bold !text-red-700" style={{color: '#b91c1c'}}>
+                        <span className="hidden sm:inline">👥 47 watching now • </span>
+                        <span style={{color: '#b91c1c'}}>🔥 TRENDING</span>
+                      </span>
+                    </div>
+                    
+                    {/* Scarcity indicator with urgency psychology */}
+                    <div className="flex items-center gap-2 bg-orange-100 px-3 py-1.5 rounded-lg animate-pulse">
+                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 !text-orange-600" style={{color: '#ea580c'}} />
+                      <span className="text-xs sm:text-sm font-bold !text-orange-700" style={{color: '#c2410c'}}>
+                        ⚠️ <span style={{color: '#c2410c'}}>ONLY 2 LEFT!</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Security Features with Social Proof */}
-              <div className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="flex items-center gap-3 p-4 bg-green-light-6 rounded-xl border border-green-light-3 hover:shadow-lg transition-all duration-200">
-                    <div className="p-2 bg-green rounded-full">
-                      <Lock className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-green-dark">🔒 Secure Payment</p>
-                      <p className="text-sm text-green font-medium">256-bit SSL Encrypted</p>
-                    </div>
+              {/* Enhanced Trust Indicators with Color Psychology */}
+              <div className="bg-gray-50 rounded-lg p-3">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs sm:text-sm">
+                  {/* Security - Blue psychology for trust */}
+                  <div className="flex items-center justify-center gap-2 bg-blue-100 px-3 py-2 rounded-lg hover:bg-blue-200 transition-all transform hover:scale-105">
+                    <Shield className="w-4 h-4 !text-blue-600" style={{color: '#2563eb'}} />
+                    <span className="font-bold !text-blue-800" style={{color: '#1e40af'}}>🔒 SSL Secured</span>
                   </div>
-                  <div className="flex items-center gap-3 p-4 bg-blue-light-5 rounded-xl border border-blue-light-3 hover:shadow-lg transition-all duration-200">
-                    <div className="p-2 bg-blue rounded-full">
-                      <Truck className="w-6 h-6 text-white" />
+                  
+                  {/* Social proof - Green psychology for popularity */}
+                  <div className="flex items-center justify-center gap-2 bg-green-100 px-3 py-2 rounded-lg hover:bg-green-200 transition-all transform hover:scale-105">
+                    <div className="flex -space-x-1">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
+                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
                     </div>
-                    <div>
-                      <p className="font-bold text-blue-dark">⚡ Instant Delivery</p>
-                      <p className="text-sm text-blue font-medium">Within 2 minutes</p>
-                    </div>
+                    <span className="font-bold !text-green-800" style={{color: '#166534'}}>🎉 15,000+ Happy Customers</span>
                   </div>
-                </div>
-                
-                {/* Social Proof Banner */}
-                <div className="bg-gradient-to-r from-yellow-light-4 to-orange-light rounded-xl p-4 border-2 border-yellow-dark border-dashed">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="flex -space-x-2">
-                        <div className="w-8 h-8 bg-gradient-to-r from-blue to-green rounded-full border-2 border-white flex items-center justify-center text-white font-bold text-xs">A</div>
-                        <div className="w-8 h-8 bg-gradient-to-r from-green to-yellow rounded-full border-2 border-white flex items-center justify-center text-white font-bold text-xs">S</div>
-                        <div className="w-8 h-8 bg-gradient-to-r from-yellow to-red rounded-full border-2 border-white flex items-center justify-center text-white font-bold text-xs">M</div>
-                        <div className="w-8 h-8 bg-gradient-to-r from-red to-blue rounded-full border-2 border-white flex items-center justify-center text-gray-600 font-bold text-xs">+</div>
-                      </div>
-                      <div>
-                        <p className="font-bold text-orange-dark">✨ 10,247 customers love this!</p>
-                        <p className="text-sm text-yellow-dark font-medium">💫 4.9/5 stars • Verified reviews</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="font-bold text-green-dark text-lg">97%</p>
-                      <p className="text-xs text-green font-medium">Satisfaction</p>
-                    </div>
+                  
+                  {/* Rating - Gold psychology for excellence */}
+                  <div className="flex items-center justify-center gap-2 bg-yellow-100 px-3 py-2 rounded-lg hover:bg-yellow-200 transition-all transform hover:scale-105">
+                    <Star className="w-4 h-4 !text-yellow-600 fill-current" style={{color: '#ca8a04', fill: '#ca8a04'}} />
+                    <span className="font-bold !text-yellow-800" style={{color: '#92400e'}}>⭐ 4.9/5 Excellence</span>
                   </div>
                 </div>
               </div>
@@ -611,26 +577,26 @@ const ShopDetails = () => {
         </div>
       </section>
 
-      {/* Tabs Section */}
-      <section className="py-16 bg-white">
+      {/* Tabs Section - Mobile Optimized */}
+      <section className="py-8 sm:py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12 px-4">
+          {/* Tab Navigation - Mobile friendly */}
+          <div className="flex flex-wrap justify-center gap-1 sm:gap-2 mb-8 sm:mb-12 px-2 sm:px-4">
             {tabs.map((tab) => {
               const IconComponent = tab.icon;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl font-semibold transition-all duration-300 text-sm sm:text-base ${
+                  className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 lg:px-6 py-2 sm:py-3 rounded-lg sm:rounded-xl font-semibold transition-all duration-300 text-xs sm:text-sm lg:text-base ${
                     activeTab === tab.id
                       ? 'bg-blue text-white shadow-lg shadow-blue-200 scale-105 transform'
                       : 'bg-white text-dark hover:bg-blue-light-5 hover:text-blue border border-gray-3 hover:border-blue hover:shadow-md'
                   }`}
                 >
-                  <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <IconComponent className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
                   <span className="hidden sm:inline">{tab.title}</span>
-                  <span className="sm:hidden">{tab.title.split(' ')[0]}</span>
+                  <span className="sm:hidden text-xs">{tab.title.split(' ')[0]}</span>
                 </button>
               );
             })}
@@ -920,8 +886,41 @@ const ShopDetails = () => {
         </div>
       </section>
 
-      <RecentlyViewdItems />
-      <Newsletter />
+      {/* Perfect Mobile CTA */}
+      <div className="sm:hidden fixed bottom-0 left-0 right-0 z-[9999] bg-white shadow-2xl">
+        <div className="px-4 py-3 safe-area-inset-bottom">
+          <div className="flex items-center gap-3">
+            <div className="flex-shrink-0">
+              <div className="text-lg font-bold text-gray-900">
+                ${product.discountedPrice}
+              </div>
+              {product.price !== product.discountedPrice && (
+                <div className="flex items-center gap-2">
+                  <span className="text-sm text-gray-500 line-through">
+                    ${product.price}
+                  </span>
+                  <span className="text-xs bg-red-500 text-white px-2 py-0.5 rounded-full font-semibold">
+                    Save ${(product.price - product.discountedPrice).toFixed(2)}
+                  </span>
+                </div>
+              )}
+            </div>
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 !bg-green-600 !text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:!bg-green-700 transition-all duration-200 flex items-center justify-center gap-2 min-h-[48px] active:scale-95"
+              style={{backgroundColor: '#10b981', color: '#ffffff'}}
+            >
+              <ShoppingCart className="w-5 h-5 !text-white" style={{color: '#ffffff'}} />
+              <span className="text-sm font-bold !text-white" style={{color: '#ffffff'}}>Buy Now</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="sm:pb-0 pb-24">
+        <RecentlyViewdItems />
+        <Newsletter />
+      </div>
     </>
   );
 };
