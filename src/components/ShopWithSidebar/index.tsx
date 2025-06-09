@@ -11,6 +11,7 @@ import PriceDropdown from "./PriceDropdown";
 import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
+import ProductSkeleton from "../Common/ProductSkeleton";
 
 const ITEMS_PER_PAGE = 9;
 
@@ -25,20 +26,35 @@ const ShopWithSidebar = () => {
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1'));
   const [filteredProducts, setFilteredProducts] = useState(shopData);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    if (categoryParam) {
-      setSelectedCategories([categoryParam]);
-      setFilteredProducts(shopData.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
-    } else {
-      setFilteredProducts(shopData.filter(product => product.category === "Windows"));
-    }
+    setIsLoading(true);
+    // Add a small delay to prevent flash of content
+    const timer = setTimeout(() => {
+      if (categoryParam) {
+        setSelectedCategories([categoryParam]);
+        setFilteredProducts(shopData.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
+      } else {
+        setFilteredProducts(shopData.filter(product => product.category === "Windows"));
+      }
+      setIsLoading(false);
+    }, 50);
+    
+    return () => clearTimeout(timer);
   }, [categoryParam]);
 
   useEffect(() => {
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    setPaginatedProducts(filteredProducts.slice(startIndex, endIndex));
+    setIsLoading(true);
+    // Simulate loading delay for better UX
+    const timer = setTimeout(() => {
+      const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+      const endIndex = startIndex + ITEMS_PER_PAGE;
+      setPaginatedProducts(filteredProducts.slice(startIndex, endIndex));
+      setIsLoading(false);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, [filteredProducts, currentPage]);
 
   const handlePageChange = (page) => {
@@ -156,27 +172,37 @@ const ShopWithSidebar = () => {
       />
       
       {/* Modern Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-8 sm:py-12 lg:py-16">
+      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-8 sm:py-12 lg:py-16" style={{ minHeight: '280px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h1 
+              className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
+              style={{ 
+                fontDisplay: 'swap',
+                lineHeight: '1.1',
+                minHeight: '3.5rem'
+              }}
+            >
               Premium Software Collection
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            <p 
+              className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+              style={{ minHeight: '2rem' }}
+            >
               Discover genuine Microsoft products with instant delivery and lifetime support
             </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-gray-700">✅ 100% Genuine</span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm font-medium" style={{ minHeight: '3rem' }}>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md" style={{ minWidth: '150px', height: '36px' }}>
+                <div className="w-2 h-2 bg-green-500 rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700 whitespace-nowrap">✅ 100% Genuine</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                <span className="text-gray-700">⚡ Instant Delivery</span>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md" style={{ minWidth: '150px', height: '36px' }}>
+                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse flex-shrink-0"></div>
+                <span className="text-gray-700 whitespace-nowrap">⚡ Instant Delivery</span>
               </div>
-              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span className="text-gray-700">🛡️ Lifetime Support</span>
+              <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-md" style={{ minWidth: '150px', height: '36px' }}>
+                <div className="w-2 h-2 bg-purple-500 rounded-full flex-shrink-0"></div>
+                <span className="text-gray-700 whitespace-nowrap">🛡️ Lifetime Support</span>
               </div>
             </div>
           </div>
@@ -401,26 +427,34 @@ const ShopWithSidebar = () => {
 
               {/* <!-- Products Grid Tab Content Start --> */}
               <div
-                className={`${
+                className={`min-h-[600px] ${
                   productStyle === "grid"
                     ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                     : "flex flex-col gap-6 lg:gap-8"
                 }`}
               >
-                {paginatedProducts.map((item, key) =>
-                  productStyle === "grid" ? (
-                    <SingleGridItem item={item} key={key} />
-                  ) : (
-                    <SingleListItem item={item} key={key} />
+                {isLoading ? (
+                  // Loading skeleton
+                  Array.from({ length: ITEMS_PER_PAGE }).map((_, index) => (
+                    <ProductSkeleton key={`skeleton-${index}`} />
+                  ))
+                ) : (
+                  paginatedProducts.map((item, key) =>
+                    productStyle === "grid" ? (
+                      <SingleGridItem item={item} key={key} />
+                    ) : (
+                      <SingleListItem item={item} key={key} />
+                    )
                   )
                 )}
               </div>
               {/* <!-- Products Grid Tab Content End --> */}
 
               {/* <!-- Products Pagination Start --> */}
-              <div className="flex justify-center mt-12 lg:mt-15">
-                <div className="bg-white shadow-lg rounded-2xl p-3 border border-gray-100">
-                  <ul className="flex items-center gap-1">
+              {!isLoading && totalPages > 1 && (
+                <div className="flex justify-center mt-12 lg:mt-15">
+                  <div className="bg-white shadow-lg rounded-2xl p-3 border border-gray-100">
+                    <ul className="flex items-center gap-1">
                     <li>
                       <button
                         onClick={() => handlePageChange(currentPage - 1)}
@@ -479,9 +513,10 @@ const ShopWithSidebar = () => {
                         </svg>
                       </button>
                     </li>
-                  </ul>
+                    </ul>
+                  </div>
                 </div>
-              </div>
+              )}
               {/* <!-- Products Pagination End --> */}
             </div>
             {/* // <!-- Content End --> */}
