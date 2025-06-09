@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ShopDetails from "@/components/ShopDetails";
 import { Metadata } from "next";
 
@@ -8,10 +8,21 @@ export const metadata: Metadata = {
   // other metadata
 };
 
+// Loading component
+const ShopDetailsLoading = () => {
+  return (
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="h-16 w-16 animate-spin rounded-full border-4 border-solid border-blue border-t-transparent"></div>
+    </div>
+  );
+};
+
 const ShopDetailsPage = () => {
   return (
     <main>
-      <ShopDetails />
+      <Suspense fallback={<ShopDetailsLoading />}>
+        <ShopDetails />
+      </Suspense>
     </main>
   );
 };

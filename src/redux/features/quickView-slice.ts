@@ -5,18 +5,22 @@ type InitialState = {
   value: Product;
 };
 
-const initialState = {
+const initialState: InitialState = {
   value: {
     title: "",
+    name: "",
     reviews: 0,
     price: 0,
     discountedPrice: 0,
-    img: "",
     id: 0,
-    images: [],
-    imgs: { thumbnails: [], previews: [] },
-  } as Product,
-} as InitialState;
+    category: "",
+    description: "",
+    imgs: { 
+      thumbnails: [], 
+      previews: [] 
+    },
+  },
+};
 
 export const quickView = createSlice({
   name: "quickView",
