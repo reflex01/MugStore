@@ -55,13 +55,22 @@ const ShopDetails = () => {
 
   // Find the matching product
   const currentProduct = products.data.find((p) => p.name === productName);
-  const productFromStorage = localStorage.getItem("productDetails");
+  const [productFromStorage, setProductFromStorage] = useState(null);
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const stored = localStorage.getItem("productDetails");
+      setProductFromStorage(stored ? JSON.parse(stored) : null);
+    }
+  }, []);
+  
   const productFromRedux = useAppSelector(
     (state) => state.productDetailsReducer.value
   );
   const product =
     currentProduct ||
-    (productFromStorage ? JSON.parse(productFromStorage) : productFromRedux);
+    productFromStorage ||
+    productFromRedux;
 
   const discountPercentage = product ? Math.round(((product.price - product.discountedPrice) / product.price) * 100) : 0;
 
@@ -340,13 +349,19 @@ const ShopDetails = () => {
               {/* Main Image */}
               <div className="relative group">
                 <div className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl sm:rounded-2xl overflow-hidden shadow-lg sm:shadow-xl">
-                  <Image
-                    src={product.imgs?.previews[selectedImage] || product.imgs?.previews[0]}
-                    alt={product.title}
-                    fill
-                    className="object-contain p-4 sm:p-8 transition-transform duration-500 group-hover:scale-105"
-                    priority
-                  />
+                  {product.imgs?.previews?.[selectedImage] || product.imgs?.previews?.[0] ? (
+                    <Image
+                      src={product.imgs.previews[selectedImage] || product.imgs.previews[0]}
+                      alt={product.title || 'Product image'}
+                      fill
+                      className="object-contain p-4 sm:p-8 transition-transform duration-500 group-hover:scale-105"
+                      priority
+                    />
+                  ) : (
+                    <div className="flex items-center justify-center h-full text-gray-400">
+                      <span>No image available</span>
+                    </div>
+                  )}
                   
                   {/* Zoom Button - Hidden on mobile */}
                   <button
@@ -358,9 +373,15 @@ const ShopDetails = () => {
                   {/* Professional Discount Badge */}
                   {discountPercentage > 0 && (
                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
-                      <div className="bg-gradient-to-r from-green to-green-dark px-3 py-1 rounded-full shadow-md animate-bounce">
+                      <div 
+                        className="px-3 py-1 rounded-full shadow-lg animate-pulse"
+                        style={{
+                          background: 'linear-gradient(to right, #ef4444, #f97316)',
+                          border: 'none'
+                        }}
+                      >
                         <span className="!text-white font-bold text-sm" style={{color: '#ffffff'}}>
-                          Save ${(product.price - product.discountedPrice).toFixed(2)}
+                          🔥 -{discountPercentage}% OFF
                         </span>
                       </div>
                     </div>
@@ -370,7 +391,7 @@ const ShopDetails = () => {
 
               {/* Thumbnail Gallery - Mobile responsive */}
               <div className="grid grid-cols-4 gap-2 sm:gap-4">
-                {product.imgs?.thumbnails.map((image: string, index: number) => (
+                {product.imgs?.thumbnails?.filter(image => image && image.trim() !== '').map((image: string, index: number) => (
                   <button
                     key={index}
                     onClick={() => setSelectedImage(index)}
@@ -382,13 +403,13 @@ const ShopDetails = () => {
                   >
                     <Image
                       src={image}
-                      alt={`${product.title} thumbnail ${index + 1}`}
+                      alt={`${product.title || 'Product'} thumbnail ${index + 1}`}
                       width={100}
                       height={100}
                       className="w-full h-full object-contain p-1 sm:p-2"
                     />
                   </button>
-                ))}
+                )) || []}
               </div>
 
             </div>
@@ -412,9 +433,9 @@ const ShopDetails = () => {
                         <span className="text-gray-600 ml-1">4.8 (127)</span>
                       </div>
                       <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
-                      <div className="flex items-center gap-1 text-green-600">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        <span className="font-medium">In Stock</span>
+                      <div className="inline-flex items-center gap-2 bg-green-100 px-3 py-1.5 rounded-lg">
+                        <CheckCircle className="w-4 h-4 !text-green-600" style={{color: '#059669'}} />
+                        <span className="font-bold !text-green-800 text-sm" style={{color: '#166534'}}>✅ In Stock</span>
                       </div>
                     </div>
                   </div>
@@ -550,25 +571,25 @@ const ShopDetails = () => {
               <div className="bg-gray-50 rounded-lg p-3">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs sm:text-sm">
                   {/* Security - Blue psychology for trust */}
-                  <div className="flex items-center justify-center gap-2 bg-blue-100 px-3 py-2 rounded-lg hover:bg-blue-200 transition-all transform hover:scale-105">
+                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
                     <Shield className="w-4 h-4 !text-blue-600" style={{color: '#2563eb'}} />
-                    <span className="font-bold !text-blue-800" style={{color: '#1e40af'}}>🔒 SSL Secured</span>
+                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>🔒 SSL Secured</span>
                   </div>
                   
                   {/* Social proof - Green psychology for popularity */}
-                  <div className="flex items-center justify-center gap-2 bg-green-100 px-3 py-2 rounded-lg hover:bg-green-200 transition-all transform hover:scale-105">
+                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
                     <div className="flex -space-x-1">
                       <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                       <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
                       <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
                     </div>
-                    <span className="font-bold !text-green-800" style={{color: '#166534'}}>🎉 15,000+ Happy Customers</span>
+                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>🎉 15,000+ Happy Customers</span>
                   </div>
                   
                   {/* Rating - Gold psychology for excellence */}
-                  <div className="flex items-center justify-center gap-2 bg-yellow-100 px-3 py-2 rounded-lg hover:bg-yellow-200 transition-all transform hover:scale-105">
+                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
                     <Star className="w-4 h-4 !text-yellow-600 fill-current" style={{color: '#ca8a04', fill: '#ca8a04'}} />
-                    <span className="font-bold !text-yellow-800" style={{color: '#92400e'}}>⭐ 4.9/5 Excellence</span>
+                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>⭐ 4.9/5 Excellence</span>
                   </div>
                 </div>
               </div>
