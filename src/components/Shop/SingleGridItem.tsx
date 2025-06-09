@@ -108,7 +108,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
 
   return (
     <div 
-      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-2"
+      className="group relative bg-white rounded-2xl lg:rounded-3xl shadow-md lg:shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-1 lg:hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -153,7 +153,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square"
+      <div className="relative overflow-hidden rounded-t-2xl lg:rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square"
            style={{
              background: isHovered 
                ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
@@ -180,8 +180,8 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           )}
         </Link>
         
-        {/* Quick Actions Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent backdrop-blur-sm transition-all duration-300 ${
+        {/* Quick Actions Overlay - Desktop Only */}
+        <div className={`hidden lg:block absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent backdrop-blur-sm transition-all duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
@@ -215,7 +215,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       </div>
 
       {/* Product Info */}
-      <div className="p-6">
+      <div className="p-4 lg:p-6">
         {/* Rating */}
         <div className="flex items-center gap-3 mb-3">
           <div className="flex items-center gap-1">
@@ -234,32 +234,51 @@ const SingleGridItem = ({ item }: { item: Product }) => {
           </Link>
         </h3>
 
-        {/* Price */}
+        {/* Price and Mobile Actions */}
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl font-bold text-gray-900">
+          <div className="flex items-center gap-2 lg:gap-3">
+            <span className="text-xl lg:text-2xl font-bold text-gray-900">
               ${item.discountedPrice}
             </span>
             {item.price !== item.discountedPrice && (
-              <span className="text-lg text-gray-400 line-through">
+              <span className="text-base lg:text-lg text-gray-400 line-through">
                 ${item.price}
               </span>
             )}
           </div>
           
-          {/* Quick Add Button (Mobile) */}
-          <button
-            onClick={handleAddToCart}
-            className="md:hidden p-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:scale-110 transform"
-          >
-            <Plus style={{width: '20px', height: '20px', color: '#ffffff'}} />
-          </button>
+          {/* Mobile Actions */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <Link href={`/shop-details?name=${item.name}`}>
+              <button
+                onClick={handleProductDetails}
+                className="p-2.5 bg-gray-100 text-gray-600 rounded-xl hover:bg-gray-200 transition-all duration-300 shadow-sm"
+                aria-label="View details"
+              >
+                <Eye className="w-4 h-4" />
+              </button>
+            </Link>
+            <button
+              onClick={handleAddToCart}
+              disabled={isAddingToCart}
+              className="flex items-center gap-1.5 px-3 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg font-medium text-sm"
+            >
+              {isAddingToCart ? (
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              ) : (
+                <ShoppingBag className="w-4 h-4" />
+              )}
+              <span className="hidden sm:inline">
+                {isAddingToCart ? 'Adding...' : 'Add'}
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* Features */}
-        <div className="mt-4 flex items-center gap-2 text-sm font-medium">
-          <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
-            <Zap style={{width: '16px', height: '16px', color: '#059669', fill: '#059669'}} />
+        <div className="mt-3 lg:mt-4 flex items-center gap-2 text-xs lg:text-sm font-medium">
+          <div className="flex items-center gap-1.5 lg:gap-2 px-2.5 lg:px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
+            <Zap style={{width: '14px', height: '14px', color: '#059669', fill: '#059669'}} className="lg:w-4 lg:h-4" />
             <span className="text-green-700">Instant Download</span>
           </div>
         </div>

@@ -48,7 +48,7 @@ const CategoryItem = ({ category, onSelect, isSelected }) => {
   );
 };
 
-const CategoryDropdown = ({ categories, selectedCategory, onCategorySelect }) => {
+const CategoryDropdown = ({ categories, selectedCategories, onCategorySelect }) => {
   const [toggleDropdown, setToggleDropdown] = useState(true);
 
   return (
@@ -97,7 +97,7 @@ const CategoryDropdown = ({ categories, selectedCategory, onCategorySelect }) =>
             key={key} 
             category={category} 
             onSelect={onCategorySelect}
-            isSelected={category.name === selectedCategory}
+            isSelected={selectedCategories.includes(category.name)}
           />
         ))}
       </div>

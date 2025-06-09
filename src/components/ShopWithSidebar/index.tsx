@@ -21,15 +21,14 @@ const ShopWithSidebar = () => {
   
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
-  const [stickyMenu, setStickyMenu] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(categoryParam || "Windows");
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(categoryParam ? [categoryParam] : ["Windows"]);
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1'));
   const [filteredProducts, setFilteredProducts] = useState(shopData);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
 
   useEffect(() => {
     if (categoryParam) {
-      setSelectedCategory(categoryParam);
+      setSelectedCategories([categoryParam]);
       setFilteredProducts(shopData.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
     } else {
       setFilteredProducts(shopData.filter(product => product.category === "Windows"));
@@ -44,26 +43,33 @@ const ShopWithSidebar = () => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    window.history.pushState({}, '', `?category=${selectedCategory.toLowerCase()}&page=${page}`);
+    const categoryQuery = selectedCategories.length > 0 ? selectedCategories[0].toLowerCase() : 'windows';
+    window.history.pushState({}, '', `?category=${categoryQuery}&page=${page}`);
   };
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
 
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
 
-  const handleCategorySelect = (category) => {
-    setSelectedCategory(category);
-    if (category === "Windows") {
-      setFilteredProducts(shopData.filter(product => product.category === "Windows"));
-    } else {
-      setFilteredProducts(shopData.filter(product => product.category === category));
-    }
+  const handleCategorySelect = (category: string) => {
+    setSelectedCategories(prev => {
+      const newCategories = prev.includes(category)
+        ? prev.filter(cat => cat !== category)
+        : [...prev, category];
+      
+      // Filter products based on selected categories
+      if (newCategories.length === 0) {
+        setFilteredProducts(shopData);
+      } else {
+        setFilteredProducts(
+          shopData.filter(product => 
+            newCategories.includes(product.category)
+          )
+        );
+      }
+      
+      setCurrentPage(1); // Reset to first page when filters change
+      return newCategories;
+    });
   };
 
   const options = [
@@ -126,11 +132,9 @@ const ShopWithSidebar = () => {
   ];
 
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-
-    // closing sidebar while clicking outside
-    function handleClickOutside(event) {
-      if (!event.target.closest(".sidebar-content")) {
+    // closing sidebar while clicking outside (desktop only)
+    function handleClickOutside(event: MouseEvent) {
+      if (window.innerWidth >= 1280 && !(event.target as Element).closest(".sidebar-content")) {
         setProductSidebar(false);
       }
     }
@@ -182,38 +186,43 @@ const ShopWithSidebar = () => {
       <section className="bg-gray-50 py-8 sm:py-12 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col xl:flex-row gap-6 lg:gap-8">
+            {/* Mobile Backdrop */}
+            {productSidebar && (
+              <div 
+                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300"
+                onClick={() => setProductSidebar(false)}
+              />
+            )}
+
             {/* Modern Sidebar */}
             <div
-              className={`sidebar-content fixed xl:z-1 z-9999 left-0 top-0 xl:translate-x-0 xl:static xl:max-w-[320px] w-full max-w-[300px] ease-out duration-300 ${
+              className={`sidebar-content fixed xl:static xl:z-auto z-50 left-0 top-0 xl:translate-x-0 xl:max-w-[320px] w-full max-w-[320px] xl:w-auto transition-transform duration-300 ease-out ${
                 productSidebar
-                  ? "translate-x-0 bg-white p-6 h-screen overflow-y-auto shadow-2xl"
-                  : "-translate-x-full xl:translate-x-0"
+                  ? "translate-x-0 bg-white xl:bg-transparent p-6 h-screen xl:h-auto overflow-y-auto shadow-2xl xl:shadow-none"
+                  : "-translate-x-full xl:translate-x-0 xl:bg-transparent"
               }`}
             >
-              {/* Mobile Close Button */}
-              <button
-                onClick={() => setProductSidebar(!productSidebar)}
-                aria-label="Toggle filters"
-                className={`xl:hidden absolute -right-14 flex items-center justify-center w-12 h-12 rounded-r-2xl bg-white shadow-xl border-l-0 ${
-                  stickyMenu
-                    ? "top-20"
-                    : "top-24"
-                }`}
-              >
-                <svg
-                  className="fill-current text-gray-600"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+              {/* Mobile Close Button - Internal */}
+              <div className="xl:hidden flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
+                <h2 className="text-lg font-bold text-gray-900">Filters</h2>
+                <button
+                  onClick={() => setProductSidebar(false)}
+                  aria-label="Close filters"
+                  className="p-2 rounded-full hover:bg-gray-100 transition-colors"
                 >
-                  <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                </svg>
-              </button>
+                  <svg
+                    className="w-6 h-6 text-gray-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
 
-              {/* Sidebar Header */}
-              <div className="mb-8">
+              {/* Sidebar Header - Desktop Only */}
+              <div className="mb-8 hidden xl:block">
                 <h2 className="text-xl font-bold text-gray-900 mb-2">🔍 Find Your Perfect Software</h2>
                 <p className="text-sm text-gray-600">Filter by category and price to discover the ideal solution</p>
               </div>
@@ -225,23 +234,38 @@ const ShopWithSidebar = () => {
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-semibold text-gray-900 flex items-center gap-2">
                         <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                        Active Filters
+                        Active Filters ({selectedCategories.length})
                       </h3>
-                      <button className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors">
+                      <button 
+                        onClick={() => {
+                          setSelectedCategories([]);
+                          setFilteredProducts(shopData);
+                          setCurrentPage(1);
+                        }}
+                        className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
+                      >
                         Clear All
                       </button>
                     </div>
                     
-                    {/* Current Category Badge */}
+                    {/* Current Category Badges */}
                     <div className="flex flex-wrap gap-2">
-                      <div className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200">
-                        <span className="text-sm font-medium text-gray-700">{selectedCategory}</span>
-                        <button className="text-gray-400 hover:text-gray-600">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                            <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M18 6L6 18M6 6L18 18"/>
-                          </svg>
-                        </button>
-                      </div>
+                      {selectedCategories.map((category) => (
+                        <div key={category} className="inline-flex items-center gap-2 bg-white px-3 py-1.5 rounded-full shadow-sm border border-gray-200">
+                          <span className="text-sm font-medium text-gray-700">{category}</span>
+                          <button 
+                            onClick={() => handleCategorySelect(category)}
+                            className="text-gray-400 hover:text-gray-600"
+                          >
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                              <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M18 6L6 18M6 6L18 18"/>
+                            </svg>
+                          </button>
+                        </div>
+                      ))}
+                      {selectedCategories.length === 0 && (
+                        <div className="text-sm text-gray-500 italic">No filters selected</div>
+                      )}
                     </div>
                   </div>
 
@@ -249,7 +273,7 @@ const ShopWithSidebar = () => {
                   <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
                     <CategoryDropdown 
                       categories={categories} 
-                      selectedCategory={selectedCategory}
+                      selectedCategories={selectedCategories}
                       onCategorySelect={handleCategorySelect}
                     />
                   </div>
@@ -271,13 +295,26 @@ const ShopWithSidebar = () => {
                           key={cat.name}
                           onClick={() => handleCategorySelect(cat.name)}
                           className={`w-full text-left px-3 py-2 rounded-lg transition-all duration-200 ${
-                            selectedCategory === cat.name 
+                            selectedCategories.includes(cat.name) 
                               ? 'bg-green-100 text-green-700 font-medium' 
                               : 'hover:bg-white hover:shadow-sm text-gray-600'
                           }`}
                         >
                           <div className="flex items-center justify-between">
-                            <span className="text-sm">{cat.name}</span>
+                            <div className="flex items-center gap-2">
+                              <div className={`w-4 h-4 border-2 rounded transition-colors ${
+                                selectedCategories.includes(cat.name) 
+                                  ? 'bg-green-500 border-green-500' 
+                                  : 'border-gray-300'
+                              }`}>
+                                {selectedCategories.includes(cat.name) && (
+                                  <svg className="w-3 h-3 text-white ml-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                  </svg>
+                                )}
+                              </div>
+                              <span className="text-sm">{cat.name}</span>
+                            </div>
                             <span className="text-xs bg-gray-100 px-2 py-0.5 rounded-full">{cat.products}</span>
                           </div>
                         </button>
@@ -295,12 +332,15 @@ const ShopWithSidebar = () => {
               <div className="xl:hidden mb-6">
                 <button
                   onClick={() => setProductSidebar(!productSidebar)}
-                  className="w-full bg-white rounded-2xl p-4 shadow-sm border border-gray-200 flex items-center justify-center gap-3 hover:shadow-md transition-shadow"
+                  className="w-full bg-white border-2 border-gray-200 rounded-2xl p-4 shadow-lg flex items-center justify-center gap-3 hover:border-blue-500 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                    <path stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M3 6h18M7 12h10m-7 6h4"/>
+                    <path stroke="#374151" strokeWidth="2" strokeLinecap="round" d="M3 6h18M7 12h10m-7 6h4"/>
                   </svg>
-                  <span className="font-medium text-gray-700">Filters & Categories</span>
+                  <span className="font-semibold text-gray-700">Show Filters & Categories</span>
+                  <div className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
+                    {selectedCategories.length}
+                  </div>
                 </button>
               </div>
 
@@ -363,8 +403,8 @@ const ShopWithSidebar = () => {
               <div
                 className={`${
                   productStyle === "grid"
-                    ? "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-7.5 gap-y-9"
-                    : "flex flex-col gap-7.5"
+                    ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+                    : "flex flex-col gap-6 lg:gap-8"
                 }`}
               >
                 {paginatedProducts.map((item, key) =>
@@ -378,14 +418,14 @@ const ShopWithSidebar = () => {
               {/* <!-- Products Grid Tab Content End --> */}
 
               {/* <!-- Products Pagination Start --> */}
-              <div className="flex justify-center mt-15">
-                <div className="bg-white shadow-1 rounded-md p-2">
-                  <ul className="flex items-center">
+              <div className="flex justify-center mt-12 lg:mt-15">
+                <div className="bg-white shadow-lg rounded-2xl p-3 border border-gray-100">
+                  <ul className="flex items-center gap-1">
                     <li>
                       <button
                         onClick={() => handlePageChange(currentPage - 1)}
                         disabled={currentPage === 1}
-                        className="flex items-center justify-center w-8 h-9 ease-out duration-200 rounded-[3px] hover:text-white hover:bg-blue disabled:text-gray-4"
+                        className="flex items-center justify-center w-10 h-10 lg:w-8 lg:h-9 ease-out duration-200 rounded-xl hover:text-white hover:bg-blue disabled:text-gray-4 disabled:cursor-not-allowed touch-manipulation"
                       >
                         <svg
                           className="fill-current"
@@ -407,10 +447,10 @@ const ShopWithSidebar = () => {
                       <li key={page}>
                         <button
                           onClick={() => handlePageChange(page)}
-                          className={`flex py-1.5 px-3.5 duration-200 rounded-[3px] ${
+                          className={`flex items-center justify-center min-w-10 h-10 lg:min-w-auto lg:py-1.5 lg:px-3.5 px-3 duration-200 rounded-xl font-medium touch-manipulation ${
                             currentPage === page
-                              ? "bg-blue text-white"
-                              : "hover:text-white hover:bg-blue"
+                              ? "bg-blue text-white shadow-md"
+                              : "hover:text-white hover:bg-blue text-gray-700"
                           }`}
                         >
                           {page}
@@ -422,7 +462,7 @@ const ShopWithSidebar = () => {
                       <button
                         onClick={() => handlePageChange(currentPage + 1)}
                         disabled={currentPage === totalPages}
-                        className="flex items-center justify-center w-8 h-9 ease-out duration-200 rounded-[3px] hover:text-white hover:bg-blue disabled:text-gray-4"
+                        className="flex items-center justify-center w-10 h-10 lg:w-8 lg:h-9 ease-out duration-200 rounded-xl hover:text-white hover:bg-blue disabled:text-gray-4 disabled:cursor-not-allowed touch-manipulation"
                       >
                         <svg
                           className="fill-current"
