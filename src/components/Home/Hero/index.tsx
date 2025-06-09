@@ -5,98 +5,128 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="overflow-hidden pb-10 lg:pb-12.5 xl:pb-15 pt-57.5 sm:pt-45 lg:pt-30 xl:pt-51.5 bg-[#E5EAF4]">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-        <div className="flex flex-wrap gap-5">
-          <div className="xl:max-w-[757px] w-full">
-            <div className="relative z-1 rounded-[10px] bg-white overflow-hidden">
-              {/* <!-- bg shapes --> */}
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-light-5 to-white pb-10 lg:pb-16 xl:pb-20 pt-32 sm:pt-36 lg:pt-40 xl:pt-44">
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-light-5/50 to-transparent"></div>
+      
+      <div className="relative z-1 max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
+        <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 lg:gap-8">
+          <div className="xl:col-span-8">
+            <div className="relative rounded-2xl bg-white shadow-2 overflow-hidden border border-gray-3/30">
               <Image
                 src="/images/hero/hero-bg.png"
                 alt="hero bg shapes"
-                className="absolute right-0 bottom-0 -z-1"
+                className="absolute right-0 bottom-0 -z-1 opacity-20"
                 width={534}
                 height={520}
               />
-
               <HeroCarousel />
             </div>
           </div>
 
-          <div className="xl:max-w-[393px] w-full">
-            <div className="flex flex-col sm:flex-row xl:flex-col gap-5">
-              <div className="w-full relative rounded-[10px] bg-white p-4 sm:p-7.5">
-                <div className="flex items-center gap-14">
-                  <div>
-                    <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> Windows 11 Pro (5 PC License) </a>
-                    </h2>
+          <div className="xl:col-span-4">
+            <div className="space-y-6">
+              <div className="group relative rounded-2xl bg-white shadow-2 border border-gray-3/30 p-6 hover:shadow-3 transition-all duration-300">
+                <div className="absolute top-4 right-4">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-red-light-5 text-red text-xs font-semibold">
+                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
+                    </svg>
+                    Hot Deal
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-dark text-lg sm:text-xl mb-3 leading-tight">
+                      <a href="#" className="hover:text-blue transition-colors"> 
+                        Windows 11 Pro<br />
+                        <span className="text-base font-normal text-dark-4">(5 PC License)</span>
+                      </a>
+                    </h3>
 
-                    <div>
-                      <p className="font-medium text-dark-4 text-custom-sm mb-1.5">
-                        limited time offer
+                    <div className="space-y-2">
+                      <p className="font-medium text-dark-4 text-sm uppercase tracking-wide">
+                        Limited Time Offer
                       </p>
-                      <span className="flex items-center gap-3">
-                        <span className="font-medium text-heading-5 text-red">
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-2xl text-red">
                           $89
                         </span>
-                        <span className="font-medium text-2xl text-dark-4 line-through">
+                        <span className="font-medium text-lg text-dark-4 line-through">
                           $199
                         </span>
-                      </span>
+                        <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-light-6 text-green text-xs font-bold">
+                          55% OFF
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div>
+                  <div className="flex-shrink-0">
                     <Image
                       src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
                       alt="Windows 11 Pro"
-                      width={123}
-                      height={161}
+                      width={80}
+                      height={100}
+                      className="object-contain"
                     />
                   </div>
                 </div>
               </div>
-              <div className="w-full relative rounded-[10px] bg-white p-4 sm:p-7.5">
-                <div className="flex items-center gap-14">
-                  <div>
-                    <h2 className="max-w-[153px] font-semibold text-dark text-xl mb-20">
-                      <a href="#"> Microsoft Office 2021 </a>
-                    </h2>
 
-                    <div>
-                      <p className="font-medium text-dark-4 text-custom-sm mb-1.5">
-                        limited time offer
+              <div className="group relative rounded-2xl bg-white shadow-2 border border-gray-3/30 p-6 hover:shadow-3 transition-all duration-300">
+                <div className="absolute top-4 right-4">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-blue-light-5 text-blue text-xs font-semibold">
+                    <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
+                    </svg>
+                    Bestseller
+                  </div>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                  <div className="flex-1">
+                    <h3 className="font-bold text-dark text-lg sm:text-xl mb-3 leading-tight">
+                      <a href="#" className="hover:text-blue transition-colors"> 
+                        Microsoft Office 2021<br />
+                        <span className="text-base font-normal text-dark-4">Professional Plus</span>
+                      </a>
+                    </h3>
+
+                    <div className="space-y-2">
+                      <p className="font-medium text-dark-4 text-sm uppercase tracking-wide">
+                        Limited Time Offer
                       </p>
-                      <span className="flex items-center gap-3">
-                        <span className="font-medium text-heading-5 text-red">
+                      <div className="flex items-center gap-3">
+                        <span className="font-bold text-2xl text-red">
                           $59
                         </span>
-                        <span className="font-medium text-2xl text-dark-4 line-through">
+                        <span className="font-medium text-lg text-dark-4 line-through">
                           $149
                         </span>
-                      </span>
+                        <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-light-6 text-green text-xs font-bold">
+                          60% OFF
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div>
+                  <div className="flex-shrink-0">
                     <Image
                       src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/office-21-pro-plus-100x100_qpykty.png"
                       alt="Microsoft Office"
-                      width={123}
-                      height={161}
+                      width={80}
+                      height={100}
+                      className="object-contain"
                     />
                   </div>
                 </div>
               </div>
-
-              
             </div>
           </div>
         </div>
       </div>
 
-      {/* <!-- Hero features --> */}
       <HeroFeature />
     </section>
   );

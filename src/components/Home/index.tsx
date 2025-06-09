@@ -4,7 +4,8 @@ import Categories from "./Categories";
 import NewArrival from "./NewArrivals";
 import PromoBanner from "./PromoBanner";
 import BestSeller from "./BestSeller";
-import CounDown from "./Countdown";
+import HowItWorks from "./HowItWorks";
+import TrustBadges from "./Countdown";
 import Testimonials from "./Testimonials";
 import Newsletter from "../Common/Newsletter";
 
@@ -12,11 +13,10 @@ const Home = () => {
   return (
     <main>
       <Hero />
-      <Categories />
       <NewArrival />
-      <PromoBanner />
+      <HowItWorks />
       <BestSeller />
-      <CounDown />
+      <TrustBadges />
       <Testimonials />
       <Newsletter />
     </main>
