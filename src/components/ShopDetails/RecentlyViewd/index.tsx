@@ -24,13 +24,13 @@ const RecentlyViewdItems = () => {
   }, []);
 
   return (
-    <section className="overflow-hidden pt-17.5">
-      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0 pb-15 border-b border-gray-3">
+    <section className="overflow-hidden pt-8 sm:pt-12 lg:pt-17.5">
+      <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-0 pb-8 sm:pb-12 lg:pb-15 border-b border-gray-3">
         <div className="swiper categories-carousel common-carousel">
           {/* <!-- section title --> */}
-          <div className="mb-10 flex items-center justify-between">
+          <div className="mb-6 sm:mb-8 lg:mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
+              <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5 text-sm sm:text-base">
                 <Image
                   src="/images/icons/icon-05.svg"
                   width={17}
@@ -39,17 +39,17 @@ const RecentlyViewdItems = () => {
                 />
                 Categories
               </span>
-              <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
+              <h2 className="font-semibold text-lg sm:text-xl lg:text-heading-5 text-dark">
                 Browse by Category
               </h2>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3 self-start sm:self-auto">
               <button onClick={handlePrev} className="swiper-button-prev">
                 <svg
                   className="fill-current"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -66,8 +66,8 @@ const RecentlyViewdItems = () => {
               <button onClick={handleNext} className="swiper-button-next">
                 <svg
                   className="fill-current"
-                  width="24"
-                  height="24"
+                  width="20"
+                  height="20"
                   viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -85,8 +85,30 @@ const RecentlyViewdItems = () => {
 
           <Swiper
             ref={sliderRef}
-            slidesPerView={4}
-            spaceBetween={20}
+            slidesPerView={1.2}
+            spaceBetween={16}
+            breakpoints={{
+              480: {
+                slidesPerView: 1.5,
+                spaceBetween: 16,
+              },
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 2.5,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1280: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+              },
+            }}
             className="justify-between"
           >
             {shopData.map((item, key) => (
