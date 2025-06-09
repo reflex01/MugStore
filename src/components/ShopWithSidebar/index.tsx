@@ -178,7 +178,6 @@ const ShopWithSidebar = () => {
             <h1 
               className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4"
               style={{ 
-                fontDisplay: 'swap',
                 lineHeight: '1.1',
                 minHeight: '3.5rem'
               }}
