@@ -1,0 +1,550 @@
+openapi: 3.0.3
+info:
+  title: Windows License Store - Products API
+  description: Products and Reviews API for Windows software licenses
+  version: 1.0.0
+servers:
+  - url: https://api.windowsstore.com/v1
+    description: Production server
+
+paths:
+  # Products API
+  /products:
+    get:
+      tags:
+        - Products
+      summary: Get all products
+      description: Retrieve all products as a simple array (used by home page for New Arrivals and Best Sellers)
+      responses:
+        '200':
+          description: Array of all products
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Product'
+              example:
+                - id: 1
+                  name: "windows-10-home"
+                  title: "Windows 10 Home"
+                  price: 119.99
+                  discountedPrice: 99.99
+                  reviews: 4.5
+                  category: "Windows"
+                  description: "Windows 10 Home is a genuine Microsoft Windows license key..."
+                  imgs:
+                    thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"]
+                    previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"]
+                - id: 2
+                  name: "windows-11-pro-5pc"
+                  title: "Windows 11 Pro 5PC"
+                  price: 299.99
+                  discountedPrice: 249.99
+                  reviews: 4.7
+                  category: "Windows"
+
+  /products/{id}:
+    get:
+      tags:
+        - Products
+      summary: Get product details by ID
+      description: Retrieve detailed information about a specific product including reviews and FAQ
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Product details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductDetails'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /products/{id}/reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Get product reviews
+      description: Retrieve paginated reviews for a specific product
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: integer
+            format: int64
+        - name: page
+          in: query
+          schema:
+            type: integer
+            default: 0
+        - name: size
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: sort
+          in: query
+          description: Sort reviews by
+          schema:
+            type: string
+            enum: [newest, oldest, rating_desc, rating_asc, helpful]
+            default: newest
+      responses:
+        '200':
+          description: Product reviews
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Review'
+                  totalElements:
+                    type: integer
+                  totalPages:
+                    type: integer
+                  aggregateRating:
+                    $ref: '#/components/schemas/AggregateRating'
+
+    post:
+      tags:
+        - Reviews
+      summary: Submit a product review
+      description: Create a new review for a product
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Product ID
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReviewRequest'
+      responses:
+        '201':
+          description: Review created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Review'
+        '400':
+          description: Invalid review data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # Categories API
+  /categories:
+    get:
+      tags:
+        - Categories
+      summary: Get all categories
+      description: Retrieve list of product categories
+      responses:
+        '200':
+          description: List of categories
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+          example: 1
+        name:
+          type: string
+          example: "windows-10-home"
+        title:
+          type: string
+          example: "Windows 10 Home"
+        price:
+          type: number
+          format: double
+          example: 119.99
+        discountedPrice:
+          type: number
+          format: double
+          example: 99.99
+        reviews:
+          type: number
+          format: float
+          example: 4.5
+        category:
+          type: string
+          example: "Windows"
+        description:
+          type: string
+          example: "Windows 10 Home is a genuine Microsoft Windows license key..."
+        imgs:
+          $ref: '#/components/schemas/ProductImages'
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    ProductDetails:
+      allOf:
+        - $ref: '#/components/schemas/Product'
+        - type: object
+          properties:
+            features:
+              type: array
+              items:
+                type: string
+              example: 
+                - "Genuine Microsoft product key with lifetime activation"
+                - "Instant digital delivery via email within minutes"
+                - "Full version license (not upgrade) - no existing Windows required"
+                - "Compatible with both new and existing PCs"
+                - "Official Microsoft support and all future updates included"
+            specifications:
+              $ref: '#/components/schemas/ProductSpecifications'
+            faq:
+              type: array
+              items:
+                $ref: '#/components/schemas/FAQ'
+            totalReviews:
+              type: integer
+              example: 127
+            averageRating:
+              type: number
+              format: float
+              example: 4.8
+            stockStatus:
+              type: string
+              enum: [IN_STOCK, OUT_OF_STOCK, LOW_STOCK]
+              example: "IN_STOCK"
+
+    ProductImages:
+      type: object
+      properties:
+        thumbnails:
+          type: array
+          items:
+            type: string
+            format: uri
+          example: 
+            - "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"
+        previews:
+          type: array
+          items:
+            type: string
+            format: uri
+          example:
+            - "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"
+
+    ProductSpecifications:
+      type: object
+      properties:
+        processor:
+          type: string
+          example: "1 GHz or faster processor or SoC"
+        memory:
+          type: string
+          example: "2 GB for 64-bit OS"
+        storage:
+          type: string
+          example: "20 GB for 64-bit OS"
+        graphics:
+          type: string
+          example: "DirectX 9 or later with WDDM 1.0 driver"
+        display:
+          type: string
+          example: "800x600 resolution minimum"
+        internet:
+          type: string
+          example: "Required for activation and updates"
+
+    Review:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: "Sarah Johnson"
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+          example: 5
+        date:
+          type: string
+          format: date
+          example: "2024-01-15"
+        verified:
+          type: boolean
+          example: true
+        comment:
+          type: string
+          example: "Absolutely fantastic! The license key arrived within 2 minutes of purchase..."
+        helpful:
+          type: integer
+          example: 47
+        location:
+          type: string
+          example: "New York, USA"
+        purchase:
+          type: string
+          example: "Windows 11 Pro"
+
+    ReviewRequest:
+      type: object
+      required:
+        - rating
+        - comment
+        - name
+      properties:
+        rating:
+          type: integer
+          minimum: 1
+          maximum: 5
+        comment:
+          type: string
+          minLength: 10
+          maxLength: 1000
+        name:
+          type: string
+          minLength: 2
+          maxLength: 50
+        location:
+          type: string
+          maxLength: 100
+        purchase:
+          type: string
+          maxLength: 100
+
+    AggregateRating:
+      type: object
+      properties:
+        averageRating:
+          type: number
+          format: float
+          example: 4.8
+        totalReviews:
+          type: integer
+          example: 10247
+        ratingDistribution:
+          type: object
+          properties:
+            fiveStars:
+              type: integer
+              example: 9642
+            fourStars:
+              type: integer
+              example: 485
+            threeStars:
+              type: integer
+              example: 85
+            twoStars:
+              type: integer
+              example: 25
+            oneStar:
+              type: integer
+              example: 10
+
+    FAQ:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        question:
+          type: string
+          example: "How quickly will I receive my license key?"
+        answer:
+          type: string
+          example: "License keys are delivered instantly via email within 5-10 minutes of successful payment."
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        title:
+          type: string
+          example: "Windows"
+        img:
+          type: string
+          format: uri
+          example: "/images/categories/windows.png"
+
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          example: "PRODUCT_NOT_FOUND"
+        message:
+          type: string
+          example: "Product with ID 123 not found"
+        timestamp:
+          type: string
+          format: date-time
+
+tags:
+  - name: Products
+    description: Product management operations
+  - name: Reviews
+    description: Product review operations
+  - name: Categories
+    description: Category management
+
+# Example Usage for Frontend Integration
+x-examples:
+  frontend-usage:
+    description: "How to use these APIs in your React frontend"
+    examples:
+      home-page-data:
+        summary: "Fetching data for home page"
+        value: |
+          // Home page component usage
+          
+          // 1. Fetch all products for New Arrivals and Best Sellers
+          const response = await fetch('/api/products');
+          const products = await response.json();
+          
+          // Use in components:
+          const newArrivals = products.slice(0, 8);     // First 8 products
+          const bestSellers = products.slice(1, 7);     // Products 2-7
+          
+          // 2. Fetch categories (if needed)
+          const categoriesResponse = await fetch('/api/categories');
+          const categories = await categoriesResponse.json();
+
+      product-details-page:
+        summary: "Fetching data for product details page"
+        value: |
+          // Product details page usage
+          
+          // 1. Get product details by ID
+          const productResponse = await fetch(`/api/products/${productId}`);
+          const productDetails = await productResponse.json();
+          
+          // 2. Get product reviews separately (with pagination)
+          const reviewsResponse = await fetch(`/api/products/${productId}/reviews?page=0&size=10&sort=newest`);
+          const reviewsData = await reviewsResponse.json();
+          
+          // Use the data:
+          // - productDetails contains: product info, features, specifications, FAQ, stock status
+          // - reviewsData contains: paginated reviews + aggregate rating stats
+
+      api-responses:
+        summary: "Example API responses"
+        value: |
+          # GET /products response:
+          [
+            {
+              "id": 1,
+              "name": "windows-10-home",
+              "title": "Windows 10 Home",
+              "price": 119.99,
+              "discountedPrice": 99.99,
+              "reviews": 4.5,
+              "category": "Windows",
+              "description": "Windows 10 Home is a genuine Microsoft Windows license key...",
+              "imgs": {
+                "thumbnails": ["https://cloudinary.com/image1.png"],
+                "previews": ["https://cloudinary.com/image1.png"]
+              }
+            }
+          ]
+          
+          # GET /products/1 response:
+          {
+            "id": 1,
+            "name": "windows-10-home",
+            "title": "Windows 10 Home",
+            "price": 119.99,
+            "discountedPrice": 99.99,
+            "reviews": 4.5,
+            "category": "Windows",
+            "description": "Windows 10 Home is a genuine Microsoft Windows license key...",
+            "imgs": {
+              "thumbnails": ["https://cloudinary.com/image1.png"],
+              "previews": ["https://cloudinary.com/image1.png"]
+            },
+            "features": [
+              "Genuine Microsoft product key with lifetime activation",
+              "Instant digital delivery via email within minutes"
+            ],
+            "specifications": {
+              "processor": "1 GHz or faster processor or SoC",
+              "memory": "2 GB for 64-bit OS",
+              "storage": "20 GB for 64-bit OS"
+            },
+            "faq": [
+              {
+                "id": 1,
+                "question": "How quickly will I receive my license key?",
+                "answer": "License keys are delivered instantly via email within 5-10 minutes..."
+              }
+            ],
+            "totalReviews": 127,
+            "averageRating": 4.8,
+            "stockStatus": "IN_STOCK"
+          }
+          
+          # GET /products/1/reviews response:
+          {
+            "content": [
+              {
+                "id": 1,
+                "name": "Sarah Johnson",
+                "rating": 5,
+                "date": "2024-01-15",
+                "verified": true,
+                "comment": "Absolutely fantastic! The license key arrived within 2 minutes...",
+                "helpful": 47,
+                "location": "New York, USA",
+                "purchase": "Windows 11 Pro"
+              }
+            ],
+            "totalElements": 127,
+            "totalPages": 13,
+            "aggregateRating": {
+              "averageRating": 4.8,
+              "totalReviews": 127,
+              "ratingDistribution": {
+                "fiveStars": 98,
+                "fourStars": 20,
+                "threeStars": 5,
+                "twoStars": 2,
+                "oneStar": 2
+              }
+            }
+          }

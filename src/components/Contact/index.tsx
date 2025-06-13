@@ -4,171 +4,408 @@ import Breadcrumb from "../Common/Breadcrumb";
 const Contact = () => {
   return (
     <>
-      <Breadcrumb title={"Contact"} pages={["contact"]} />
+      <Breadcrumb title={"Contact Us"} pages={["contact"]} />
 
-      <section className="overflow-hidden py-20 bg-gray-2">
+      {/* Hero Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-br from-blue-light-5 via-white to-green-light-6">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-          <div className="flex flex-col xl:flex-row gap-7.5">
-            <div className="xl:max-w-[370px] w-full bg-white rounded-xl shadow-1">
-              <div className="py-5 px-4 sm:px-7.5 border-b border-gray-3">
-                <p className="font-medium text-xl text-dark">
-                  Contact Information
-                </p>
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-light-5 text-blue px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
+              </svg>
+              Get In Touch
+            </div>
+            
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark mb-6 leading-tight">
+              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">AllKeysSale</span>
+            </h1>
+            
+            <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Have a question about our software licenses? Need technical support? 
+              We're here to help! Reach out to our expert team and get the assistance you need.
+            </p>
+
+            {/* Quick Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-blue mb-1">24/7</div>
+                <div className="text-sm text-gray-6">Support</div>
               </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-green mb-1">&lt;1hr</div>
+                <div className="text-sm text-gray-6">Response Time</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-yellow mb-1">99%</div>
+                <div className="text-sm text-gray-6">Satisfaction</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold text-red mb-1">24/7</div>
+                <div className="text-sm text-gray-6">Live Chat</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <div className="p-4 sm:p-7.5">
-                <div className="flex flex-col gap-4">
-                  <p className="flex items-center gap-4">
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M9.11365 2.97913H12.8837C14.5684 2.97911 15.9027 2.9791 16.947 3.1195C18.0217 3.26399 18.8916 3.56843 19.5776 4.25443C20.2636 4.94043 20.568 5.8103 20.7125 6.88502C20.8529 7.9293 20.8529 9.26363 20.8529 10.9482V11.0517C20.8529 12.7363 20.8529 14.0706 20.7125 15.1149C20.568 16.1896 20.2636 17.0595 19.5776 17.7455C18.8916 18.4315 18.0217 18.7359 16.947 18.8804C15.9027 19.0208 14.5684 19.0208 12.8837 19.0208H9.11366C7.42904 19.0208 6.09471 19.0208 5.05043 18.8804C3.97571 18.7359 3.10584 18.4315 2.41984 17.7455C1.73384 17.0595 1.4294 16.1896 1.28491 15.1149C1.14451 14.0706 1.14452 12.7363 1.14453 11.0517V10.9482C1.14452 9.26363 1.14451 7.9293 1.28491 6.88502C1.4294 5.8103 1.73384 4.94043 2.41984 4.25443C3.10584 3.56843 3.97571 3.26399 5.05043 3.1195C6.09471 2.9791 7.42904 2.97911 9.11365 2.97913ZM5.23364 4.48224C4.31139 4.60623 3.78005 4.83876 3.39211 5.2267C3.00417 5.61465 2.77164 6.14599 2.64764 7.06824C2.52099 8.01026 2.51953 9.25204 2.51953 11C2.51953 12.7479 2.52099 13.9897 2.64764 14.9317C2.77164 15.8539 3.00417 16.3853 3.39211 16.7732C3.78005 17.1612 4.31139 17.3937 5.23364 17.5177C6.17567 17.6443 7.41745 17.6458 9.16536 17.6458H12.832C14.58 17.6458 15.8217 17.6443 16.7638 17.5177C17.686 17.3937 18.2173 17.1612 18.6053 16.7732C18.9932 16.3853 19.2258 15.8539 19.3498 14.9317C19.4764 13.9897 19.4779 12.7479 19.4779 11C19.4779 9.25204 19.4764 8.01026 19.3498 7.06824C19.2258 6.14599 18.9932 5.61465 18.6053 5.2267C18.2173 4.83876 17.686 4.60623 16.7638 4.48224C15.8217 4.35559 14.58 4.35413 12.832 4.35413H9.16537C7.41745 4.35413 6.17567 4.35559 5.23364 4.48224ZM4.97055 6.89317C5.21362 6.60148 5.64713 6.56207 5.93883 6.80514L7.91781 8.4543C8.77303 9.16697 9.36678 9.66017 9.86807 9.98258C10.3533 10.2947 10.6824 10.3994 10.9987 10.3994C11.315 10.3994 11.6441 10.2947 12.1293 9.98258C12.6306 9.66017 13.2244 9.16697 14.0796 8.4543L16.0586 6.80514C16.3503 6.56207 16.7838 6.60148 17.0269 6.89317C17.2699 7.18486 17.2305 7.61837 16.9388 7.86145L14.9254 9.53932C14.1129 10.2164 13.4543 10.7652 12.8731 11.139C12.2677 11.5284 11.678 11.7744 10.9987 11.7744C10.3194 11.7744 9.72973 11.5284 9.12428 11.139C8.54306 10.7652 7.88452 10.2164 7.07203 9.53933L5.05857 7.86145C4.76688 7.61837 4.72747 7.18486 4.97055 6.89317Z"
-                        fill="#3C50E0"
-                      />
-                    </svg>
-                    Name: James Septimus
-                  </p>
+      {/* Contact Methods */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-6">
+              Multiple Ways to Reach Us
+            </h2>
+            <p className="text-lg text-gray-6 max-w-2xl mx-auto">
+              Choose your preferred way to get in touch. We're available through various channels to assist you.
+            </p>
+          </div>
 
-                  <p className="flex items-center gap-4">
-                    <svg
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M12.1559 1.72346C12.2166 1.34865 12.571 1.09439 12.9458 1.15507C12.969 1.15951 13.0436 1.17346 13.0827 1.18217C13.161 1.19959 13.2701 1.22641 13.4061 1.26604C13.6781 1.34528 14.0582 1.47581 14.5143 1.68494C15.4276 2.10363 16.6429 2.83605 17.9041 4.0972C19.1652 5.35835 19.8977 6.57368 20.3163 7.48693C20.5255 7.94308 20.656 8.32314 20.7352 8.59518C20.7749 8.73122 20.8017 8.84033 20.8191 8.91855C20.8278 8.95766 20.8342 8.98907 20.8386 9.01227L20.8439 9.04086C20.9046 9.41568 20.6526 9.78465 20.2778 9.84533C19.9041 9.90584 19.552 9.65281 19.4898 9.27975C19.4879 9.26974 19.4826 9.24283 19.477 9.21745C19.4657 9.16668 19.4461 9.08617 19.4151 8.9797C19.3531 8.76672 19.2453 8.45017 19.0664 8.05997C18.7091 7.28052 18.0665 6.20418 16.9318 5.06947C15.7971 3.93477 14.7208 3.29219 13.9413 2.93484C13.5511 2.75595 13.2346 2.64821 13.0216 2.58618C12.9151 2.55516 12.7813 2.52445 12.7305 2.51314C12.3575 2.45097 12.0954 2.09721 12.1559 1.72346Z"
-                        fill="#3C50E0"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M12.3633 4.88547C12.4677 4.52039 12.8482 4.30899 13.2133 4.4133L13.0244 5.07434C13.2133 4.4133 13.2133 4.4133 13.2133 4.4133L13.2146 4.41368L13.216 4.41408L13.219 4.41497L13.2261 4.41709L13.2443 4.42275C13.2581 4.42716 13.2754 4.43292 13.2959 4.44022C13.3371 4.45483 13.3915 4.47561 13.4583 4.50421C13.5918 4.56144 13.7743 4.64983 13.9984 4.78248C14.4471 5.04802 15.0596 5.4891 15.7792 6.20866C16.4987 6.92822 16.9398 7.54072 17.2053 7.9894C17.338 8.21353 17.4264 8.39601 17.4836 8.52955C17.5122 8.59629 17.533 8.65071 17.5476 8.69187C17.5549 8.71245 17.5607 8.72971 17.5651 8.74354L17.5707 8.76167L17.5728 8.76878L17.5737 8.77184L17.5741 8.77324C17.5741 8.77324 17.5745 8.77456 16.9135 8.96343L17.5745 8.77456C17.6788 9.13965 17.4674 9.52017 17.1023 9.62448C16.7404 9.7279 16.3632 9.52096 16.2551 9.16157L16.2518 9.15169C16.2469 9.13791 16.2368 9.1108 16.2198 9.07119C16.1859 8.99205 16.1244 8.86259 16.022 8.68971C15.8177 8.34437 15.4485 7.82256 14.8069 7.18093C14.1653 6.53931 13.6435 6.17016 13.2981 5.96577C13.1252 5.86346 12.9958 5.80195 12.9166 5.76804C12.877 5.75106 12.8499 5.74095 12.8361 5.73606L12.8263 5.73267C12.4669 5.62462 12.2599 5.24746 12.3633 4.88547Z"
-                        fill="#3C50E0"
-                      />
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M4.59146 4.03966C6.13153 2.4996 8.73041 2.61667 9.80274 4.53812L10.3977 5.60414C11.0979 6.85889 10.7995 8.44205 9.77441 9.47969C9.76075 9.49839 9.6884 9.60375 9.67938 9.78783C9.66788 10.0228 9.75133 10.5662 10.5932 11.4081C11.4348 12.2497 11.9781 12.3333 12.2132 12.3219C12.3974 12.3129 12.5029 12.2405 12.5216 12.2269C13.5592 11.2018 15.1424 10.9034 16.3971 11.6036L17.4632 12.1985C19.3846 13.2709 19.5017 15.8698 17.9616 17.4098C17.1378 18.2336 16.0425 18.9655 14.7553 19.0143C12.8478 19.0867 9.6805 18.594 6.54387 15.4574C3.40724 12.3208 2.91463 9.15348 2.98694 7.24596C3.03574 5.95877 3.76769 4.86343 4.59146 4.03966ZM8.60206 5.2082C8.05297 4.2243 6.57741 3.99826 5.56374 5.01193C4.853 5.72267 4.39094 6.50717 4.36096 7.29804C4.30065 8.88877 4.69339 11.6624 7.51614 14.4851C10.3389 17.3079 13.1125 17.7006 14.7032 17.6403C15.4941 17.6103 16.2786 17.1483 16.9893 16.4375C18.003 15.4239 17.777 13.9483 16.7931 13.3992L15.7271 12.8043C15.0639 12.4342 14.1325 12.5604 13.4786 13.2143C13.4144 13.2785 13.0055 13.66 12.28 13.6953C11.5373 13.7314 10.6383 13.3977 9.62095 12.3803C8.60326 11.3626 8.26966 10.4634 8.30603 9.72058C8.34155 8.99503 8.72309 8.58656 8.78693 8.52271C9.4408 7.86884 9.56708 6.93735 9.19699 6.27422L8.60206 5.2082Z"
-                        fill="#3C50E0"
-                      />
-                    </svg>
-                    Phone: 1234 567890
-                  </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+            <div className="text-center p-6 bg-gradient-to-br from-blue-light-5 to-blue-light-4 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 bg-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-dark mb-2">Phone Support</h3>
+              <p className="text-gray-6 mb-3">Speak directly with our experts</p>
+              <p className="font-medium text-blue">+1 (555) 123-4567</p>
+            </div>
 
-                  <p className="flex gap-4">
-                    <svg
-                      className="mt-0.5 shrink-0"
-                      width="22"
-                      height="22"
-                      viewBox="0 0 22 22"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M3.89453 7.80506C3.89453 4.08157 7.12254 1.14581 10.9987 1.14581C14.8749 1.14581 18.1029 4.08157 18.1029 7.80506C18.1029 11.2986 15.9369 15.4 12.4423 16.8934C11.5248 17.2855 10.4726 17.2855 9.55514 16.8934C6.06051 15.4 3.89453 11.2986 3.89453 7.80506ZM10.9987 2.52081C7.7872 2.52081 5.26953 4.93234 5.26953 7.80506C5.26953 10.856 7.19951 14.3915 10.0955 15.629C10.6678 15.8736 11.3296 15.8736 11.9019 15.629C14.7979 14.3915 16.7279 10.856 16.7279 7.80506C16.7279 4.93234 14.2102 2.52081 10.9987 2.52081ZM10.9987 7.10415C10.3659 7.10415 9.85286 7.61715 9.85286 8.24998C9.85286 8.88281 10.3659 9.39581 10.9987 9.39581C11.6315 9.39581 12.1445 8.88281 12.1445 8.24998C12.1445 7.61715 11.6315 7.10415 10.9987 7.10415ZM8.47786 8.24998C8.47786 6.85776 9.60648 5.72915 10.9987 5.72915C12.3909 5.72915 13.5195 6.85776 13.5195 8.24998C13.5195 9.6422 12.3909 10.7708 10.9987 10.7708C9.60648 10.7708 8.47786 9.6422 8.47786 8.24998ZM3.29449 13.7469C3.54935 14.0283 3.52779 14.4631 3.24634 14.7179C2.72595 15.1891 2.51953 15.6402 2.51953 16.0416C2.51953 16.7417 3.18321 17.6044 4.79901 18.3315C6.35028 19.0296 8.54159 19.4791 10.9987 19.4791C13.4558 19.4791 15.6471 19.0296 17.1984 18.3315C18.8142 17.6044 19.4779 16.7417 19.4779 16.0416C19.4779 15.6402 19.2714 15.1891 18.7511 14.7179C18.4696 14.4631 18.448 14.0283 18.7029 13.7468C18.9578 13.4654 19.3925 13.4438 19.674 13.6987C20.3734 14.332 20.8529 15.126 20.8529 16.0416C20.8529 17.6198 19.4645 18.8196 17.7626 19.5854C15.9962 20.3803 13.6042 20.8541 10.9987 20.8541C8.3932 20.8541 6.00117 20.3803 4.23476 19.5854C2.53288 18.8196 1.14453 17.6198 1.14453 16.0416C1.14453 15.126 1.62399 14.332 2.32341 13.6987C2.60487 13.4438 3.03963 13.4654 3.29449 13.7469Z"
-                        fill="#3C50E0"
-                      />
+            <div className="text-center p-6 bg-gradient-to-br from-green-light-6 to-green-light-5 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 bg-green rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-dark mb-2">Email Support</h3>
+              <p className="text-gray-6 mb-3">Send us your detailed inquiries</p>
+              <p className="font-medium text-green">support@allkeyssale.com</p>
+            </div>
+
+            <div className="text-center p-6 bg-gradient-to-br from-yellow-light-4 to-yellow-light-2 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 bg-yellow rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-dark mb-2">Live Chat</h3>
+              <p className="text-gray-6 mb-3">Get instant help from our team</p>
+              <button className="font-medium text-yellow-dark hover:text-yellow transition-colors">Start Chat</button>
+            </div>
+
+            <div className="text-center p-6 bg-gradient-to-br from-red-light-6 to-red-light-5 rounded-2xl hover:shadow-lg transition-shadow duration-300">
+              <div className="w-16 h-16 bg-red rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-dark mb-2">Visit Us</h3>
+              <p className="text-gray-6 mb-3">Come to our office</p>
+              <p className="font-medium text-red">Las Vegas, NV</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Contact Form */}
+      <section className="py-16 lg:py-20 bg-gray-1">
+        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+          <div className="flex flex-col xl:flex-row gap-12 lg:gap-16">
+            {/* Contact Information Card */}
+            <div className="xl:max-w-[400px] w-full">
+              <div className="bg-white rounded-2xl shadow-2 p-8 lg:p-10 h-full">
+                <div className="text-center mb-8">
+                  <div className="w-20 h-20 bg-gradient-to-r from-blue to-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    Address: 7398 Smoke Ranch RoadLas Vegas, Nevada 89128
-                  </p>
+                  </div>
+                  <h3 className="text-2xl font-bold text-dark mb-2">Contact Information</h3>
+                  <p className="text-gray-6">Get in touch with our friendly team</p>
+                </div>
+
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-light-5 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-dark mb-1">Phone</h4>
+                      <p className="text-gray-6">+1 (555) 123-4567</p>
+                      <p className="text-sm text-gray-5">Mon-Fri 9am-6pm PST</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-green-light-6 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-dark mb-1">Email</h4>
+                      <p className="text-gray-6">support@allkeyssale.com</p>
+                      <p className="text-sm text-gray-5">We'll respond within 1 hour</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-yellow-light-2 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-dark mb-1">Address</h4>
+                      <p className="text-gray-6">123 Software Lane<br />Las Vegas, NV 89128<br />United States</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-red-light-6 rounded-full flex items-center justify-center flex-shrink-0">
+                      <svg className="w-6 h-6 text-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-dark mb-1">Business Hours</h4>
+                      <p className="text-gray-6">Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                      <p className="text-gray-6">Weekend: 10:00 AM - 4:00 PM PST</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="mt-8 pt-8 border-t border-gray-3">
+                  <h4 className="font-semibold text-dark mb-4">Follow Us</h4>
+                  <div className="flex gap-4">
+                    <a href="#" className="w-10 h-10 bg-blue-light-5 rounded-full flex items-center justify-center hover:bg-blue-light-4 transition-colors">
+                      <svg className="w-5 h-5 text-blue" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                      </svg>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-blue-light-5 rounded-full flex items-center justify-center hover:bg-blue-light-4 transition-colors">
+                      <svg className="w-5 h-5 text-blue" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                      </svg>
+                    </a>
+                    <a href="#" className="w-10 h-10 bg-blue-light-5 rounded-full flex items-center justify-center hover:bg-blue-light-4 transition-colors">
+                      <svg className="w-5 h-5 text-blue" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="xl:max-w-[770px] w-full bg-white rounded-xl shadow-1 p-4 sm:p-7.5 xl:p-10">
-              <form>
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
-                  <div className="w-full">
-                    <label htmlFor="firstName" className="block mb-2.5">
-                      First Name <span className="text-red">*</span>
-                    </label>
-
-                    <input
-                      type="text"
-                      name="firstName"
-                      id="firstName"
-                      placeholder="Jhon"
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                    />
-                  </div>
-
-                  <div className="w-full">
-                    <label htmlFor="lastName" className="block mb-2.5">
-                      Last Name <span className="text-red">*</span>
-                    </label>
-
-                    <input
-                      type="text"
-                      name="lastName"
-                      id="lastName"
-                      placeholder="Deo"
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                    />
-                  </div>
+            {/* Contact Form */}
+            <div className="flex-1">
+              <div className="bg-white rounded-2xl shadow-2 p-8 lg:p-10">
+                <div className="mb-8">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-dark mb-3">Send Us a Message</h3>
+                  <p className="text-gray-6">Fill out the form below and we'll get back to you within 24 hours.</p>
                 </div>
 
-                <div className="flex flex-col lg:flex-row gap-5 sm:gap-8 mb-5">
-                  <div className="w-full">
-                    <label htmlFor="subject" className="block mb-2.5">
-                      Subject
-                    </label>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-semibold text-dark mb-2">
+                        First Name <span className="text-red">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="firstName"
+                        id="firstName"
+                        placeholder="John"
+                        className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 placeholder:text-gray-5 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200"
+                      />
+                    </div>
 
-                    <input
-                      type="text"
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-semibold text-dark mb-2">
+                        Last Name <span className="text-red">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="lastName"
+                        id="lastName"
+                        placeholder="Doe"
+                        className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 placeholder:text-gray-5 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-semibold text-dark mb-2">
+                        Email Address <span className="text-red">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="john@example.com"
+                        className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 placeholder:text-gray-5 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="phone" className="block text-sm font-semibold text-dark mb-2">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        placeholder="+1 (555) 123-4567"
+                        className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 placeholder:text-gray-5 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-semibold text-dark mb-2">
+                      Subject <span className="text-red">*</span>
+                    </label>
+                    <select
                       name="subject"
                       id="subject"
-                      placeholder="Type your subject"
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                    />
+                      className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 text-gray-6 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200"
+                    >
+                      <option value="">Select a subject</option>
+                      <option value="license-inquiry">License Inquiry</option>
+                      <option value="technical-support">Technical Support</option>
+                      <option value="billing-question">Billing Question</option>
+                      <option value="product-information">Product Information</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="other">Other</option>
+                    </select>
                   </div>
 
-                  <div className="w-full">
-                    <label htmlFor="phone" className="block mb-2.5">
-                      Phone
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-dark mb-2">
+                      Message <span className="text-red">*</span>
                     </label>
-
-                    <input
-                      type="text"
-                      name="phone"
-                      id="phone"
-                      placeholder="Enter your phone"
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                    />
+                    <textarea
+                      name="message"
+                      id="message"
+                      rows={5}
+                      placeholder="Tell us how we can help you..."
+                      className="w-full px-4 py-3 border border-gray-3 rounded-lg bg-gray-1 placeholder:text-gray-5 focus:border-blue focus:ring-2 focus:ring-blue-light-5 focus:bg-white outline-none transition-all duration-200 resize-none"
+                    ></textarea>
                   </div>
+
+                  <div className="flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      id="newsletter"
+                      className="w-4 h-4 text-blue border-gray-3 rounded focus:ring-blue-light-5"
+                    />
+                    <label htmlFor="newsletter" className="text-sm text-gray-6">
+                      I'd like to receive updates about new products and offers
+                    </label>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-blue to-blue-dark text-white font-semibold py-4 px-8 rounded-lg hover:from-blue-dark hover:to-blue transform hover:scale-[1.02] transition-all duration-200 shadow-lg hover:shadow-xl"
+                  >
+                    Send Message
+                    <svg className="inline-block w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 lg:py-20 bg-white">
+        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-dark mb-6">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-gray-6 max-w-2xl mx-auto">
+              Quick answers to common questions about our services and support.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-gradient-to-br from-blue-light-5 to-blue-light-4 p-6 rounded-xl">
+              <h4 className="font-bold text-dark mb-3">How quickly do you respond to support requests?</h4>
+              <p className="text-gray-6">We typically respond to all support requests within 1 hour during business hours and within 4 hours outside business hours.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-green-light-6 to-green-light-5 p-6 rounded-xl">
+              <h4 className="font-bold text-dark mb-3">What information should I include in my support request?</h4>
+              <p className="text-gray-6">Please include your order number, product details, and a clear description of the issue you're experiencing.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-yellow-light-4 to-yellow-light-2 p-6 rounded-xl">
+              <h4 className="font-bold text-dark mb-3">Do you offer phone support?</h4>
+              <p className="text-gray-6">Yes! Our phone support is available Monday through Friday, 9 AM to 6 PM PST. Premium customers get 24/7 priority support.</p>
+            </div>
+
+            <div className="bg-gradient-to-br from-red-light-6 to-red-light-5 p-6 rounded-xl">
+              <h4 className="font-bold text-dark mb-3">Can I get help with software installation?</h4>
+              <p className="text-gray-6">Absolutely! Our technical team can guide you through the installation process and help troubleshoot any issues.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Section */}
+      <section className="py-16 lg:py-20 bg-gradient-to-r from-blue to-green">
+        <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
+          <div className="text-center text-white">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Why Choose AllKeysSale Support?
+            </h2>
+            <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto">
+              We're committed to providing exceptional customer service that goes above and beyond your expectations.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold mb-2">Lightning Fast</h3>
+                <p className="opacity-90">Average response time under 1 hour</p>
+              </div>
 
-                <div className="mb-7.5">
-                  <label htmlFor="message" className="block mb-2.5">
-                    Message
-                  </label>
-
-                  <textarea
-                    name="message"
-                    id="message"
-                    rows={5}
-                    placeholder="Type your message"
-                    className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
-                  ></textarea>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
                 </div>
+                <h3 className="text-xl font-bold mb-2">Expert Team</h3>
+                <p className="opacity-90">Certified professionals with deep product knowledge</p>
+              </div>
 
-                <button
-                  type="submit"
-                  className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
-                >
-                  Send Message
-                </button>
-              </form>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-2">Customer First</h3>
+                <p className="opacity-90">99% customer satisfaction rate</p>
+              </div>
             </div>
           </div>
         </div>

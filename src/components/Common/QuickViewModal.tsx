@@ -102,27 +102,39 @@ const QuickViewModal = () => {
                         activePreview === key && "border-2 border-blue"
                       }`}
                     >
-                      <Image
-                        src={img || ""}
-                        alt="thumbnail"
-                        width={61}
-                        height={61}
-                        className="aspect-square"
-                      />
+                      {img ? (
+                        <Image
+                          src={img}
+                          alt="thumbnail"
+                          width={61}
+                          height={61}
+                          className="aspect-square"
+                        />
+                      ) : (
+                        <div className="flex items-center justify-center w-full h-full text-gray-400">
+                          <span className="text-xs">No image</span>
+                        </div>
+                      )}
                     </button>
                   ))}
                 </div>
 
                 <div className="relative z-1 overflow-hidden flex items-center justify-center w-full sm:min-h-[508px] bg-gray-1 rounded-lg border border-gray-3">
                   <div>
-                    <Image
-                      src={product?.imgs?.previews?.[activePreview]}
-                      alt="products-details"
-                      width={400}
-                      height={400}
-                      unoptimized
-                      style={{ objectFit: "contain" }}
-                    />
+                    {product?.imgs?.previews?.[activePreview] ? (
+                      <Image
+                        src={product.imgs.previews[activePreview]}
+                        alt="products-details"
+                        width={400}
+                        height={400}
+                        unoptimized
+                        style={{ objectFit: "contain" }}
+                      />
+                    ) : (
+                      <div className="flex items-center justify-center w-[400px] h-[400px] text-gray-400">
+                        <span>No image available</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

@@ -162,14 +162,20 @@ const ProductItem = ({ item }: { item: Product }) => {
           onClick={handleProductDetails}
           className="block w-full h-full cursor-pointer"
         >
-          <Image 
-            src={item.imgs.previews[0]} 
-            alt={item.title}
-            fill
-            className={`object-contain p-6 transition-transform duration-500 ${
-              isHovered ? 'scale-110' : 'scale-100'
-            }`}
-          />
+          {item.imgs?.previews?.[0] ? (
+            <Image 
+              src={item.imgs.previews[0]} 
+              alt={item.title}
+              fill
+              className={`object-contain p-6 transition-transform duration-500 ${
+                isHovered ? 'scale-110' : 'scale-100'
+              }`}
+            />
+          ) : (
+            <div className="flex items-center justify-center h-full text-gray-400">
+              <span>No image available</span>
+            </div>
+          )}
         </Link>
         
         {/* Quick Actions Overlay */}

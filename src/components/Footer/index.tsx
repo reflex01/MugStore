@@ -198,33 +198,48 @@ const Footer = () => {
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Account
+              Company
             </h2>
 
             <ul className="flex flex-col gap-3.5">
               <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  My Account
+                <a className="ease-out duration-200 hover:text-blue" href="/about">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-blue" href="/contact">
+                  Contact Us
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Login / Register
+                  Become Affiliate
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-blue" href="/privacy-policy">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-blue" href="/terms">
+                  Terms & Conditions
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-blue" href="/delivery-payment">
+                  Delivery & Payment
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Cart
+                  Refund & Returns Policy
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Wishlist
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Shop
+                  Cookie Policy
                 </a>
               </li>
             </ul>
@@ -232,33 +247,33 @@ const Footer = () => {
 
           <div className="w-full sm:w-auto">
             <h2 className="mb-7.5 text-custom-1 font-medium text-dark">
-              Quick Link
+              HELP
             </h2>
 
             <ul className="flex flex-col gap-3">
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Privacy Policy
+                  FAQs
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Refund Policy
+                  Help Center
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Terms of Use
+                  Get Confirmation ID Online
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  FAQ’s
+                  How to activate Office by Phone? Activation Guide
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Contact
+                  How to activate Windows by phone? Activation Guide
                 </a>
               </li>
             </ul>
