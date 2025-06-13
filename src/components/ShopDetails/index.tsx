@@ -76,7 +76,7 @@ const ShopDetails = () => {
 
   const handleAddToCart = () => {
     const cartItem = {
-      id: product.id || Date.now(),
+      id: product.id || Math.floor(Math.random() * 1000000),
       title: product.title,
       price: product.price,
       discountedPrice: product.discountedPrice,

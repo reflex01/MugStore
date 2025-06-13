@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 
@@ -30,18 +31,18 @@ const About = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="inline-flex items-center justify-center gap-2 bg-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-dark transition-colors duration-200">
+                <Link href="/shop-without-sidebar" className="inline-flex items-center justify-center gap-2 bg-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-dark transition-colors duration-200">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
                   Browse Products
-                </button>
-                <button className="inline-flex items-center justify-center gap-2 border-2 border-gray-4 text-gray-7 px-8 py-3 rounded-lg font-medium hover:border-gray-5 transition-colors duration-200">
+                </Link>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-gray-4 text-gray-7 px-8 py-3 rounded-lg font-medium hover:border-gray-5 transition-colors duration-200">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
                   Contact Support
-                </button>
+                </Link>
               </div>
             </div>
             
@@ -311,18 +312,18 @@ const About = () => {
               is the trusted choice for software licenses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
+              <Link href="/shop-without-sidebar" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 Shop Now
-              </button>
-              <button className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
+              </Link>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
                 Contact Us
-              </button>
+              </Link>
             </div>
           </div>
         </div>

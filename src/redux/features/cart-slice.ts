@@ -21,9 +21,15 @@ type CartItem = {
 
 // Load initial state from localStorage
 const loadInitialState = (): InitialState => {
-  const savedCart = getLocalStorage('cart');
+  // Only access localStorage on the client side
+  if (typeof window !== 'undefined') {
+    const savedCart = getLocalStorage('cart');
+    return {
+      items: savedCart?.items || [],
+    };
+  }
   return {
-    items: savedCart?.items || [],
+    items: [],
   };
 };
 
@@ -37,7 +43,7 @@ export const cart = createSlice({
       const { id, title, price, quantity, discountedPrice, imgs, category } = action.payload;
       
       // Generate a unique ID if one isn't provided
-      const itemId = id || Date.now();
+      const itemId = id || Math.floor(Math.random() * 1000000);
       
       const existingItem = state.items.find((item) => item.id === itemId);
 

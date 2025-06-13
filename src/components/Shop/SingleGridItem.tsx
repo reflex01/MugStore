@@ -38,7 +38,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
     setIsAddingToCart(true);
     
     const cartItem = {
-      id: item.id || Date.now(),
+      id: item.id || Math.floor(Math.random() * 1000000),
       title: item.title,
       price: item.price,
       discountedPrice: item.discountedPrice,
