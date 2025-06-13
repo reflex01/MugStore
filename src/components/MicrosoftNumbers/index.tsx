@@ -1347,7 +1347,7 @@ const MicrosoftNumbers = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-dark mb-4">Need Activation Help?</h3>
                 <p className="text-gray-6 mb-6 max-w-2xl mx-auto">
-                  If the numbers above don't work for your region or you need assistance with the activation process, 
+                  If the numbers above don&apos;t work for your region or you need assistance with the activation process, 
                   our support team can provide alternative numbers and step-by-step guidance.
                 </p>
                 

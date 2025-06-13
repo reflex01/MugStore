@@ -59,7 +59,7 @@ const CookiePolicy = () => {
                   </p>
                 </div>
                 <div className="space-y-4 text-gray-6">
-                  <p>Cookies can be "persistent" or "session" cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.</p>
+                  <p>Cookies can be &quot;persistent&quot; or &quot;session&quot; cookies. Persistent cookies remain on your personal computer or mobile device when you go offline, while session cookies are deleted as soon as you close your web browser.</p>
                   <p>We use both session and persistent cookies for the purposes set out below.</p>
                 </div>
               </section>

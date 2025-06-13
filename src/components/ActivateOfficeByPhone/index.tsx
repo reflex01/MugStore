@@ -81,7 +81,7 @@ const ActivateOfficeByPhone = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-dark mb-2">Method 1: Online ID</h3>
-              <p className="text-gray-6 text-sm mb-4">Use Microsoft's online confirmation service</p>
+              <p className="text-gray-6 text-sm mb-4">Use Microsoft&apos;s online confirmation service</p>
               <div className="bg-red-light-6 text-red px-3 py-2 rounded-lg text-sm font-medium">
                 ⚠️ Currently Not Working
               </div>
@@ -205,7 +205,7 @@ const ActivateOfficeByPhone = () => {
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">4</span>
-                        <p><strong>Step 4:</strong> Go to Microsoft's Get Confirmation ID Online service (currently unavailable).</p>
+                        <p><strong>Step 4:</strong> Go to Microsoft&apos;s Get Confirmation ID Online service (currently unavailable).</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <span className="w-6 h-6 bg-gray-400 rounded-full flex items-center justify-center text-white text-xs font-bold mt-1">5</span>
@@ -250,7 +250,7 @@ const ActivateOfficeByPhone = () => {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                       <div>
-                        <p className="text-gray-6 mb-4">Click NEXT to proceed to the telephone activation section where you'll see country selection options.</p>
+                        <p className="text-gray-6 mb-4">Click NEXT to proceed to the telephone activation section where you&apos;ll see country selection options.</p>
                         <div className="bg-blue-light-5 p-4 rounded-lg">
                           <p className="text-sm text-blue-dark">💡 <strong>Tip:</strong> Make sure you have your product key ready before starting.</p>
                         </div>
@@ -283,7 +283,7 @@ const ActivateOfficeByPhone = () => {
                           <p><strong>Step 2:</strong> Note down the Installation ID shown on screen.</p>
                         </div>
                         <div className="bg-yellow-light-5 p-4 rounded-lg">
-                          <p className="text-sm text-yellow-dark">⚠️ <strong>Important:</strong> If the number doesn't work, contact our support team for assistance.</p>
+                          <p className="text-sm text-yellow-dark">⚠️ <strong>Important:</strong> If the number doesn&apos;t work, contact our support team for assistance.</p>
                         </div>
                       </div>
                       <div className="text-center">
@@ -306,7 +306,7 @@ const ActivateOfficeByPhone = () => {
                     <h3 className="text-2xl font-bold text-dark mb-6 text-center">
                       📞 Telephone Activation Steps
                     </h3>
-                    <p className="text-center text-gray-6 mb-8">Follow these steps when calling Microsoft's automated activation system:</p>
+                    <p className="text-center text-gray-6 mb-8">Follow these steps when calling Microsoft&apos;s automated activation system:</p>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       <div className="text-center p-4 bg-white rounded-lg shadow-sm">
@@ -375,17 +375,17 @@ const ActivateOfficeByPhone = () => {
                 <div className="space-y-6">
                   <div className="border border-gray-200 rounded-xl p-6">
                     <h3 className="text-lg font-bold text-dark mb-3">Why is Method 1 not working?</h3>
-                    <p className="text-gray-6">Microsoft has temporarily disabled their online confirmation ID service. We recommend using Method 2 (phone activation) as it's currently the most reliable option.</p>
+                    <p className="text-gray-6">Microsoft has temporarily disabled their online confirmation ID service. We recommend using Method 2 (phone activation) as it&apos;s currently the most reliable option.</p>
                   </div>
                   
                   <div className="border border-gray-200 rounded-xl p-6">
-                    <h3 className="text-lg font-bold text-dark mb-3">What if the phone number doesn't work?</h3>
-                    <p className="text-gray-6">If the Microsoft phone number doesn't work in your country, please contact our support team. We can provide alternative numbers or assist you with the activation process.</p>
+                    <h3 className="text-lg font-bold text-dark mb-3">What if the phone number doesn&apos;t work?</h3>
+                    <p className="text-gray-6">If the Microsoft phone number doesn&apos;t work in your country, please contact our support team. We can provide alternative numbers or assist you with the activation process.</p>
                   </div>
                   
                   <div className="border border-gray-200 rounded-xl p-6">
                     <h3 className="text-lg font-bold text-dark mb-3">How long does phone activation take?</h3>
-                    <p className="text-gray-6">Phone activation typically takes 5-10 minutes. The automated system will guide you through each step, and you'll receive your confirmation ID immediately.</p>
+                    <p className="text-gray-6">Phone activation typically takes 5-10 minutes. The automated system will guide you through each step, and you&apos;ll receive your confirmation ID immediately.</p>
                   </div>
                   
                   <div className="border border-gray-200 rounded-xl p-6">
@@ -413,7 +413,7 @@ const ActivateOfficeByPhone = () => {
                     <h3 className="text-2xl lg:text-3xl font-bold text-dark mb-4">Expert Technical Assistance</h3>
                     <p className="text-lg text-gray-6 max-w-3xl mx-auto leading-relaxed">
                       Our certified Microsoft specialists are available to provide personalized assistance with your Office activation. 
-                      We understand that activation issues can be frustrating, and we're committed to resolving them efficiently.
+                      We understand that activation issues can be frustrating, and we&apos;re committed to resolving them efficiently.
                     </p>
                   </div>
 
@@ -543,7 +543,7 @@ const ActivateOfficeByPhone = () => {
                           </div>
                           <div className="flex items-center gap-3">
                             <span className="w-2 h-2 bg-blue rounded-full"></span>
-                            <p className="text-gray-6"><strong>Methods Tried:</strong> Which activation methods you've attempted</p>
+                            <p className="text-gray-6"><strong>Methods Tried:</strong> Which activation methods you&apos;ve attempted</p>
                           </div>
                           <div className="flex items-center gap-3">
                             <span className="w-2 h-2 bg-blue rounded-full"></span>
