@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
               Privacy at a Glance
             </h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Here's what you need to know about how we handle your information.
+              Here&apos;s what you need to know about how we handle your information.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ const PrivacyPolicy = () => {
                   <a href="#data-security" className="text-blue hover:text-blue-dark transition-colors">4. Data Security</a>
                   <a href="#your-rights" className="text-blue hover:text-blue-dark transition-colors">5. Your Rights</a>
                   <a href="#cookies" className="text-blue hover:text-blue-dark transition-colors">6. Cookies and Tracking</a>
-                  <a href="#children" className="text-blue hover:text-blue-dark transition-colors">7. Children's Privacy</a>
+                  <a href="#children" className="text-blue hover:text-blue-dark transition-colors">7. Children&apos;s Privacy</a>
                   <a href="#international" className="text-blue hover:text-blue-dark transition-colors">8. International Transfers</a>
                   <a href="#changes" className="text-blue hover:text-blue-dark transition-colors">9. Policy Changes</a>
                   <a href="#contact" className="text-blue hover:text-blue-dark transition-colors">10. Contact Information</a>
@@ -471,7 +471,7 @@ const PrivacyPolicy = () => {
                     <li><strong>Browser Settings:</strong> Most browsers allow you to block or delete cookies</li>
                     <li><strong>Cookie Preferences:</strong> Use our cookie consent banner to choose your preferences</li>
                     <li><strong>Opt-Out Tools:</strong> Use industry opt-out tools for advertising cookies</li>
-                    <li><strong>Do Not Track:</strong> We respect browser "Do Not Track" signals</li>
+                    <li><strong>Do Not Track:</strong> We respect browser &quot;Do Not Track&quot; signals</li>
                   </ul>
                 </div>
               </section>
@@ -481,7 +481,7 @@ const PrivacyPolicy = () => {
               <section id="children" className="mb-12">
                 <h2 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
                   <span className="w-8 h-8 bg-red rounded-full flex items-center justify-center text-white text-sm font-bold">7</span>
-                  Children's Privacy
+                  Children&apos;s Privacy
                 </h2>
                 
                 <div className="bg-red-light-6 rounded-lg p-6">
@@ -540,10 +540,10 @@ const PrivacyPolicy = () => {
                     When we make significant changes, we will:
                   </p>
                   <ul className="list-disc list-inside text-gray-6 space-y-2 ml-4">
-                    <li>Update the "Last Updated" date at the top of this policy</li>
+                    <li>Update the &quot;Last Updated&quot; date at the top of this policy</li>
                     <li>Send you an email notification (if you have an account with us)</li>
                     <li>Display a prominent notice on our website</li>
-                    <li>Provide you with 30 days' notice before significant changes take effect</li>
+                    <li>Provide you with 30 days&apos; notice before significant changes take effect</li>
                   </ul>
                   <p className="text-gray-6 mt-4">
                     We encourage you to review this Privacy Policy periodically to stay informed about how we protect your information.
@@ -616,7 +616,7 @@ const PrivacyPolicy = () => {
               Your Privacy is Our Priority
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              We're committed to protecting your personal information and being transparent about our data practices.
+              We&apos;re committed to protecting your personal information and being transparent about our data practices.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">

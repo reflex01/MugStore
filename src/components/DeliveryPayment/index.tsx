@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Breadcrumb from "../Common/Breadcrumb";
 
 const DeliveryPayment = () => {
@@ -125,7 +126,7 @@ const DeliveryPayment = () => {
               Delivery Timeframes
             </h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Understanding when you'll receive your software activation keys.
+              Understanding when you&apos;ll receive your software activation keys.
             </p>
           </div>
 
@@ -174,7 +175,7 @@ const DeliveryPayment = () => {
           </div>
 
           <div className="bg-blue-light-5 rounded-2xl p-8">
-            <h3 className="text-xl font-bold text-dark mb-4 text-center">What if I don't receive my keys?</h3>
+            <h3 className="text-xl font-bold text-dark mb-4 text-center">What if I don&apos;t receive my keys?</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="flex items-start gap-4">
                 <div className="w-8 h-8 bg-blue rounded-full flex items-center justify-center flex-shrink-0">
@@ -191,7 +192,7 @@ const DeliveryPayment = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-dark mb-1">Contact Support</h4>
-                  <p className="text-gray-6 text-sm">Reach out to our 24/7 support team if you haven't received your keys within 8 hours</p>
+                  <p className="text-gray-6 text-sm">Reach out to our 24/7 support team if you haven&apos;t received your keys within 8 hours</p>
                 </div>
               </div>
             </div>
@@ -323,7 +324,7 @@ const DeliveryPayment = () => {
             {/* Left Column */}
             <div className="space-y-8">
               <div className="bg-white rounded-2xl shadow-2 p-8">
-                <h3 className="text-xl font-bold text-dark mb-6">What You'll Receive</h3>
+                <h3 className="text-xl font-bold text-dark mb-6">What You&apos;ll Receive</h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <div className="w-6 h-6 bg-green-light-6 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -437,8 +438,8 @@ const DeliveryPayment = () => {
               </div>
 
               <div className="bg-gradient-to-br from-blue-light-5 to-blue-light-4 p-6 rounded-xl">
-                <h4 className="font-bold text-dark mb-3">What if I don't receive my keys after 8 hours?</h4>
-                <p className="text-gray-6">Contact our 24/7 support team immediately at support@allkeyssale.com or +1 (555) 123-4567. We'll investigate and resolve the issue promptly.</p>
+                <h4 className="font-bold text-dark mb-3">What if I don&apos;t receive my keys after 8 hours?</h4>
+                <p className="text-gray-6">Contact our 24/7 support team immediately at support@allkeyssale.com or +1 (555) 123-4567. We&apos;ll investigate and resolve the issue promptly.</p>
               </div>
 
               <div className="bg-gradient-to-br from-yellow-light-4 to-yellow-light-2 p-6 rounded-xl">
@@ -454,7 +455,7 @@ const DeliveryPayment = () => {
               </div>
 
               <div className="bg-gradient-to-br from-red-light-6 to-red-light-4 p-6 rounded-xl">
-                <h4 className="font-bold text-dark mb-3">Can I get a refund if the key doesn't work?</h4>
+                <h4 className="font-bold text-dark mb-3">Can I get a refund if the key doesn&apos;t work?</h4>
                 <p className="text-gray-6">Yes! We offer a 30-day money-back guarantee for non-functional keys. Contact support with your order details for a quick resolution.</p>
               </div>
 
@@ -478,12 +479,12 @@ const DeliveryPayment = () => {
               Experience our fast delivery and secure payment process. Get your activation keys within minutes!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/" className="inline-flex items-center justify-center gap-2 bg-white text-green px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">
+              <Link href="/" className="inline-flex items-center justify-center gap-2 bg-white text-green px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 Start Shopping
-              </a>
+              </Link>
               <a href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-green transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />

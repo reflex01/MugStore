@@ -23,7 +23,7 @@ const Contact = () => {
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
               Have a question about our software licenses? Need technical support? 
-              We're here to help! Reach out to our expert team and get the assistance you need.
+              We&apos;re here to help! Reach out to our expert team and get the assistance you need.
             </p>
 
             {/* Quick Stats */}
@@ -57,7 +57,7 @@ const Contact = () => {
               Multiple Ways to Reach Us
             </h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Choose your preferred way to get in touch. We're available through various channels to assist you.
+              Choose your preferred way to get in touch. We&apos;re available through various channels to assist you.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ const Contact = () => {
                     <div>
                       <h4 className="font-semibold text-dark mb-1">Email</h4>
                       <p className="text-gray-6">support@allkeyssale.com</p>
-                      <p className="text-sm text-gray-5">We'll respond within 1 hour</p>
+                      <p className="text-sm text-gray-5">We&apos;ll respond within 1 hour</p>
                     </div>
                   </div>
 
@@ -210,7 +210,7 @@ const Contact = () => {
               <div className="bg-white rounded-2xl shadow-2 p-8 lg:p-10">
                 <div className="mb-8">
                   <h3 className="text-2xl lg:text-3xl font-bold text-dark mb-3">Send Us a Message</h3>
-                  <p className="text-gray-6">Fill out the form below and we'll get back to you within 24 hours.</p>
+                  <p className="text-gray-6">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
                 </div>
 
                 <form className="space-y-6">
@@ -309,7 +309,7 @@ const Contact = () => {
                       className="w-4 h-4 text-blue border-gray-3 rounded focus:ring-blue-light-5"
                     />
                     <label htmlFor="newsletter" className="text-sm text-gray-6">
-                      I'd like to receive updates about new products and offers
+                      I&apos;d like to receive updates about new products and offers
                     </label>
                   </div>
 
@@ -349,7 +349,7 @@ const Contact = () => {
 
             <div className="bg-gradient-to-br from-green-light-6 to-green-light-5 p-6 rounded-xl">
               <h4 className="font-bold text-dark mb-3">What information should I include in my support request?</h4>
-              <p className="text-gray-6">Please include your order number, product details, and a clear description of the issue you're experiencing.</p>
+              <p className="text-gray-6">Please include your order number, product details, and a clear description of the issue you&apos;re experiencing.</p>
             </div>
 
             <div className="bg-gradient-to-br from-yellow-light-4 to-yellow-light-2 p-6 rounded-xl">
@@ -373,7 +373,7 @@ const Contact = () => {
               Why Choose AllKeysSale Support?
             </h2>
             <p className="text-xl mb-12 opacity-90 max-w-3xl mx-auto">
-              We're committed to providing exceptional customer service that goes above and beyond your expectations.
+              We&apos;re committed to providing exceptional customer service that goes above and beyond your expectations.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

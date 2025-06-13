@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Breadcrumb from "../Common/Breadcrumb";
 
 const TermsAndConditions = () => {
@@ -24,7 +25,7 @@ const TermsAndConditions = () => {
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Please read these Terms and Conditions carefully before using AllKeysSale's services. 
+              Please read these Terms and Conditions carefully before using AllKeysSale&apos;s services. 
               By accessing our platform, you agree to be bound by these terms.
             </p>
 
@@ -132,13 +133,13 @@ const TermsAndConditions = () => {
                 <div className="bg-blue-light-5 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">Agreement to Terms</h3>
                   <p className="text-gray-6">
-                    By accessing and using AllKeysSale's website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy.
+                    By accessing and using AllKeysSale&apos;s website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <p className="text-gray-6">
-                    These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and AllKeysSale ("Company", "we", "us", or "our") regarding your use of our website, services, and software license marketplace.
+                    These Terms and Conditions (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;User&quot;, &quot;you&quot;, or &quot;your&quot;) and AllKeysSale (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) regarding your use of our website, services, and software license marketplace.
                   </p>
                   <p className="text-gray-6">
                     If you do not agree with these Terms, you must not access or use our services. Your continued use of our services following any changes to these Terms constitutes acceptance of those changes.
@@ -160,20 +161,20 @@ const TermsAndConditions = () => {
                   <div className="bg-green-light-6 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Key Terms</h3>
                     <div className="space-y-3 text-gray-6">
-                      <div><strong>"Services":</strong> AllKeysSale's software license marketplace platform and related services</div>
-                      <div><strong>"Software":</strong> Computer programs, applications, and digital products offered through our platform</div>
-                      <div><strong>"License":</strong> Legal permission to use software granted by software publishers</div>
-                      <div><strong>"User Account":</strong> Your registered account on our platform</div>
+                      <div><strong>&quot;Services&quot;:</strong> AllKeysSale&apos;s software license marketplace platform and related services</div>
+                      <div><strong>&quot;Software&quot;:</strong> Computer programs, applications, and digital products offered through our platform</div>
+                      <div><strong>&quot;License&quot;:</strong> Legal permission to use software granted by software publishers</div>
+                      <div><strong>&quot;User Account&quot;:</strong> Your registered account on our platform</div>
                     </div>
                   </div>
 
                   <div className="bg-blue-light-5 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Service Terms</h3>
                     <div className="space-y-3 text-gray-6">
-                      <div><strong>"Content":</strong> All text, graphics, data, and materials on our website</div>
-                      <div><strong>"Third Party":</strong> Software publishers, developers, and other service providers</div>
-                      <div><strong>"Activation Key":</strong> Unique code provided to activate licensed software</div>
-                      <div><strong>"End User":</strong> The final user of the software license purchased through our platform</div>
+                      <div><strong>&quot;Content&quot;:</strong> All text, graphics, data, and materials on our website</div>
+                      <div><strong>&quot;Third Party&quot;:</strong> Software publishers, developers, and other service providers</div>
+                      <div><strong>&quot;Activation Key&quot;:</strong> Unique code provided to activate licensed software</div>
+                      <div><strong>&quot;End User&quot;:</strong> The final user of the software license purchased through our platform</div>
                     </div>
                   </div>
                 </div>
@@ -312,7 +313,7 @@ const TermsAndConditions = () => {
                 <div className="bg-blue-light-5 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">⚠️ Important Notice</h3>
                   <p className="text-gray-6">
-                    <strong>AllKeysSale is a reseller of software licenses.</strong> All software licenses are subject to the original publisher's End User License Agreement (EULA). We do not modify or override the original license terms.
+                    <strong>AllKeysSale is a reseller of software licenses.</strong> All software licenses are subject to the original publisher&apos;s End User License Agreement (EULA). We do not modify or override the original license terms.
                   </p>
                 </div>
 
@@ -332,7 +333,7 @@ const TermsAndConditions = () => {
                       <h4 className="font-semibold text-dark mb-3">License Restrictions</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2">
                         <li>One license per activation key</li>
-                        <li>Subject to publisher's EULA</li>
+                        <li>Subject to publisher&apos;s EULA</li>
                         <li>No resale or redistribution</li>
                         <li>Commercial use restrictions may apply</li>
                       </ul>
@@ -427,7 +428,7 @@ const TermsAndConditions = () => {
                         <ul className="list-disc list-inside text-gray-6 text-sm space-y-1">
                           <li>Successfully activated licenses</li>
                           <li>Change of mind after activation</li>
-                          <li>Compatibility issues with user's system</li>
+                          <li>Compatibility issues with user&apos;s system</li>
                           <li>Purchases older than 30 days</li>
                         </ul>
                       </div>
@@ -611,7 +612,7 @@ const TermsAndConditions = () => {
                 <div className="bg-blue-light-5 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">⚠️ Important Disclaimer</h3>
                   <p className="text-gray-6">
-                    <strong>OUR SERVICES ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND.</strong> 
+                    <strong>OUR SERVICES ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot; WITHOUT WARRANTIES OF ANY KIND.</strong> 
                     Please read these disclaimers carefully as they limit our liability.
                   </p>
                 </div>
@@ -653,7 +654,7 @@ const TermsAndConditions = () => {
                 <div className="bg-red-light-6 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">🛡️ Liability Limitations</h3>
                   <p className="text-gray-6">
-                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALLKEYSSALE'S LIABILITY IS LIMITED AS DESCRIBED BELOW.
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALLKEYSSALE&apos;S LIABILITY IS LIMITED AS DESCRIBED BELOW.
                   </p>
                 </div>
 
@@ -810,18 +811,18 @@ const TermsAndConditions = () => {
               Now that you understand our terms, explore our extensive collection of authentic software licenses.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">
+              <Link href="/" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
                 Browse Products
-              </a>
-              <a href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
+              </Link>
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
                 Contact Support
-              </a>
+              </Link>
             </div>
           </div>
         </div>

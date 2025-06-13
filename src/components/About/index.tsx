@@ -131,7 +131,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-dark mb-4">Our Vision</h3>
               <p className="text-gray-6 leading-relaxed">
-                To become the world's most trusted marketplace for software licenses, 
+                To become the world&apos;s most trusted marketplace for software licenses, 
                 known for our integrity, customer service, and commitment to making 
                 technology accessible to everyone.
               </p>
