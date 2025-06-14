@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Product } from "@/types/product";
-import { useModalContext } from "@/app/context/QuickViewModalContext";
-import { updateQuickView } from "@/redux/features/quickView-slice";
 import { addItemToCart } from "@/redux/features/cart-slice";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { updateproductDetails } from "@/redux/features/product-details";
@@ -12,26 +10,18 @@ import { AppDispatch } from "@/redux/store";
 import Link from "next/link";
 import { 
   Eye, 
-  ShoppingCart, 
   Heart, 
   Star, 
   StarHalf,
-  Zap,
   ShoppingBag,
   Plus
 } from "lucide-react";
 
 const ProductItem = ({ item }: { item: Product }) => {
-  const { openModal } = useModalContext();
   const dispatch = useDispatch<AppDispatch>();
   const [isHovered, setIsHovered] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
-
-  // update the QuickView state
-  const handleQuickViewUpdate = () => {
-    dispatch(updateQuickView({ ...item }));
-  };
 
   // add to cart with loading state
   const handleAddToCart = async () => {
@@ -100,13 +90,9 @@ const ProductItem = ({ item }: { item: Product }) => {
     localStorage.setItem("productDetails", JSON.stringify(item));
   };
 
-  const handleImageClick = () => {
-    handleProductDetails();
-  };
-
   return (
     <div 
-      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-2"
+      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-200 ease-out overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
@@ -117,34 +103,18 @@ const ProductItem = ({ item }: { item: Product }) => {
     >
       {/* Discount Badge */}
       {discountPercentage > 0 && (
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 10,
-          background: 'linear-gradient(135deg, #fb923c 0%, #ef4444 50%, #ec4899 100%)',
-          color: '#ffffff',
-          padding: '8px 16px',
-          borderRadius: '9999px',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-        }}>
-          <span style={{display: 'flex', alignItems: 'center', gap: '4px', color: '#ffffff'}}>
-            <Zap style={{width: '14px', height: '14px', color: '#ffffff', fill: '#ffffff'}} />
-            <span style={{color: '#ffffff'}}>-{discountPercentage}%</span>
-          </span>
+        <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-lg text-sm font-semibold shadow-md animate-pulse" style={{ backgroundColor: '#dc2626', color: '#ffffff', animation: 'pulse 2s infinite' }}>
+          -{discountPercentage}% OFF
         </div>
       )}
 
       {/* Wishlist Button */}
       <button
         onClick={handleItemToWishList}
-        className={`absolute top-4 right-4 z-10 p-2 rounded-full transition-all duration-300 ${
+        className={`absolute top-4 right-4 z-10 p-2 rounded-full transition-all duration-150 ease-out ${
           isWishlisted 
-            ? 'bg-red-100 text-red-500 shadow-lg scale-110' 
-            : 'bg-white/80 text-gray-400 hover:bg-white hover:text-red-500 shadow-md hover:scale-110'
+            ? 'bg-red-100 text-red-500 shadow-lg scale-105' 
+            : 'bg-white/80 text-gray-400 hover:bg-white hover:text-red-500 shadow-md hover:scale-105'
         }`}
       >
         <Heart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
@@ -167,9 +137,12 @@ const ProductItem = ({ item }: { item: Product }) => {
               src={item.imgs.previews[0]} 
               alt={item.title}
               fill
-              className={`object-contain p-6 transition-transform duration-500 ${
-                isHovered ? 'scale-110' : 'scale-100'
+              className={`object-contain p-6 transition-transform duration-200 ease-out ${
+                isHovered ? 'scale-105' : 'scale-100'
               }`}
+              quality={85}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
             />
           ) : (
             <div className="flex items-center justify-center h-full text-gray-400">
@@ -179,7 +152,7 @@ const ProductItem = ({ item }: { item: Product }) => {
         </Link>
         
         {/* Quick Actions Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent backdrop-blur-sm transition-all duration-300 ${
+        <div className={`absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent transition-opacity duration-200 ease-out ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
@@ -187,7 +160,7 @@ const ProductItem = ({ item }: { item: Product }) => {
             <Link href={`/shop-details?name=${item.name}`}>
               <button
                 onClick={handleProductDetails}
-                className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-all duration-200 hover:scale-110 group/btn"
+                className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-all duration-150 ease-out hover:scale-105 group/btn"
               >
                 <Eye className="w-5 h-5 text-gray-700 group-hover/btn:text-blue-600" />
               </button>
@@ -197,14 +170,17 @@ const ProductItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 text-white rounded-full shadow-xl hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 transition-all duration-300 hover:scale-110 disabled:opacity-75 font-semibold"
+              className="flex items-center gap-2 px-6 py-3 rounded-full shadow-xl transition-all duration-150 ease-out hover:scale-105 disabled:opacity-75 font-semibold"
+              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
             >
               {isAddingToCart ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-5 h-5" style={{ color: '#ffffff' }} />
               )}
-              <span className="font-medium">
+              <span className="font-medium" style={{ color: '#ffffff' }}>
                 {isAddingToCart ? 'Adding...' : 'Add to Cart'}
               </span>
             </button>
@@ -248,17 +224,19 @@ const ProductItem = ({ item }: { item: Product }) => {
           {/* Quick Add Button (Mobile) */}
           <button
             onClick={handleAddToCart}
-            className="md:hidden p-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:scale-110 transform"
+            className="md:hidden p-3 rounded-lg transition-colors duration-200 shadow-sm"
+            style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
           >
-            <Plus style={{width: '20px', height: '20px', color: '#ffffff'}} />
+            <Plus className="w-5 h-5" style={{ color: '#ffffff' }} />
           </button>
         </div>
 
         {/* Features */}
         <div className="mt-4 flex items-center gap-2 text-sm font-medium">
-          <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
-            <Zap style={{width: '16px', height: '16px', color: '#059669', fill: '#059669'}} />
-            <span className="text-green-700">Instant Download</span>
+          <div className="flex items-center gap-2 px-3 py-1 rounded-lg" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
+            <span style={{ color: '#1d4ed8' }}>Digital License</span>
           </div>
         </div>
       </div>

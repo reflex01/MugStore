@@ -6,7 +6,6 @@ import Breadcrumb from "../Common/Breadcrumb";
 import Image from "next/image";
 import Newsletter from "../Common/Newsletter";
 import RecentlyViewdItems from "./RecentlyViewd";
-import { usePreviewSlider } from "@/app/context/PreviewSliderContext";
 import { useAppSelector } from "@/redux/store";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
@@ -76,7 +75,7 @@ const ShopDetails = () => {
 
   const handleAddToCart = () => {
     const cartItem = {
-      id: product.id || Math.floor(Math.random() * 1000000),
+      id: product.id || Date.now(),
       title: product.title,
       price: product.price,
       discountedPrice: product.discountedPrice,
@@ -370,19 +369,11 @@ const ShopDetails = () => {
                     <ZoomIn className="w-5 h-5 text-gray-700" />
                   </button>
 
-                  {/* Professional Discount Badge */}
+                  {/* Discount Badge */}
                   {discountPercentage > 0 && (
                     <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10">
-                      <div 
-                        className="px-3 py-1 rounded-full shadow-lg animate-pulse"
-                        style={{
-                          background: 'linear-gradient(to right, #ef4444, #f97316)',
-                          border: 'none'
-                        }}
-                      >
-                        <span className="!text-white font-bold text-sm" style={{color: '#ffffff'}}>
-                          🔥 -{discountPercentage}% OFF
-                        </span>
+                      <div className="px-3 py-1 rounded-lg shadow-md font-semibold text-sm animate-pulse" style={{ backgroundColor: '#dc2626', color: '#ffffff', animation: 'pulse 2s infinite' }}>
+                        -{discountPercentage}% OFF
                       </div>
                     </div>
                   )}
@@ -434,8 +425,8 @@ const ShopDetails = () => {
                       </div>
                       <div className="hidden sm:block w-px h-4 bg-gray-300"></div>
                       <div className="inline-flex items-center gap-2 bg-green-100 px-3 py-1.5 rounded-lg">
-                        <CheckCircle className="w-4 h-4 !text-green-600" style={{color: '#059669'}} />
-                        <span className="font-bold !text-green-800 text-sm" style={{color: '#166534'}}>✅ In Stock</span>
+                        <CheckCircle className="w-4 h-4 text-green-600" />
+                        <span className="font-medium text-green-800 text-sm">In Stock</span>
                       </div>
                     </div>
                   </div>
@@ -468,7 +459,7 @@ const ShopDetails = () => {
                       <span className="text-xl sm:text-2xl text-gray-400 line-through">
                         ${product.price}
                       </span>
-                      <div className="bg-gradient-to-r from-green to-green-dark text-white px-3 py-1 rounded-full text-sm font-bold shadow-md animate-bounce w-fit">
+                      <div className="px-3 py-1 rounded-lg text-sm font-medium shadow-sm w-fit" style={{ backgroundColor: '#16a34a', color: '#ffffff' }}>
                         Save ${(product.price - product.discountedPrice).toFixed(2)}
                       </div>
                     </>
@@ -476,36 +467,25 @@ const ShopDetails = () => {
                 </div>
               </div>
 
-              {/* Enhanced Value Proposition with Color Psychology */}
+              {/* Value Proposition */}
               <div className="bg-gray-50 rounded-xl p-4 shadow-sm">
-                <div className="space-y-3">
-                  {/* Conversion-focused badges with color psychology */}
-                  <div className="flex flex-wrap justify-center gap-2">
-                    {/* Trust Badge - Green psychology for security */}
-                    <div className="inline-flex items-center gap-2 bg-emerald-100 px-3 py-2 rounded-lg hover:bg-emerald-200 transition-all transform hover:scale-105">
-                      <Shield className="w-4 h-4 !text-emerald-600" style={{color: '#059669'}} />
-                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>🛡️ 100% Genuine</span>
-                    </div>
-                    
-                    {/* Urgency Badge - Orange psychology for immediate action */}
-                    <div className="inline-flex items-center gap-2 bg-orange-100 px-3 py-2 rounded-lg hover:bg-orange-200 transition-all transform hover:scale-105">
-                      <Zap className="w-4 h-4 !text-orange-600" style={{color: '#ea580c'}} />
-                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>⚡ Instant Delivery</span>
-                    </div>
-                    
-                    {/* Value Badge - Purple psychology for premium feel */}
-                    <div className="inline-flex items-center gap-2 bg-purple-100 px-3 py-2 rounded-lg hover:bg-purple-200 transition-all transform hover:scale-105">
-                      <Award className="w-4 h-4 !text-purple-600" style={{color: '#9333ea'}} />
-                      <span className="font-bold !text-gray-800 text-sm" style={{color: '#1f2937'}}>👑 Lifetime License</span>
-                    </div>
+                <div className="flex flex-wrap justify-center gap-3">
+                  {/* Trust Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
+                    <Shield className="w-4 h-4" style={{ color: '#2563eb' }} />
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Genuine License</span>
                   </div>
                   
-                  {/* Enhanced savings highlight with urgency */}
-                  <div className="text-center">
-                    <div className="inline-flex items-center gap-2 bg-red-100 px-4 py-2 rounded-lg animate-pulse">
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-                      <span className="font-bold !text-red-700 text-sm" style={{color: '#b91c1c'}}>🔥 LIMITED TIME: Save ${(product.price - product.discountedPrice).toFixed(2)} Today!</span>
-                    </div>
+                  {/* Delivery Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
+                    <Download className="w-4 h-4" style={{ color: '#16a34a' }} />
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Digital Delivery</span>
+                  </div>
+                  
+                  {/* Support Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#faf5ff', border: '1px solid #d8b4fe' }}>
+                    <Award className="w-4 h-4" style={{ color: '#9333ea' }} />
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Lifetime Support</span>
                   </div>
                 </div>
               </div>
@@ -537,59 +517,49 @@ const ShopDetails = () => {
 
                 <button
                   onClick={handleAddToCart}
-                  className="w-full btn-green-override font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg"
-                  style={{backgroundColor: '#10b981', color: '#ffffff'}}
+                  className="w-full font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 sm:gap-3 text-sm sm:text-base lg:text-lg"
+                  style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
                 >
-                  <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" style={{color: '#ffffff'}} />
-                  <span style={{color: '#ffffff'}}>🚀 Buy Now - Save ${(product.price - product.discountedPrice).toFixed(2)}</span>
+                  <ShoppingCart className="w-5 h-5 sm:w-6 sm:h-6" style={{ color: '#ffffff' }} />
+                  <span style={{ color: '#ffffff' }}>Buy Now - Save ${(product.price - product.discountedPrice).toFixed(2)}</span>
                 </button>
                 
-                {/* Enhanced Social Proof with Color Psychology */}
-                <div className="bg-orange-50 rounded-lg p-3">
-                  <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-2">
-                    {/* Live activity with urgency colors */}
-                    <div className="flex items-center gap-2 bg-red-100 px-3 py-1.5 rounded-lg">
-                      <div className="w-2 h-2 bg-red-500 rounded-full animate-ping"></div>
-                      <span className="text-xs sm:text-sm font-bold !text-red-700" style={{color: '#b91c1c'}}>
-                        <span className="hidden sm:inline">👥 47 watching now • </span>
-                        <span style={{color: '#b91c1c'}}>🔥 TRENDING</span>
-                      </span>
+                {/* Product Info */}
+                <div className="bg-gray-50 rounded-lg p-3">
+                  <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <span>In Stock</span>
                     </div>
-                    
-                    {/* Scarcity indicator with urgency psychology */}
-                    <div className="flex items-center gap-2 bg-orange-100 px-3 py-1.5 rounded-lg animate-pulse">
-                      <Clock className="w-3 h-3 sm:w-4 sm:h-4 !text-orange-600" style={{color: '#ea580c'}} />
-                      <span className="text-xs sm:text-sm font-bold !text-orange-700" style={{color: '#c2410c'}}>
-                        ⚠️ <span style={{color: '#c2410c'}}>ONLY 2 LEFT!</span>
-                      </span>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-blue-600" />
+                      <span>Ships Today</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Enhanced Trust Indicators with Color Psychology */}
-              <div className="bg-gray-50 rounded-lg p-3">
+              {/* Trust Indicators */}
+              <div style={{ backgroundColor: '#f9fafb' }} className="rounded-lg p-3">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs sm:text-sm">
-                  {/* Security - Blue psychology for trust */}
-                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
-                    <Shield className="w-4 h-4 !text-blue-600" style={{color: '#2563eb'}} />
-                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>🔒 SSL Secured</span>
+                  {/* Security */}
+                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg shadow-sm" style={{ backgroundColor: '#ffffff' }}>
+                    <Shield className="w-4 h-4" style={{ color: '#2563eb' }} />
+                    <span className="font-medium" style={{ color: '#1f2937' }}>SSL Secured</span>
                   </div>
                   
-                  {/* Social proof - Green psychology for popularity */}
-                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
-                    <div className="flex -space-x-1">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-emerald-500 rounded-full"></div>
-                      <div className="w-3 h-3 bg-teal-500 rounded-full"></div>
-                    </div>
-                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>🎉 15,000+ Happy Customers</span>
+                  {/* Customer Reviews */}
+                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg shadow-sm" style={{ backgroundColor: '#ffffff' }}>
+                    <Star className="w-4 h-4 fill-current" style={{ color: '#eab308', fill: '#eab308' }} />
+                    <span className="font-medium" style={{ color: '#1f2937' }}>4.8/5 Rating</span>
                   </div>
                   
-                  {/* Rating - Gold psychology for excellence */}
-                  <div className="flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm hover:shadow-md transition-all transform hover:scale-105">
-                    <Star className="w-4 h-4 !text-yellow-600 fill-current" style={{color: '#ca8a04', fill: '#ca8a04'}} />
-                    <span className="font-bold !text-gray-800" style={{color: '#1f2937'}}>⭐ 4.9/5 Excellence</span>
+                  {/* Support */}
+                  <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg shadow-sm" style={{ backgroundColor: '#ffffff' }}>
+                    <CheckCircle className="w-4 h-4" style={{ color: '#16a34a' }} />
+                    <span className="font-medium" style={{ color: '#1f2937' }}>24/7 Support</span>
                   </div>
                 </div>
               </div>
@@ -928,11 +898,13 @@ const ShopDetails = () => {
             </div>
             <button
               onClick={handleAddToCart}
-              className="flex-1 !bg-green-600 !text-white font-bold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl hover:!bg-green-700 transition-all duration-200 flex items-center justify-center gap-2 min-h-[48px] active:scale-95"
-              style={{backgroundColor: '#10b981', color: '#ffffff'}}
+              className="flex-1 font-semibold py-3 px-4 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 min-h-[48px]"
+              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
             >
-              <ShoppingCart className="w-5 h-5 !text-white" style={{color: '#ffffff'}} />
-              <span className="text-sm font-bold !text-white" style={{color: '#ffffff'}}>Buy Now</span>
+              <ShoppingCart className="w-5 h-5" style={{ color: '#ffffff' }} />
+              <span className="text-sm font-semibold" style={{ color: '#ffffff' }}>Buy Now</span>
             </button>
           </div>
         </div>

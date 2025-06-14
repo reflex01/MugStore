@@ -1,8 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { Product } from "@/types/product";
-import { useModalContext } from "@/app/context/QuickViewModalContext";
-import { updateQuickView } from "@/redux/features/quickView-slice";
 import { addItemToCart } from "@/redux/features/cart-slice";
 import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 import { updateproductDetails } from "@/redux/features/product-details";
@@ -12,33 +10,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { 
   Eye, 
-  ShoppingCart, 
   Heart, 
   Star, 
   StarHalf,
-  Zap,
-  ShoppingBag,
-  Plus
+  ShoppingBag
 } from "lucide-react";
 
 const SingleGridItem = ({ item }: { item: Product }) => {
-  const { openModal } = useModalContext();
   const dispatch = useDispatch<AppDispatch>();
   const [isHovered, setIsHovered] = useState(false);
   const [isWishlisted, setIsWishlisted] = useState(false);
   const [isAddingToCart, setIsAddingToCart] = useState(false);
-
-  // update the QuickView state
-  const handleQuickViewUpdate = () => {
-    dispatch(updateQuickView({ ...item }));
-  };
 
   // add to cart with loading state
   const handleAddToCart = async () => {
     setIsAddingToCart(true);
     
     const cartItem = {
-      id: item.id || Math.floor(Math.random() * 1000000),
+      id: item.id || Date.now(),
       title: item.title,
       price: item.price,
       discountedPrice: item.discountedPrice,
@@ -102,10 +91,6 @@ const SingleGridItem = ({ item }: { item: Product }) => {
     }
   };
 
-  const handleImageClick = () => {
-    handleProductDetails();
-  };
-
   return (
     <div 
       className="group relative bg-white rounded-2xl lg:rounded-3xl shadow-md lg:shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-1 lg:hover:-translate-y-2"
@@ -119,24 +104,8 @@ const SingleGridItem = ({ item }: { item: Product }) => {
     >
       {/* Discount Badge */}
       {discountPercentage > 0 && (
-        <div style={{
-          position: 'absolute',
-          top: '16px',
-          left: '16px',
-          zIndex: 10,
-          background: 'linear-gradient(135deg, #fb923c 0%, #ef4444 50%, #ec4899 100%)',
-          color: '#ffffff',
-          padding: '8px 16px',
-          borderRadius: '9999px',
-          fontSize: '14px',
-          fontWeight: 'bold',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-          animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
-        }}>
-          <span style={{display: 'flex', alignItems: 'center', gap: '4px', color: '#ffffff'}}>
-            <Zap style={{width: '14px', height: '14px', color: '#ffffff', fill: '#ffffff'}} />
-            <span style={{color: '#ffffff'}}>-{discountPercentage}%</span>
-          </span>
+        <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-lg text-sm font-semibold shadow-md animate-pulse" style={{ backgroundColor: '#dc2626', color: '#ffffff', animation: 'pulse 2s infinite' }}>
+          -{discountPercentage}% OFF
         </div>
       )}
 
@@ -204,14 +173,17 @@ const SingleGridItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 text-white rounded-full shadow-xl hover:from-purple-700 hover:via-blue-700 hover:to-cyan-700 transition-all duration-300 hover:scale-110 disabled:opacity-75 font-semibold"
+              className="flex items-center gap-2 px-6 py-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 disabled:opacity-75 font-semibold"
+              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
             >
               {isAddingToCart ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <ShoppingBag className="w-5 h-5" />
+                <ShoppingBag className="w-5 h-5" style={{ color: '#ffffff' }} />
               )}
-              <span className="font-medium">
+              <span className="font-medium" style={{ color: '#ffffff' }}>
                 {isAddingToCart ? 'Adding...' : 'Add to Cart'}
               </span>
             </button>
@@ -266,14 +238,17 @@ const SingleGridItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-1.5 px-3 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg font-medium text-sm"
+              className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl transition-all duration-300 shadow-lg font-medium text-sm"
+              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
             >
               {isAddingToCart ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <ShoppingBag className="w-4 h-4" />
+                <ShoppingBag className="w-4 h-4" style={{ color: '#ffffff' }} />
               )}
-              <span className="hidden sm:inline">
+              <span className="hidden sm:inline" style={{ color: '#ffffff' }}>
                 {isAddingToCart ? 'Adding...' : 'Add'}
               </span>
             </button>
@@ -282,9 +257,8 @@ const SingleGridItem = ({ item }: { item: Product }) => {
 
         {/* Features */}
         <div className="mt-3 lg:mt-4 flex items-center gap-2 text-xs lg:text-sm font-medium">
-          <div className="flex items-center gap-1.5 lg:gap-2 px-2.5 lg:px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
-            <Zap style={{width: '14px', height: '14px', color: '#059669', fill: '#059669'}} className="lg:w-4 lg:h-4" />
-            <span className="text-green-700">Instant Download</span>
+          <div className="flex items-center gap-1.5 lg:gap-2 px-2.5 lg:px-3 py-1 rounded-lg" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
+            <span style={{ color: '#1d4ed8' }}>Digital License</span>
           </div>
         </div>
       </div>
