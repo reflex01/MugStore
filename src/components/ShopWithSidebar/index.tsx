@@ -8,7 +8,7 @@ import GenderDropdown from "./GenderDropdown";
 import SizeDropdown from "./SizeDropdown";
 import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
-import shopData from "../Shop/shopData";
+import products from "@/contents/products.json";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import ProductSkeleton from "../Common/ProductSkeleton";
@@ -24,7 +24,7 @@ const ShopWithSidebar = () => {
   const [productSidebar, setProductSidebar] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(categoryParam ? [categoryParam] : ["Windows"]);
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1'));
-  const [filteredProducts, setFilteredProducts] = useState(shopData);
+  const [filteredProducts, setFilteredProducts] = useState(products.data);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -34,9 +34,9 @@ const ShopWithSidebar = () => {
     const timer = setTimeout(() => {
       if (categoryParam) {
         setSelectedCategories([categoryParam]);
-        setFilteredProducts(shopData.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
+        setFilteredProducts(products.data.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
       } else {
-        setFilteredProducts(shopData.filter(product => product.category === "Windows"));
+        setFilteredProducts(products.data.filter(product => product.category === "Windows"));
       }
       setIsLoading(false);
     }, 50);
@@ -74,10 +74,10 @@ const ShopWithSidebar = () => {
       
       // Filter products based on selected categories
       if (newCategories.length === 0) {
-        setFilteredProducts(shopData);
+        setFilteredProducts(products.data);
       } else {
         setFilteredProducts(
-          shopData.filter(product => 
+          products.data.filter(product => 
             newCategories.includes(product.category)
           )
         );
@@ -264,7 +264,7 @@ const ShopWithSidebar = () => {
                       <button 
                         onClick={() => {
                           setSelectedCategories([]);
-                          setFilteredProducts(shopData);
+                          setFilteredProducts(products.data);
                           setCurrentPage(1);
                         }}
                         className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
@@ -379,7 +379,7 @@ const ShopWithSidebar = () => {
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-gray-600">Showing</span>
                       <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                        {filteredProducts.length} of {shopData.length}
+                        {filteredProducts.length} of {products.data.length}
                       </span>
                       <span className="text-gray-600">products</span>
                     </div>

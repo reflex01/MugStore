@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import shopData from "@/components/Shop/shopData";
+import products from "@/contents/products.json";
 import ProductItem from "@/components/Common/ProductItem";
 import Image from "next/image";
 import Link from "next/link";
@@ -111,7 +111,7 @@ const RecentlyViewdItems = () => {
             }}
             className="justify-between"
           >
-            {shopData.map((item, key) => (
+            {products.data.map((item, key) => (
               <SwiperSlide key={key}>
                 <ProductItem item={item} />
               </SwiperSlide>

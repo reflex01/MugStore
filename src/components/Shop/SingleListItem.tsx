@@ -147,7 +147,7 @@ const SingleListItem = ({ item }: { item: Product }) => {
                 height={14}
               />
             </div>
-            <span>({item.reviews} Reviews)</span>
+            <span>({item.totalReviews || 0} Reviews)</span>
           </div>
 
           <h3

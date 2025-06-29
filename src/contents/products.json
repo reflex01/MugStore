@@ -2,185 +2,599 @@
   "data": [
     {
       "id": 1,
-      "name": "windows-10-home",
-      "title": "Windows 10 Home",
-      "price": 119.99,
-      "discountedPrice": 99.99,
-      "reviews": 4.5,
+      "name": "windows-11-professional",
+      "title": "Windows 11 Professional",
+      "price": 39.99,
+      "discountedPrice": 35.99,
       "category": "Windows",
+      "description": "Microsoft Windows 11 Pro—lifetime retail licence, instant digital delivery.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"
+        ]
+      },
+      "features": [
+        "BitLocker device & drive encryption",
+        "Device-wide encryption + Secure Boot",
+        "Find My Device, Windows Defender firewall",
+        "App & browser exploit protection",
+        "Parental controls (Microsoft family)",
+        "Windows Information Protection (WIP)",
+        "Windows Hello (face / fingerprint / PIN)",
+        "Group Policy, Assigned Access, WU-for-Business",
+        "Remote Desktop",
+        "Hyper-V and Windows Sandbox",
+        "Support for Azure Active Directory",
+        "Mobile device management"
+      ],
+      "specifications": {
+        "processor": "1GHz or faster, 2-core 64-bit",
+        "memory": "4GB RAM",
+        "storage": "64GB",
+        "graphics": "DirectX12 / WDDM 2.x",
+        "display": "720p ≥9″ diagonal",
+        "internet": "Required for activation / updates"
+      },
+      "faq": [
+        {
+          "question": "What is the main difference between Windows 11 Home and Pro?",
+          "answer": "Windows 11 Pro includes all the features of Home, plus additional business and security tools like BitLocker encryption, Remote Desktop, and Hyper-V for virtualization."
+        },
+        {
+          "question": "Is this a lifetime license?",
+          "answer": "Yes, this is a one-time purchase for a lifetime retail license for one computer. It does not expire."
+        },
+        {
+          "question": "How will I receive the product key?",
+          "answer": "The product key is delivered instantly to your email address after the purchase is complete."
+        }
+      ],
+      "totalReviews": 540,
+      "averageRating": 4.9,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Mark T.",
+          "rating": 5,
+          "comment": "Key arrived instantly and activation was a breeze. The Pro features like BitLocker are exactly what I needed for my work laptop."
+        },
+        {
+          "reviewer": "Sarah K.",
+          "rating": 5,
+          "comment": "Upgraded from Windows 10 Pro. The process was smooth with this key. Windows 11 feels fresh and modern."
+        },
+        {
+          "reviewer": "Dev_Guru",
+          "rating": 4,
+          "comment": "Works perfectly. Hyper-V is essential for my development work. Deducted one star because I had to contact support for the download link, but they responded quickly."
+        }
+      ]
     },
     {
       "id": 2,
-      "name": "windows-11-pro-5pc",
-      "title": "Windows 11 Pro 5PC",
-      "price": 299.99,
-      "discountedPrice": 249.99,
-      "reviews": 4.7,
+      "name": "windows-11-professional-5pc",
+      "title": "Windows 11 Pro – 5 PC",
+      "price": 140.00,
+      "discountedPrice": 100.00,
       "category": "Windows",
+      "description": "Five-seat Windows 11 Pro licence bundle.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
+        ]
+      },
+      "features": [
+        "All Windows 11 Pro features on 5 devices",
+        "Azure AD & local Active Directory join",
+        "Kiosk / Assigned-Access, MDM, WU-for-Business",
+        "BitLocker device & drive encryption",
+        "Remote Desktop",
+        "Hyper-V and Windows Sandbox"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Does this provide 5 separate keys or one key for 5 PCs?",
+          "answer": "This product provides one license key valid for activation on up to five different computers."
+        },
+        {
+          "question": "Are these licenses suitable for a small business?",
+          "answer": "Yes, this bundle is ideal for small businesses or studios that need to equip multiple workstations with Windows 11 Professional."
+        },
+        {
+          "question": "Can I use these licenses on PCs in different locations?",
+          "answer": "Absolutely. As long as the total number of activated machines does not exceed five, you can use them wherever you need."
+        }
+      ],
+      "totalReviews": 42,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "IT Solutions Inc.",
+          "rating": 5,
+          "comment": "Perfect for our office setup. Got 5 PCs running on Windows 11 Pro in under an hour. Great value."
+        },
+        {
+          "reviewer": "Joanna F.",
+          "rating": 5,
+          "comment": "Bought this for my family's computers. The multi-pack was much cheaper than buying individual licenses. All activated without issue."
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "windows-10-home-5pc",
-      "title": "Windows 10 Home 5PC",
-      "price": 199.99,
-      "discountedPrice": 179.99,
-      "reviews": 4.6,
+      "name": "windows-11-home",
+      "title": "Windows 11 Home",
+      "price": 33.99,
+      "discountedPrice": 29.99,
       "category": "Windows",
+      "description": "Windows 11 Home digital key—fast download & lifetime activation.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"
+        ]
+      },
+      "features": [
+        "New centred Start menu & taskbar",
+        "Snap Layouts / Snap Groups multitasking",
+        "DirectStorage & Auto-HDR gaming tech",
+        "Widgets & Android-app support",
+        "Microsoft Defender Antivirus & Firewall",
+        "Windows Hello",
+        "Device encryption",
+        "Parental controls and protection"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Do I need a Microsoft Account to install Windows 11 Home?",
+          "answer": "Yes, a Microsoft Account and an internet connection are required for the initial setup of Windows 11 Home."
+        },
+        {
+          "question": "Can I upgrade from Windows 10 Home with this key?",
+          "answer": "Yes, you can perform a clean installation or an in-place upgrade from a compatible version of Windows 10 Home."
+        }
+      ],
+      "totalReviews": 127,
+      "averageRating": 4.8,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Alex G.",
+          "rating": 5,
+          "comment": "Got the key in my email right away. Installation on my new PC build was straightforward. Happy with my purchase."
+        },
+        {
+          "reviewer": "Brenda M.",
+          "rating": 5,
+          "comment": "The new interface is great! My laptop feels faster and the Snap Layouts are a game changer for my productivity."
+        },
+        {
+          "reviewer": "Tom P.",
+          "rating": 4,
+          "comment": "Good price and it works. The requirement for a Microsoft account during setup is a bit annoying, but you can change to a local account later."
+        }
+      ]
     },
     {
       "id": 4,
       "name": "windows-11-home-5pc",
-      "title": "Windows 11 Home 5PC",
-      "price": 249.99,
-      "discountedPrice": 219.99,
-      "reviews": 4.4,
+      "title": "Windows 11 Home – 5 PC",
+      "price": 159.99,
+      "discountedPrice": 129.99,
       "category": "Windows",
+      "description": "Bundle—activate Windows 11 Home on up to five devices.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"
+        ]
+      },
+      "features": [
+        "Same feature-set as Windows 11 Home",
+        "Multiple-device retail licence (5 PCs)",
+        "Ideal for families & small studios",
+        "Snap Layouts / Snap Groups multitasking",
+        "DirectStorage & Auto-HDR gaming tech",
+        "Widgets & Android-app support"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Is this a good option for a family with multiple computers?",
+          "answer": "Yes, this 5-PC license bundle is a very cost-effective solution for families, allowing you to install and activate Windows 11 Home on up to five household computers."
+        }
+      ],
+      "totalReviews": 19,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "The Martins Family",
+          "rating": 5,
+          "comment": "Upgraded all our family laptops and the desktop with this pack. One key for all five made it super simple. Excellent value."
+        }
+      ]
     },
     {
       "id": 5,
-      "name": "windows-10-pro-5pc",
-      "title": "Windows 10 Pro 5PC",
-      "price": 279.99,
-      "discountedPrice": 239.99,
-      "reviews": 4.8,
+      "name": "windows-10-professional",
+      "title": "Windows 10 Professional",
+      "price": 35.00,
+      "discountedPrice": 22.00,
       "category": "Windows",
+      "description": "Instant Windows 10 Pro OEM key, 1 PC / lifetime.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"
+        ]
+      },
+      "features": [
+        "BitLocker drive encryption",
+        "Remote Desktop host",
+        "Hyper-V virtualisation",
+        "Group Policy management",
+        "Windows Update for Business",
+        "Assigned Access",
+        "Dynamic Provisioning"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "What does an OEM key mean?",
+          "answer": "An OEM (Original Equipment Manufacturer) key is typically tied to the motherboard of the first PC it's installed on and cannot be transferred to another computer."
+        },
+        {
+          "question": "Can I upgrade to Windows 11 Pro for free with this license?",
+          "answer": "Yes, if your computer meets the minimum system requirements for Windows 11, this Windows 10 Pro license allows for a free upgrade to Windows 11 Pro."
+        }
+      ],
+      "totalReviews": 32,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Chris B.",
+          "rating": 5,
+          "comment": "Needed a stable OS for a business machine that wasn't ready for Win11. This Win10 Pro key was perfect and the price is unbeatable."
+        },
+        {
+          "reviewer": "Retro Gamer",
+          "rating": 5,
+          "comment": "Windows 10 is still the king for compatibility with older games. Key worked instantly."
+        }
+      ]
     },
     {
       "id": 6,
-      "name": "windows-11-home",
-      "title": "Windows 11 Home",
-      "price": 139.99,
-      "discountedPrice": 119.99,
-      "reviews": 4.5,
+      "name": "windows-10-home",
+      "title": "Windows 10 Home",
+      "price": 27.99,
+      "discountedPrice": 27.99,
       "category": "Windows",
+      "description": "Genuine Windows 10 Home licence for a single computer.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"
+        ]
+      },
+      "features": [
+        "Windows Defender antivirus & firewall",
+        "Cortana voice assistant",
+        "Game Mode & DirectX 12",
+        "Microsoft Edge browser",
+        "Windows Hello",
+        "Device Encryption",
+        "Parental Controls"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Why would I choose Windows 10 Home over Windows 11?",
+          "answer": "You might prefer Windows 10 Home if your hardware is not compatible with Windows 11, or if you prefer the user interface and stability of Windows 10 for your applications."
+        }
+      ],
+      "totalReviews": 14,
+      "averageRating": 4.9,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Linda S.",
+          "rating": 5,
+          "comment": "Perfect for my older laptop that can't run Windows 11. It's running like new again! Activation was simple."
+        }
+      ]
     },
     {
       "id": 7,
-      "name": "windows-10-enterprise-ltsb-2016",
-      "title": "Windows 10 Enterprise LTSB 2016",
-      "price": 399.99,
-      "discountedPrice": 349.99,
-      "reviews": 4.9,
+      "name": "windows-10-professional-5pc",
+      "title": "Windows 10 Pro – 5 PC",
+      "price": 100.00,
+      "discountedPrice": 86.00,
       "category": "Windows",
+      "description": "Five‑machine Windows 10 Pro retail pack.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"]
-      }
+        "thumbnails": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/05/windows-10-pro-5-pc.png"
+        ],
+        "previews": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/05/windows-10-pro-5-pc.png"
+        ]
+      },
+      "features": [
+        "All Windows 10 Pro features on 5 devices"
+      ],
+      "specifications": {},
+      "faq": [],
+      "totalReviews": 2,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": []
     },
     {
       "id": 8,
-      "name": "windows-10-pro",
-      "title": "Windows 10 Pro",
-      "price": 169.99,
-      "discountedPrice": 149.99,
-      "reviews": 4.6,
+      "name": "windows-10-home-5pc",
+      "title": "Windows 10 Home – 5 PC",
+      "price": 86.00,
+      "discountedPrice": 75.00,
       "category": "Windows",
+      "description": "Five‑seat Windows 10 Home activation bundle.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"]
-      }
+        "thumbnails": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/05/windows-10-home-5-pc.png"
+        ],
+        "previews": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/05/windows-10-home-5-pc.png"
+        ]
+      },
+      "features": [
+        "Same feature‑set as Windows 10 Home",
+        "Easy licence transfer between PCs"
+      ],
+      "specifications": {},
+      "faq": [],
+      "totalReviews": 1,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": []
     },
     {
       "id": 9,
-      "name": "windows-10-enterprise-ltsb-2019",
-      "title": "Windows 10 Enterprise LTSB 2019",
-      "price": 449.99,
-      "discountedPrice": 399.99,
-      "reviews": 4.8,
+      "name": "windows-10-enterprise",
+      "title": "Windows 10 Enterprise",
+      "price": 45.67,
+      "discountedPrice": 38.67,
       "category": "Windows",
+      "description": "Enterprise-grade Windows 10 for medium & large organisations.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"
+        ]
+      },
+      "features": [
+        "Device Guard & Credential Guard",
+        "AppLocker & Managed User Experience",
+        "DirectAccess & BranchCache",
+        "Windows Defender Advanced Threat Protection (ATP)",
+        "Windows To Go",
+        "Application Virtualization (App-V)"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Is this version suitable for a personal computer?",
+          "answer": "While it can be installed on a personal PC, Windows 10 Enterprise is designed for IT professionals in medium to large organizations and includes many advanced features a typical home user would not need."
+        },
+        {
+          "question": "What is the main benefit of Enterprise over Pro?",
+          "answer": "The Enterprise edition offers more advanced security and management features like DirectAccess, AppLocker, and Credential Guard, which are critical for managing large fleets of computers in a corporate environment."
+        }
+      ],
+      "totalReviews": 2,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "SysAdmin_Pro",
+          "rating": 5,
+          "comment": "Exactly what we needed for our test environment. DirectAccess and AppLocker work as expected. Legitimate key."
+        }
+      ]
     },
     {
       "id": 10,
-      "name": "windows-8-1-pro",
-      "title": "Windows 8.1 Pro",
-      "price": 149.99,
-      "discountedPrice": 129.99,
-      "reviews": 4.3,
+      "name": "windows-10-enterprise-ltsc-2021",
+      "title": "Windows 10 Enterprise LTSC 2021",
+      "price": 54.98,
+      "discountedPrice": 48.98,
       "category": "Windows",
+      "description": "Long-Term Servicing Channel release—10 years support.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"
+        ]
+      },
+      "features": [
+        "10-year support cadence (LTSC)",
+        "No Feature Updates every 6 months",
+        "Microsoft Defender for Endpoint",
+        "Windows Autopilot deployment",
+        "System Guard with SMM Firmware Protection",
+        "Windows Security app improvements",
+        "Microsoft Edge included"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "What does LTSC mean?",
+          "answer": "LTSC stands for Long-Term Servicing Channel. This version of Windows receives security updates for 10 years but does not receive the frequent feature updates, making it extremely stable for mission-critical systems."
+        },
+        {
+          "question": "Does LTSC include the Microsoft Store or Cortana?",
+          "answer": "No, LTSC versions are stripped-down and do not include many consumer-facing apps like the Microsoft Store, Cortana, or Microsoft Edge (though the 2021 version includes Edge)."
+        }
+      ],
+      "totalReviews": 1,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Industrial PC Tech",
+          "rating": 5,
+          "comment": "The only choice for our control systems. We need stability above all, and LTSC 2021 delivers. No bloatware, no surprise updates. It just works."
+        }
+      ]
     },
     {
       "id": 11,
-      "name": "windows-10-enterprise",
-      "title": "Windows 10 Enterprise",
-      "price": 299.99,
-      "discountedPrice": 259.99,
-      "reviews": 4.7,
+      "name": "windows-10-enterprise-ltsc-2019",
+      "title": "Windows 10 Enterprise LTSC 2019",
+      "price": 55.98,
+      "discountedPrice": 48.98,
       "category": "Windows",
+      "description": "LTSC 2019 build—stable, stripped‑down enterprise OS.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"]
-      }
+        "thumbnails": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/windows-10-enterprise-ltcs-2019.png"
+        ],
+        "previews": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/windows-10-enterprise-ltcs-2019.png"
+        ]
+      },
+      "features": [
+        "Long‑Term Servicing Channel (2019)",
+        "Microsoft Defender ATP integration"
+      ],
+      "specifications": {},
+      "faq": [],
+      "totalReviews": 2,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": []
     },
     {
       "id": 12,
-      "name": "windows-10-pro-n",
-      "title": "Windows 10 Pro N",
-      "price": 189.99,
-      "discountedPrice": 169.99,
-      "reviews": 4.5,
+      "name": "windows-10-enterprise-ltsb-2016",
+      "title": "Windows 10 Enterprise LTSB 2016",
+      "price": 49.98,
+      "discountedPrice": 39.98,
       "category": "Windows",
+      "description": "First LTSB release—minimal apps, 10‑year servicing.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"]
-      }
+        "thumbnails": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/Windows-10-Enterprise-LTSB-2016-Activation-key.png"
+        ],
+        "previews": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/Windows-10-Enterprise-LTSB-2016-Activation-key.png"
+        ]
+      },
+      "features": [
+        "No Cortana, Store or Edge",
+        "10‑year security & quality updates"
+      ],
+      "specifications": {},
+      "faq": [],
+      "totalReviews": 2,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": []
     },
     {
       "id": 13,
-      "name": "windows-10-enterprise-ltsb-2021",
-      "title": "Windows 10 Enterprise LTSB 2021",
-      "price": 499.99,
-      "discountedPrice": 449.99,
-      "reviews": 4.8,
+      "name": "windows-10-pro-n",
+      "title": "Windows 10 Pro N",
+      "price": 46.98,
+      "discountedPrice": 38.98,
       "category": "Windows",
+      "description": "EU 'N' edition (no media apps) – Windows 10 Pro feature‑set.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"]
-      }
+        "thumbnails": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/windows-10-pro-n.png"
+        ],
+        "previews": [
+          "https://allgoodkeys.com/wp-content/uploads/2022/09/windows-10-pro-n.png"
+        ]
+      },
+      "features": [
+        "All Windows 10 Pro business tools",
+        "Ships without pre‑installed multimedia codecs/apps"
+      ],
+      "specifications": {},
+      "faq": [],
+      "totalReviews": 2,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": []
     },
     {
       "id": 14,
-      "name": "windows-11-pro",
-      "title": "Windows 11 Pro",
-      "price": 189.99,
-      "discountedPrice": 159.99,
-      "reviews": 4.7,
+      "name": "windows-8-1-professional",
+      "title": "Windows 8.1 Professional",
+      "price": 29.99,
+      "discountedPrice": 20.99,
       "category": "Windows",
+      "description": "Original Windows 8.1 Pro licence, both 32/64-bit ISOs provided.",
       "imgs": {
-        "thumbnails": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"],
-        "previews": ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"]
-      }
+        "thumbnails": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"
+        ],
+        "previews": [
+          "https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"
+        ]
+      },
+      "features": [
+        "Windows Defender & SmartScreen",
+        "Hyper-V, Remote Desktop host",
+        "Modern UI 'Tiles' & Windows Store",
+        "BitLocker and BitLocker To Go",
+        "Domain Join and Group Policy",
+        "Boot to desktop option"
+      ],
+      "specifications": {},
+      "faq": [
+        {
+          "question": "Why would someone buy Windows 8.1 today?",
+          "answer": "This is primarily for users who need to run legacy software or hardware that is only compatible with Windows 8.1. It is not recommended for general-purpose use as its support period has ended."
+        },
+        {
+          "question": "Does this product still receive security updates?",
+          "answer": "No, Microsoft ended extended support for Windows 8.1 on January 10, 2023. This operating system will no longer receive security updates."
+        }
+      ],
+      "totalReviews": 4,
+      "averageRating": 5.0,
+      "stockStatus": "IN_STOCK",
+      "customerReviews": [
+        {
+          "reviewer": "Legacy Systems LLC",
+          "rating": 5,
+          "comment": "Had to get a specific machine running for a client with old software. This key worked perfectly for a clean Win 8.1 Pro install. A real lifesaver."
+        }
+      ]
     }
   ]
 }

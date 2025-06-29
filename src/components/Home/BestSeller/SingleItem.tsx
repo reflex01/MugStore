@@ -52,7 +52,7 @@ const SingleItem = ({ item }: { item: Product }) => {
 
   // Calculate star rating
   const renderStars = () => {
-    const rating = 4.5;
+    const rating = item.averageRating || 4.5;
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -192,7 +192,7 @@ const SingleItem = ({ item }: { item: Product }) => {
           <div className="flex items-center gap-1">
             {renderStars()}
           </div>
-          <span className="text-sm text-gray-500 font-medium">({item.reviews} reviews)</span>
+          <span className="text-sm text-gray-500 font-medium">({item.totalReviews || 0} reviews)</span>
         </div>
 
         {/* Title */}

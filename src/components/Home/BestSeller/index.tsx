@@ -2,7 +2,7 @@ import React from "react";
 import SingleItem from "./SingleItem";
 import Image from "next/image";
 import Link from "next/link";
-import shopData from "@/components/Shop/shopData";
+import products from "@/contents/products.json";
 import { ArrowRight, Award, Flame, Star, Target, Zap } from "lucide-react";
 
 const BestSeller = () => {
@@ -100,7 +100,7 @@ const BestSeller = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {shopData.slice(1, 7).map((item, index) => (
+          {products.data.slice(1, 7).map((item, index) => (
             <div
               key={item.id}
               className="animate-fade-in-up"

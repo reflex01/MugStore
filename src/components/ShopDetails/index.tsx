@@ -98,7 +98,7 @@ const ShopDetails = () => {
     }));
   };
 
-  const renderStars = (rating = 4.8) => {
+  const renderStars = (rating = product?.averageRating || 4.8) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
@@ -145,137 +145,9 @@ const ShopDetails = () => {
     return null;
   };
 
-  const mockReviews = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      rating: 5,
-      date: "2024-01-15",
-      verified: true,
-      comment: "Absolutely fantastic! 🌟 The license key arrived within 2 minutes of purchase. Installation was seamless and all features work perfectly. This is exactly what I needed for my new gaming PC. Worth every penny!",
-      helpful: 47,
-      location: "New York, USA",
-      purchase: "Windows 11 Pro"
-    },
-    {
-      id: 2,
-      name: "Mike Chen",
-      rating: 5,
-      date: "2024-01-12",
-      verified: true,
-      comment: "Outstanding service! 💯 I was skeptical about buying online but this exceeded all expectations. Genuine Microsoft license, instant delivery, and excellent customer support. Activated successfully on my workstation.",
-      helpful: 35,
-      location: "Toronto, Canada",
-      purchase: "Windows 11 Home"
-    },
-    {
-      id: 3,
-      name: "Emily Rodriguez",
-      rating: 5,
-      date: "2024-01-10",
-      verified: true,
-      comment: "Perfect experience from start to finish! ⭐ The website was easy to navigate, payment was secure, and I received my license immediately. No issues with activation. Will definitely buy again for my other computers.",
-      helpful: 29,
-      location: "Los Angeles, USA",
-      purchase: "Windows 10 Pro"
-    },
-    {
-      id: 4,
-      name: "David Thompson",
-      rating: 4,
-      date: "2024-01-08",
-      verified: true,
-      comment: "Great value for money! 👍 Saved a lot compared to retail prices. The license is 100% genuine and Microsoft support confirmed it's legitimate. Minor delay in email delivery (5 minutes) but overall very satisfied.",
-      helpful: 22,
-      location: "London, UK",
-      purchase: "Windows 11 Pro"
-    },
-    {
-      id: 5,
-      name: "Lisa Wang",
-      rating: 5,
-      date: "2024-01-05",
-      verified: true,
-      comment: "Incredible service! 🚀 I needed Windows for my new laptop urgently and this was a lifesaver. Instant download, genuine license, and everything works flawlessly. Customer support answered my questions within minutes. Highly recommended!",
-      helpful: 41,
-      location: "Singapore",
-      purchase: "Windows 11 Home"
-    },
-    {
-      id: 6,
-      name: "James Miller",
-      rating: 5,
-      date: "2024-01-03",
-      verified: true,
-      comment: "Best purchase decision ever! 💪 I was tired of trial versions and decided to get a genuine license. This site delivered exactly what they promised. Fast, reliable, and authentic. All Windows updates work perfectly.",
-      helpful: 33,
-      location: "Sydney, Australia",
-      purchase: "Windows 10 Home"
-    },
-    {
-      id: 7,
-      name: "Maria Garcia",
-      rating: 5,
-      date: "2024-01-01",
-      verified: true,
-      comment: "Amazing experience! ✨ I bought this for my home office setup and it's been perfect. The license activated immediately and I received all the documentation I needed. Professional service at an unbeatable price!",
-      helpful: 26,
-      location: "Madrid, Spain",
-      purchase: "Windows 11 Pro"
-    },
-    {
-      id: 8,
-      name: "Robert Kim",
-      rating: 4,
-      date: "2023-12-28",
-      verified: true,
-      comment: "Solid purchase! 👌 The license key worked perfectly and saved me hundreds compared to Microsoft's retail price. Only minor complaint is the email formatting could be better, but the product itself is excellent.",
-      helpful: 19,
-      location: "Seoul, South Korea",
-      purchase: "Windows 10 Pro"
-    },
-    {
-      id: 9,
-      name: "Anna Petrov",
-      rating: 5,
-      date: "2023-12-25",
-      verified: true,
-      comment: "Outstanding quality! 🎯 I run a small business and needed multiple Windows licenses. This site provided excellent bulk pricing and all licenses are working perfectly across our office computers. Exceptional value!",
-      helpful: 38,
-      location: "Moscow, Russia",
-      purchase: "Windows 11 Pro x3"
-    },
-    {
-      id: 10,
-      name: "Tom Anderson",
-      rating: 5,
-      date: "2023-12-20",
-      verified: true,
-      comment: "Fantastic service! 🔥 I was building a new PC and needed Windows urgently. Found this site, made the purchase, and had my license within minutes. Installation was smooth and everything is working perfectly. Will recommend to friends!",
-      helpful: 31,
-      location: "Vancouver, Canada",
-      purchase: "Windows 11 Home"
-    }
-  ];
+  const customerReviews = product?.customerReviews || [];
 
-  const faqData = [
-    {
-      question: "How quickly will I receive my license key?",
-      answer: "License keys are delivered instantly via email within 5-10 minutes of successful payment. Check your spam folder if you don't see it in your inbox."
-    },
-    {
-      question: "Is this a genuine Microsoft license?",
-      answer: "Yes, all our licenses are 100% genuine Microsoft licenses. They come with lifetime activation and full Microsoft support."
-    },
-    {
-      question: "Can I use this on multiple computers?",
-      answer: "Each license is valid for one PC only. If you need licenses for multiple computers, please purchase additional licenses."
-    },
-    {
-      question: "What if I have installation problems?",
-      answer: "We provide free technical support via email. Our team will help you with any installation or activation issues you may encounter."
-    }
-  ];
+  const faqData = product?.faq || [];
 
   if (!product || product.title === "") {
     return (
@@ -311,8 +183,8 @@ const ShopDetails = () => {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "reviewCount": "127"
+      "ratingValue": product.averageRating?.toString() || "4.8",
+      "reviewCount": product.totalReviews?.toString() || "0"
     }
   };
 
@@ -553,7 +425,7 @@ const ShopDetails = () => {
                   {/* Customer Reviews */}
                   <div className="flex items-center justify-center gap-2 px-3 py-2 rounded-lg shadow-sm" style={{ backgroundColor: '#ffffff' }}>
                     <Star className="w-4 h-4 fill-current" style={{ color: '#eab308', fill: '#eab308' }} />
-                    <span className="font-medium" style={{ color: '#1f2937' }}>4.8/5 Rating</span>
+                    <span className="font-medium" style={{ color: '#1f2937' }}>{product.averageRating || 4.8}/5 Rating</span>
                   </div>
                   
                   {/* Support */}
@@ -601,7 +473,7 @@ const ShopDetails = () => {
                 <div>
                   <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Description</h2>
                   <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                    {getProductDescription()?.overview}
+                    {product.description || getProductDescription()?.overview}
                   </p>
                   
                   <h3 className="text-xl font-bold text-dark mb-6 flex items-center gap-2">
@@ -611,7 +483,7 @@ const ShopDetails = () => {
                     <span className="bg-gradient-to-r from-green to-blue bg-clip-text text-transparent">🌟 Premium Features</span>
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {getProductDescription()?.features.map((feature, index) => (
+                    {(product.features || getProductDescription()?.features || []).map((feature, index) => (
                       <div key={index} className="flex items-start gap-3 p-4 bg-gradient-to-r from-green-light-6 to-blue-light-5 rounded-xl border border-green-light-3 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer">
                         <div className="p-1 bg-green rounded-full">
                           <CheckCircle className="w-4 h-4 text-white" />
@@ -653,24 +525,38 @@ const ShopDetails = () => {
                     💻 System Requirements
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    {[
-                      { key: "Processor", value: "1 GHz or faster processor or SoC", color: "blue", icon: "⚡" },
-                      { key: "Memory", value: "2 GB for 64-bit OS", color: "green", icon: "🧠" },
-                      { key: "Storage", value: "20 GB for 64-bit OS", color: "orange", icon: "💾" },
-                      { key: "Graphics", value: "DirectX 9 or later with WDDM 1.0 driver", color: "teal", icon: "🎮" },
-                      { key: "Display", value: "800x600 resolution minimum", color: "blue", icon: "🖥️" },
-                      { key: "Internet", value: "Required for activation and updates", color: "green", icon: "🌐" }
-                    ].map((spec, index) => (
-                      <div key={index} className={`p-4 bg-white rounded-xl border border-${spec.color}-light-3 hover:shadow-lg transition-all duration-200 hover:scale-105`}>
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className={`p-2 bg-${spec.color} rounded-lg`}>
-                            <span className="text-white font-bold text-lg">{spec.icon}</span>
+                    {product.specifications && Object.keys(product.specifications).length > 0 ? (
+                      Object.entries(product.specifications).map(([key, value], index) => (
+                        <div key={index} className={`p-4 bg-white rounded-xl border border-blue-light-3 hover:shadow-lg transition-all duration-200 hover:scale-105`}>
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className={`p-2 bg-blue rounded-lg`}>
+                              <span className="text-white font-bold text-lg">💻</span>
+                            </div>
+                            <h4 className={`font-bold text-blue-dark capitalize`}>{key}</h4>
                           </div>
-                          <h4 className={`font-bold text-${spec.color}-dark`}>{spec.key}</h4>
+                          <p className="text-dark font-medium ml-12">{String(value)}</p>
                         </div>
-                        <p className="text-dark font-medium ml-12">{spec.value}</p>
-                      </div>
-                    ))}
+                      ))
+                    ) : (
+                      [
+                        { key: "Processor", value: "1 GHz or faster processor or SoC", color: "blue", icon: "⚡" },
+                        { key: "Memory", value: "2 GB for 64-bit OS", color: "green", icon: "🧠" },
+                        { key: "Storage", value: "20 GB for 64-bit OS", color: "orange", icon: "💾" },
+                        { key: "Graphics", value: "DirectX 9 or later with WDDM 1.0 driver", color: "teal", icon: "🎮" },
+                        { key: "Display", value: "800x600 resolution minimum", color: "blue", icon: "🖥️" },
+                        { key: "Internet", value: "Required for activation and updates", color: "green", icon: "🌐" }
+                      ].map((spec, index) => (
+                        <div key={index} className={`p-4 bg-white rounded-xl border border-${spec.color}-light-3 hover:shadow-lg transition-all duration-200 hover:scale-105`}>
+                          <div className="flex items-center gap-3 mb-2">
+                            <div className={`p-2 bg-${spec.color} rounded-lg`}>
+                              <span className="text-white font-bold text-lg">{spec.icon}</span>
+                            </div>
+                            <h4 className={`font-bold text-${spec.color}-dark`}>{spec.key}</h4>
+                          </div>
+                          <p className="text-dark font-medium ml-12">{spec.value}</p>
+                        </div>
+                      ))
+                    )}
                   </div>
                 </div>
                 
@@ -748,14 +634,14 @@ const ShopDetails = () => {
                   <h2 className="text-3xl font-bold bg-gradient-to-r from-green to-blue bg-clip-text text-transparent mb-4">⭐ Customer Reviews</h2>
                   <div className="flex items-center justify-center gap-6 mb-4">
                     <div className="flex items-center gap-2">
-                      {renderStars(4.9)}
+                      {renderStars(product.averageRating)}
                     </div>
                     <div className="text-center">
-                      <p className="text-3xl font-bold text-green-dark">4.9</p>
+                      <p className="text-3xl font-bold text-green-dark">{product.averageRating || 4.9}</p>
                       <p className="text-sm text-green font-medium">out of 5</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-2xl font-bold text-blue-dark">10,247</p>
+                      <p className="text-2xl font-bold text-blue-dark">{product.totalReviews || 0}</p>
                       <p className="text-sm text-blue font-medium">reviews</p>
                     </div>
                   </div>
@@ -781,7 +667,7 @@ const ShopDetails = () => {
 
                 {/* Reviews List */}
                 <div className="space-y-6">
-                  {mockReviews.map((review, index) => (
+                  {customerReviews.map((review, index) => (
                     <div key={review.id} className={`bg-gradient-to-r ${
                       review.rating === 5 
                         ? 'from-green-light-6 to-blue-light-5 border-green-light-3' 
@@ -792,27 +678,21 @@ const ShopDetails = () => {
                           <div className={`w-14 h-14 bg-gradient-to-r ${
                             ['from-blue-500 to-green-500', 'from-green-500 to-yellow-500', 'from-yellow-500 to-red-500', 'from-red-500 to-blue-500', 'from-purple-500 to-pink-500'][index % 5]
                           } rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
-                            {review.name.charAt(0)}
+                            {(review.reviewer || review.name || 'A').charAt(0)}
                           </div>
                           <div>
                             <div className="flex items-center gap-2 mb-2">
-                              <h4 className="font-bold text-dark text-lg">{review.name}</h4>
-                              {review.verified && (
-                                <div className="flex items-center gap-1 bg-green text-white px-3 py-1 rounded-full shadow-md">
-                                  <CheckCircle className="w-4 h-4" />
-                                  <span className="text-xs font-bold">✅ VERIFIED</span>
-                                </div>
-                              )}
+                              <h4 className="font-bold text-dark text-lg">{review.reviewer || review.name || 'Anonymous'}</h4>
+                              <div className="flex items-center gap-1 bg-green text-white px-3 py-1 rounded-full shadow-md">
+                                <CheckCircle className="w-4 h-4" />
+                                <span className="text-xs font-bold">✅ VERIFIED</span>
+                              </div>
                             </div>
                             <div className="flex items-center gap-4 mb-1">
                               <div className="flex items-center gap-1">
                                 {renderStars(review.rating)}
                               </div>
-                              <span className="text-sm text-gray-600 font-medium">{review.date}</span>
-                            </div>
-                            <div className="flex items-center gap-4 text-xs">
-                              <span className="text-blue-dark font-medium">📍 {review.location}</span>
-                              <span className="text-green-dark font-medium">🛒 {review.purchase}</span>
+                              <span className="text-sm text-gray-600 font-medium">{review.date || 'Recent'}</span>
                             </div>
                           </div>
                         </div>
@@ -830,7 +710,7 @@ const ShopDetails = () => {
                       <div className="flex items-center justify-between">
                         <button className="flex items-center gap-2 bg-white hover:bg-green-light-6 text-gray-700 hover:text-green-dark px-4 py-2 rounded-xl transition-all duration-200 hover:shadow-md border border-gray-3 hover:border-green-light-3">
                           <ThumbsUp className="w-5 h-5" />
-                          <span className="font-semibold">👍 Helpful ({review.helpful})</span>
+                          <span className="font-semibold">👍 Helpful</span>
                         </button>
                         <div className="flex items-center gap-2 text-sm text-gray-600">
                           <span className="font-medium">Was this review helpful?</span>
