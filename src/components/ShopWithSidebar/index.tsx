@@ -22,7 +22,7 @@ const ShopWithSidebar = () => {
   
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>(categoryParam ? [categoryParam] : ["Windows"]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>(categoryParam ? [categoryParam] : []);
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1'));
   const [filteredProducts, setFilteredProducts] = useState(products.data);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
@@ -34,9 +34,9 @@ const ShopWithSidebar = () => {
     const timer = setTimeout(() => {
       if (categoryParam) {
         setSelectedCategories([categoryParam]);
-        setFilteredProducts(products.data.filter(product => product.category.toLowerCase() === categoryParam.toLowerCase()));
+        setFilteredProducts(products.data.filter((product: any) => product.category.toLowerCase() === categoryParam.toLowerCase()));
       } else {
-        setFilteredProducts(products.data.filter(product => product.category === "Windows"));
+        setFilteredProducts(products.data);
       }
       setIsLoading(false);
     }, 50);
@@ -59,8 +59,8 @@ const ShopWithSidebar = () => {
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
-    const categoryQuery = selectedCategories.length > 0 ? selectedCategories[0].toLowerCase() : 'windows';
-    window.history.pushState({}, '', `?category=${categoryQuery}&page=${page}`);
+    const categoryQuery = selectedCategories.length > 0 ? `category=${selectedCategories[0].toLowerCase()}&` : '';
+    window.history.pushState({}, '', `?${categoryQuery}page=${page}`);
   };
 
   const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -77,7 +77,7 @@ const ShopWithSidebar = () => {
         setFilteredProducts(products.data);
       } else {
         setFilteredProducts(
-          products.data.filter(product => 
+          products.data.filter((product: any) => 
             newCategories.includes(product.category)
           )
         );
@@ -94,43 +94,27 @@ const ShopWithSidebar = () => {
     { label: "Old Products", value: "2" },
   ];
 
-  const categories = [
-    {
-      name: "Windows",
-      products: 14,
-      isRefined: true,
-    },
-    {
-      name: "Desktop",
-      products: 10,
-      isRefined: false,
-    },
-    {
-      name: "Laptop",
-      products: 12,
-      isRefined: false,
-    },
-    {
-      name: "Monitor",
-      products: 30,
-      isRefined: false,
-    },
-    {
-      name: "UPS",
-      products: 23,
-      isRefined: false,
-    },
-    {
-      name: "Phone",
-      products: 10,
-      isRefined: false,
-    },
-    {
-      name: "Watch",
-      products: 13,
-      isRefined: false,
-    },
-  ];
+  // Automatically generate categories from products
+  const generateCategories = () => {
+    const categoryMap = new Map();
+    
+    products.data.forEach((product: any) => {
+      const category = product.category;
+      if (categoryMap.has(category)) {
+        categoryMap.set(category, categoryMap.get(category) + 1);
+      } else {
+        categoryMap.set(category, 1);
+      }
+    });
+
+    return Array.from(categoryMap.entries()).map(([name, count]) => ({
+      name,
+      products: count,
+      isRefined: false // No default refined category
+    }));
+  };
+
+  const categories = generateCategories();
 
   const genders = [
     {
@@ -156,13 +140,13 @@ const ShopWithSidebar = () => {
     }
 
     if (productSidebar) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside, { passive: true });
     }
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  });
+  }, [productSidebar]);
 
   return (
     <>
@@ -172,7 +156,7 @@ const ShopWithSidebar = () => {
       />
       
       {/* Modern Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-8 sm:py-12 lg:py-16" style={{ minHeight: '280px' }}>
+      <section className="bg-gray-50 py-8 sm:py-12 lg:py-16" style={{ minHeight: '280px' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 
@@ -214,7 +198,7 @@ const ShopWithSidebar = () => {
             {/* Mobile Backdrop */}
             {productSidebar && (
               <div 
-                className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300"
+                className="fixed inset-0 bg-black/50 z-40 xl:hidden transition-opacity duration-300"
                 onClick={() => setProductSidebar(false)}
               />
             )}
@@ -255,7 +239,7 @@ const ShopWithSidebar = () => {
               <form onSubmit={(e) => e.preventDefault()}>
                 <div className="space-y-6">
                   {/* Active Filters Display */}
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-4 border border-blue-100">
+                  <div className="bg-blue-50 rounded-2xl p-4 border border-blue-100">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="font-semibold text-gray-900 flex items-center gap-2">
                         <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
@@ -309,7 +293,7 @@ const ShopWithSidebar = () => {
                   </div>
 
                   {/* Popular Categories Quick Access */}
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-5 border border-green-100">
+                  <div className="bg-green-50 rounded-2xl p-5 border border-green-100">
                     <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
                       <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                       🔥 Popular Categories
@@ -357,7 +341,7 @@ const ShopWithSidebar = () => {
               <div className="xl:hidden mb-6">
                 <button
                   onClick={() => setProductSidebar(!productSidebar)}
-                  className="w-full bg-white border-2 border-gray-200 rounded-2xl p-4 shadow-lg flex items-center justify-center gap-3 hover:border-blue-500 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="w-full bg-white border-2 border-gray-200 rounded-2xl p-4 shadow-lg flex items-center justify-center gap-3 hover:border-blue-500 hover:shadow-xl transition-all duration-200"
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <path stroke="#374151" strokeWidth="2" strokeLinecap="round" d="M3 6h18M7 12h10m-7 6h4"/>
@@ -426,7 +410,7 @@ const ShopWithSidebar = () => {
 
               {/* <!-- Products Grid Tab Content Start --> */}
               <div
-                className={`min-h-[600px] ${
+                className={`min-h-[600px] will-change-contents ${
                   productStyle === "grid"
                     ? "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
                     : "flex flex-col gap-6 lg:gap-8"

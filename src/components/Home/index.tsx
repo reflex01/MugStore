@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <main>
       <Hero />
+      <Categories />
       <NewArrival />
       <HowItWorks />
       <BestSeller />

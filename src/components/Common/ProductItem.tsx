@@ -92,14 +92,9 @@ const ProductItem = ({ item }: { item: Product }) => {
 
   return (
     <div 
-      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-200 ease-out overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-2"
+      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-150 ease-out overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        background: isHovered 
-          ? 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)' 
-          : '#ffffff'
-      }}
     >
       {/* Discount Badge */}
       {discountPercentage > 0 && (
@@ -121,12 +116,7 @@ const ProductItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square"
-           style={{
-             background: isHovered 
-               ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
-               : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-           }}>
+      <div className="relative overflow-hidden rounded-t-3xl bg-gray-50 aspect-square">
         <Link 
           href={`/shop-details?name=${item.name}`}
           onClick={handleProductDetails}
@@ -137,7 +127,7 @@ const ProductItem = ({ item }: { item: Product }) => {
               src={item.imgs.previews[0]} 
               alt={item.title}
               fill
-              className={`object-contain p-6 transition-transform duration-200 ease-out ${
+              className={`object-contain p-6 transition-transform duration-150 ease-out ${
                 isHovered ? 'scale-105' : 'scale-100'
               }`}
               quality={85}
@@ -152,16 +142,13 @@ const ProductItem = ({ item }: { item: Product }) => {
         </Link>
         
         {/* Quick Actions Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent transition-opacity duration-200 ease-out ${
+        <div className={`absolute inset-0 bg-black/10 backdrop-blur-sm transition-opacity duration-150 ease-out ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
             {/* View Product */}
-            <Link href={`/shop-details?name=${item.name}`}>
-              <button
-                onClick={handleProductDetails}
-                className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-all duration-150 ease-out hover:scale-105 group/btn"
-              >
+            <Link href={`/shop-details?name=${item.name}`} onClick={handleProductDetails}>
+              <button className="p-3 bg-white rounded-full shadow-lg hover:bg-gray-50 transition-all duration-150 ease-out hover:scale-105 group/btn">
                 <Eye className="w-5 h-5 text-gray-700 group-hover/btn:text-blue-600" />
               </button>
             </Link>
@@ -170,17 +157,14 @@ const ProductItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-2 px-6 py-3 rounded-full shadow-xl transition-all duration-150 ease-out hover:scale-105 disabled:opacity-75 font-semibold"
-              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+              className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-xl transition-all duration-150 ease-out hover:scale-105 disabled:opacity-75 font-semibold"
             >
               {isAddingToCart ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
-                <ShoppingBag className="w-5 h-5" style={{ color: '#ffffff' }} />
+                <ShoppingBag className="w-5 h-5" />
               )}
-              <span className="font-medium" style={{ color: '#ffffff' }}>
+              <span className="font-medium">
                 {isAddingToCart ? 'Adding...' : 'Add to Cart'}
               </span>
             </button>
@@ -199,11 +183,8 @@ const ProductItem = ({ item }: { item: Product }) => {
         </div>
 
         {/* Title */}
-        <h3 
-          className="font-semibold text-lg text-gray-800 hover:text-blue-600 transition-colors duration-200 mb-3 line-clamp-2 cursor-pointer"
-          onClick={() => handleProductDetails()}
-        >
-          <Link href={`/shop-details?name=${item.name}`} className="hover:underline">
+        <h3 className="font-semibold text-lg text-gray-800 hover:text-blue-600 transition-colors duration-200 mb-3 line-clamp-2">
+          <Link href={`/shop-details?name=${item.name}`} onClick={handleProductDetails} className="hover:underline cursor-pointer">
             {item.title}
           </Link>
         </h3>
@@ -224,12 +205,9 @@ const ProductItem = ({ item }: { item: Product }) => {
           {/* Quick Add Button (Mobile) */}
           <button
             onClick={handleAddToCart}
-            className="md:hidden p-3 rounded-lg transition-colors duration-200 shadow-sm"
-            style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+            className="md:hidden p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors duration-200 shadow-sm"
           >
-            <Plus className="w-5 h-5" style={{ color: '#ffffff' }} />
+            <Plus className="w-5 h-5" />
           </button>
         </div>
 

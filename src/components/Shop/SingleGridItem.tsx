@@ -93,14 +93,9 @@ const SingleGridItem = ({ item }: { item: Product }) => {
 
   return (
     <div 
-      className="group relative bg-white rounded-2xl lg:rounded-3xl shadow-md lg:shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-1 lg:hover:-translate-y-2"
+      className="group relative bg-white rounded-2xl lg:rounded-3xl shadow-md lg:shadow-lg hover:shadow-2xl transition-all duration-200 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-purple-200 transform hover:-translate-y-1 lg:hover:-translate-y-2"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        background: isHovered 
-          ? 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%)' 
-          : '#ffffff'
-      }}
     >
       {/* Discount Badge */}
       {discountPercentage > 0 && (
@@ -122,12 +117,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-2xl lg:rounded-t-3xl bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 aspect-square"
-           style={{
-             background: isHovered 
-               ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
-               : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-           }}>
+      <div className="relative overflow-hidden rounded-t-2xl lg:rounded-t-3xl bg-gray-50 aspect-square">
         <Link 
           href={`/shop-details?name=${item.name}`}
           onClick={handleProductDetails}
@@ -139,11 +129,9 @@ const SingleGridItem = ({ item }: { item: Product }) => {
               alt={item.title}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              priority={true}
-              placeholder="blur"
-              blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
-              className={`object-contain p-6 transition-transform duration-500 ${
-                isHovered ? 'scale-110' : 'scale-100'
+              loading="lazy"
+              className={`object-contain p-6 transition-transform duration-200 ${
+                isHovered ? 'scale-105' : 'scale-100'
               }`}
               style={{ width: '100%', height: '100%' }}
             />
@@ -155,7 +143,7 @@ const SingleGridItem = ({ item }: { item: Product }) => {
         </Link>
         
         {/* Quick Actions Overlay - Desktop Only */}
-        <div className={`hidden lg:block absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-transparent backdrop-blur-sm transition-all duration-300 ${
+        <div className={`hidden lg:block absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-200 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
@@ -173,17 +161,14 @@ const SingleGridItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-2 px-6 py-3 rounded-full shadow-xl transition-all duration-300 hover:scale-110 disabled:opacity-75 font-semibold"
-              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+              className="flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-xl transition-all duration-200 hover:scale-105 disabled:opacity-75 font-semibold"
             >
               {isAddingToCart ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
                 <ShoppingBag className="w-5 h-5" style={{ color: '#ffffff' }} />
               )}
-              <span className="font-medium" style={{ color: '#ffffff' }}>
+              <span className="font-medium text-white">
                 {isAddingToCart ? 'Adding...' : 'Add to Cart'}
               </span>
             </button>
@@ -238,17 +223,14 @@ const SingleGridItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-1.5 px-3 py-2.5 rounded-xl transition-all duration-300 shadow-lg font-medium text-sm"
-              style={{ backgroundColor: '#2563eb', color: '#ffffff' }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#1d4ed8'}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#2563eb'}
+              className="flex items-center gap-1.5 px-3 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-xl transition-all duration-200 shadow-lg font-medium text-sm"
             >
               {isAddingToCart ? (
                 <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
               ) : (
                 <ShoppingBag className="w-4 h-4" style={{ color: '#ffffff' }} />
               )}
-              <span className="hidden sm:inline" style={{ color: '#ffffff' }}>
+              <span className="hidden sm:inline text-white">
                 {isAddingToCart ? 'Adding...' : 'Add'}
               </span>
             </button>
