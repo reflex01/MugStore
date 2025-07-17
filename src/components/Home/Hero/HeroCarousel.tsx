@@ -99,6 +99,8 @@ const HeroCarousal = () => {
                   alt="Windows 11 Pro"
                   width={320}
                   height={320}
+                  priority={true}
+                  fetchPriority="high"
                   className="relative z-10 object-contain drop-shadow-2xl"
                 />
               </div>

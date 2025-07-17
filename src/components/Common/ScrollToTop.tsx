@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,20 +13,31 @@ export default function ScrollToTop() {
     });
   };
 
+  const toggleVisibility = useCallback(() => {
+    requestAnimationFrame(() => {
+      const scrollY = window.pageYOffset;
+      setIsVisible(scrollY > 300);
+    });
+  }, []);
+
   useEffect(() => {
-    // Button is displayed after scrolling for 500 pixels
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
+    // Throttle scroll events for better performance
+    let ticking = false;
+    
+    const optimizedScrollHandler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          toggleVisibility();
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", optimizedScrollHandler, { passive: true });
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    return () => window.removeEventListener("scroll", optimizedScrollHandler);
+  }, [toggleVisibility]);
 
   return (
     <>

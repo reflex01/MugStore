@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { menuData } from "./menuData";
 import Dropdown from "./Dropdown";
@@ -22,18 +22,35 @@ const Header = () => {
     openCartModal();
   };
 
-  // Sticky menu
-  const handleStickyMenu = () => {
-    if (window.scrollY >= 80) {
-      setStickyMenu(true);
-    } else {
-      setStickyMenu(false);
-    }
-  };
+  // Sticky menu with optimized scroll handling
+  const handleStickyMenu = useCallback(() => {
+    requestAnimationFrame(() => {
+      const scrollY = window.scrollY;
+      setStickyMenu(scrollY >= 80);
+    });
+  }, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleStickyMenu);
-  });
+    // Throttle scroll events for better performance
+    let ticking = false;
+    
+    const optimizedScrollHandler = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleStickyMenu();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", optimizedScrollHandler, { passive: true });
+    
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener("scroll", optimizedScrollHandler);
+    };
+  }, [handleStickyMenu]);
 
 
   return (

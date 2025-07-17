@@ -27,6 +27,7 @@ const ShopWithSidebar = () => {
   const [filteredProducts, setFilteredProducts] = useState(products.data);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -131,10 +132,24 @@ const ShopWithSidebar = () => {
     },
   ];
 
+  // Cache window size to avoid forced reflows
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1280);
+    };
+    
+    checkIsDesktop();
+    window.addEventListener("resize", checkIsDesktop);
+    
+    return () => {
+      window.removeEventListener("resize", checkIsDesktop);
+    };
+  }, []);
+
   useEffect(() => {
     // closing sidebar while clicking outside (desktop only)
     function handleClickOutside(event: MouseEvent) {
-      if (window.innerWidth >= 1280 && !(event.target as Element).closest(".sidebar-content")) {
+      if (isDesktop && !(event.target as Element).closest(".sidebar-content")) {
         setProductSidebar(false);
       }
     }
@@ -146,7 +161,7 @@ const ShopWithSidebar = () => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [productSidebar]);
+  }, [productSidebar, isDesktop]);
 
   return (
     <>
