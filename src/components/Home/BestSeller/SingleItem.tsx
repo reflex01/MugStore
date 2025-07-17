@@ -87,14 +87,9 @@ const SingleItem = ({ item }: { item: Product }) => {
 
   return (
     <div 
-      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-indigo-200 transform hover:-translate-y-3"
+      className="group relative bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-200 overflow-hidden border border-gray-200 hover:border-transparent hover:ring-2 hover:ring-indigo-200 transform hover:-translate-y-3"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        background: isHovered 
-          ? 'linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #eff6ff 100%)' 
-          : '#ffffff'
-      }}
     >
       {/* Best Seller Badge */}
       <div style={{
@@ -129,12 +124,7 @@ const SingleItem = ({ item }: { item: Product }) => {
       </button>
 
       {/* Product Image */}
-      <div className="relative overflow-hidden rounded-t-3xl aspect-square bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 p-8"
-           style={{
-             background: isHovered 
-               ? 'linear-gradient(135deg, #eff6ff 0%, #f3e8ff 50%, #fdf2f8 100%)' 
-               : 'linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%)'
-           }}>
+      <div className="relative overflow-hidden rounded-t-3xl aspect-square bg-gray-50 p-8">
         <Link 
           href={`/shop-details?name=${item.name}`}
           onClick={handleProductDetails}
@@ -145,14 +135,14 @@ const SingleItem = ({ item }: { item: Product }) => {
             alt={item.title}
             width={280}
             height={280}
-            className={`w-full h-full object-contain transition-transform duration-500 ${
-              isHovered ? 'scale-110' : 'scale-100'
+            className={`w-full h-full object-contain transition-transform duration-200 ${
+              isHovered ? 'scale-105' : 'scale-100'
             }`}
           />
         </Link>
         
         {/* Quick Actions Overlay */}
-        <div className={`absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent backdrop-blur-sm transition-all duration-300 ${
+        <div className={`absolute inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-200 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
           <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
@@ -160,7 +150,7 @@ const SingleItem = ({ item }: { item: Product }) => {
             <Link href={`/shop-details?name=${item.name}`}>
               <button
                 onClick={handleProductDetails}
-                className="p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-110 group/btn"
+                className="p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all duration-200 hover:scale-105 group/btn"
               >
                 <Eye style={{width: '18px', height: '18px', color: '#4f46e5'}} />
               </button>
@@ -170,7 +160,7 @@ const SingleItem = ({ item }: { item: Product }) => {
             <button
               onClick={handleAddToCart}
               disabled={isAddingToCart}
-              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-full shadow-xl hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-110 disabled:opacity-75 font-semibold"
+              className="flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-full shadow-xl transition-all duration-200 hover:scale-105 disabled:opacity-75 font-semibold"
             >
               {isAddingToCart ? (
                 <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />

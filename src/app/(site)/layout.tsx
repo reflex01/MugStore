@@ -15,6 +15,7 @@ import PreviewSliderModal from "@/components/Common/PreviewSlider";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
 import PreLoader from "@/components/Common/PreLoader";
+import { organizationSchema, websiteSchema, storeSchema } from '@/config/seo';
 
 export default function RootLayout({
   children,
@@ -25,6 +26,27 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        {/* Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(storeSchema),
+          }}
+        />
+      </head>
       <body>
         {loading ? (
           <PreLoader />
