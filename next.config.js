@@ -29,7 +29,6 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     externalDir: true,
-    optimizeCss: true,
   },
   
   // Headers for better caching and performance
