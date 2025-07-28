@@ -146,6 +146,7 @@ const Checkout = () => {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center rounded-md border border-gray-3 w-max">
                             <button
+                              type="button"
                               onClick={() => handleDecreaseQuantity(item.id, item.quantity)}
                               aria-label="decrease quantity"
                               className="flex items-center justify-center w-8 h-8 ease-out duration-200 hover:text-blue"
@@ -168,6 +169,7 @@ const Checkout = () => {
                               {item.quantity}
                             </span>
                             <button
+                              type="button"
                               onClick={() => handleIncreaseQuantity(item.id, item.quantity)}
                               aria-label="increase quantity"
                               className="flex items-center justify-center w-8 h-8 ease-out duration-200 hover:text-blue"
