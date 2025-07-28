@@ -1,25 +1,80 @@
 "use client";
 import React, { useState } from "react";
-import { useAppSelector } from "@/redux/store";
-import { selectCartItems, selectTotalPrice } from "@/redux/features/cart-slice";
+import { useAppSelector, useAppDispatch } from "@/redux/store";
+import { selectCartItems, selectTotalPrice, updateCartItemQuantity } from "@/redux/features/cart-slice";
 import Breadcrumb from "../Common/Breadcrumb";
 import PaymentMethod from "./PaymentMethod";
 
 const Checkout = () => {
   const cartItems = useAppSelector(selectCartItems);
   const totalPrice = useAppSelector(selectTotalPrice);
-  const [paymentMethod, setPaymentMethod] = useState("bank");
+  const dispatch = useAppDispatch();
+  const [paymentMethod, setPaymentMethod] = useState("paypal");
   const [email, setEmail] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleIncreaseQuantity = (itemId: number, currentQuantity: number) => {
+    dispatch(updateCartItemQuantity({ id: itemId, quantity: currentQuantity + 1 }));
+  };
+
+  const handleDecreaseQuantity = (itemId: number, currentQuantity: number) => {
+    if (currentQuantity > 1) {
+      dispatch(updateCartItemQuantity({ id: itemId, quantity: currentQuantity - 1 }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically:
-    // 1. Validate email
-    // 2. Process the payment
-    // 3. Send digital product to email
-    // 4. Clear the cart
-    // 5. Redirect to success page
-    console.log("Processing checkout...");
+    
+    if (!email) {
+      alert("Please enter your email address");
+      return;
+    }
+
+    if (paymentMethod === "stripe") {
+      await handleStripeCheckout();
+    } else {
+      // Handle other payment methods (PayPal, etc.)
+      console.log("Processing checkout with:", paymentMethod);
+      // Here you would typically:
+      // 1. Process the payment
+      // 2. Send digital product to email
+      // 3. Clear the cart
+      // 4. Redirect to success page
+    }
+  };
+
+  const handleStripeCheckout = async () => {
+    try {
+      const checkoutData = {
+        product: "product",
+        price: totalPrice, // Send price in dollars, server will convert to cents
+        order_id: `order_${Date.now()}`,
+        currency: "USD"
+      };
+
+      console.log('Sending checkout data:', checkoutData);
+
+      const response = await fetch('/api/stripe-checkout', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(checkoutData),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to create checkout session: ${response.status}`);
+      }
+
+      const result = await response.json();
+      
+      if (result.url) {
+        window.location.href = result.url;
+      }
+    } catch (error) {
+      console.error('Checkout error:', error);
+      alert('Failed to process payment. Please try again.');
+    }
   };
 
   return (
@@ -78,12 +133,64 @@ const Checkout = () => {
 
                     {/* <!-- product items --> */}
                     {cartItems.map((item) => (
-                      <div key={item.id} className="flex items-center justify-between py-5 border-b border-gray-3">
-                        <div>
-                          <p className="text-dark">{item.title} x {item.quantity}</p>
+                      <div key={item.id} className="py-5 border-b border-gray-3">
+                        <div className="flex items-center justify-between mb-3">
+                          <div>
+                            <p className="text-dark font-medium">{item.title}</p>
+                            <p className="text-sm text-gray-500">${item.discountedPrice} each</p>
+                          </div>
+                          <div>
+                            <p className="text-dark text-right font-medium">${(item.discountedPrice * item.quantity).toFixed(2)}</p>
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-dark text-right">${(item.discountedPrice * item.quantity).toFixed(2)}</p>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center rounded-md border border-gray-3 w-max">
+                            <button
+                              onClick={() => handleDecreaseQuantity(item.id, item.quantity)}
+                              aria-label="decrease quantity"
+                              className="flex items-center justify-center w-8 h-8 ease-out duration-200 hover:text-blue"
+                            >
+                              <svg
+                                className="fill-current"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.33301 10.0001C3.33301 9.53984 3.7061 9.16675 4.16634 9.16675H15.833C16.2932 9.16675 16.6663 9.53984 16.6663 10.0001C16.6663 10.4603 16.2932 10.8334 15.833 10.8334H4.16634C3.7061 10.8334 3.33301 10.4603 3.33301 10.0001Z"
+                                  fill=""
+                                />
+                              </svg>
+                            </button>
+                            <span className="flex items-center justify-center w-12 h-8 border-x border-gray-4 text-sm">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => handleIncreaseQuantity(item.id, item.quantity)}
+                              aria-label="increase quantity"
+                              className="flex items-center justify-center w-8 h-8 ease-out duration-200 hover:text-blue"
+                            >
+                              <svg
+                                className="fill-current"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 20 20"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M3.33301 10C3.33301 9.5398 3.7061 9.16671 4.16634 9.16671H15.833C16.2932 9.16671 16.6663 9.5398 16.6663 10C16.6663 10.4603 16.2932 10.8334 15.833 10.8334H4.16634C3.7061 10.8334 3.33301 10.4603 3.33301 10Z"
+                                  fill=""
+                                />
+                                <path
+                                  d="M9.99967 16.6667C9.53944 16.6667 9.16634 16.2936 9.16634 15.8334L9.16634 4.16671C9.16634 3.70647 9.53944 3.33337 9.99967 3.33337C10.4599 3.33337 10.833 3.70647 10.833 4.16671L10.833 15.8334C10.833 16.2936 10.4599 16.6667 9.99967 16.6667Z"
+                                  fill=""
+                                />
+                              </svg>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -106,12 +213,15 @@ const Checkout = () => {
                 <PaymentMethod onMethodChange={setPaymentMethod} />
 
                 {/* <!-- checkout button --> */}
-                <button
-                  type="submit"
-                  className="w-full flex justify-center font-medium text-white bg-blue py-3 px-6 rounded-md ease-out duration-200 hover:bg-blue-dark mt-7.5"
-                >
-                  Process to Checkout
-                </button>
+                <div className="mt-7.5">
+                  <button
+                    type="submit"
+                    className="w-full rounded-md py-3 px-6 text-white font-medium bg-blue hover:bg-blue-dark transition-colors duration-200"
+                  >
+                    Complete Order
+                  </button>
+                </div>
+
               </div>
             </div>
           </form>

@@ -7,11 +7,13 @@ interface PaymentMethodProps {
 
 const PaymentMethod: React.FC<PaymentMethodProps> = ({ onMethodChange }) => {
   const [payment, setPayment] = React.useState("paypal");
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handlePaymentChange = (method: string) => {
     setPayment(method);
     onMethodChange(method);
   };
+
 
   return (
     <div className="bg-white shadow-1 rounded-[10px] mt-7.5">
@@ -102,6 +104,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = ({ onMethodChange }) => {
             </div>
           </label>
         </div>
+        
       </div>
     </div>
   );
