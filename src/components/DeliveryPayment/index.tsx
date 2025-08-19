@@ -24,7 +24,7 @@ const DeliveryPayment = () => {
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
               Experience lightning-fast digital delivery and secure payment processing. 
-              Get your software activation keys delivered directly to your email within minutes!
+              Get your premium mugs delivered directly to your door with fast shipping!
             </p>
 
             {/* Quick Stats */}
@@ -58,7 +58,7 @@ const DeliveryPayment = () => {
               How Digital Delivery Works
             </h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Our automated system ensures fast and reliable delivery of your software activation keys.
+              Our reliable shipping partners ensure fast and secure delivery of your premium mugs.
             </p>
           </div>
 
@@ -126,7 +126,7 @@ const DeliveryPayment = () => {
               Delivery Timeframes
             </h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Understanding when you&apos;ll receive your software activation keys.
+              Understanding when you&apos;ll receive your premium mugs.
             </p>
           </div>
 
@@ -433,7 +433,7 @@ const DeliveryPayment = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="bg-gradient-to-br from-green-light-6 to-green-light-5 p-6 rounded-xl">
-                <h4 className="font-bold text-dark mb-3">How fast will I receive my software keys?</h4>
+                <h4 className="font-bold text-dark mb-3">How fast will I receive my mugs?</h4>
                 <p className="text-gray-6">Most orders are delivered within 5 minutes of payment confirmation. In some cases, it may take up to 8 hours for manual verification or during high-demand periods.</p>
               </div>
 
@@ -473,7 +473,7 @@ const DeliveryPayment = () => {
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              Ready to Get Your Software Keys?
+              Ready to Get Your Premium Mugs?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Experience our fast delivery and secure payment process. Get your activation keys within minutes!

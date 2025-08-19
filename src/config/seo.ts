@@ -1,32 +1,32 @@
 // Page-specific SEO configurations
 export const pageSEOConfigs = {
   home: {
-    title: 'Premium Software Store - Genuine Microsoft Products & Digital Licenses',
-    description: 'Shop genuine Microsoft Windows, Office, and premium software with instant delivery. 100% authentic licenses, lifetime support, and competitive prices.',
+    title: 'MugsStore - Premium Coffee Mugs & Drinkware Collection',
+    description: 'Shop premium coffee mugs, tea cups, and drinkware with fast shipping. High-quality ceramic mugs, unique designs, and competitive prices.',
     canonical: '/',
     openGraph: {
-      title: 'Premium Software Store - Genuine Microsoft Products',
-      description: 'Shop genuine Microsoft Windows, Office, and premium software with instant delivery. 100% authentic licenses, lifetime support, and competitive prices.',
+      title: 'MugsStore - Premium Coffee Mugs & Drinkware',
+      description: 'Shop premium coffee mugs, tea cups, and drinkware with fast shipping. High-quality ceramic mugs, unique designs, and competitive prices.',
       url: '/',
     },
   },
   shop: {
-    title: 'Shop All Software Products',
-    description: 'Browse our complete collection of genuine Microsoft products, digital licenses, and premium software. All products come with instant delivery and lifetime support.',
+    title: 'Shop All Mugs & Drinkware',
+    description: 'Browse our complete collection of premium mugs, coffee cups, and drinkware. All products come with fast shipping and quality guarantee.',
     canonical: '/shop-with-sidebar',
     openGraph: {
-      title: 'Shop All Software Products - Premium Software Store',
-      description: 'Browse our complete collection of genuine Microsoft products, digital licenses, and premium software. All products come with instant delivery and lifetime support.',
+      title: 'Shop All Mugs & Drinkware - MugsStore',
+      description: 'Browse our complete collection of premium mugs, coffee cups, and drinkware. All products come with fast shipping and quality guarantee.',
       url: '/shop-with-sidebar',
     },
   },
   productDetails: (productName: string, price: number, description: string) => ({
-    title: `${productName} - Digital License`,
-    description: `Buy ${productName} digital license for $${price}. Instant delivery, genuine product key, and lifetime support included.`,
+    title: `${productName} - Premium Mug`,
+    description: `Buy ${productName} premium mug for $${price}. Fast shipping, high-quality ceramic, and satisfaction guarantee included.`,
     canonical: `/shop-details?name=${encodeURIComponent(productName)}`,
     openGraph: {
-      title: `${productName} - Digital License | Premium Software Store`,
-      description: `Buy ${productName} digital license for $${price}. Instant delivery, genuine product key, and lifetime support included.`,
+      title: `${productName} - Premium Mug | MugsStore`,
+      description: `Buy ${productName} premium mug for $${price}. Fast shipping, high-quality ceramic, and satisfaction guarantee included.`,
       url: `/shop-details?name=${encodeURIComponent(productName)}`,
       type: 'product',
     },
@@ -37,8 +37,8 @@ export const pageSEOConfigs = {
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Premium Software Store',
-  description: 'Genuine Microsoft products and digital licenses with instant delivery',
+  name: 'MugsStore',
+  description: 'Premium coffee mugs and drinkware with fast shipping',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
   logo: {
     '@type': 'ImageObject',
@@ -52,15 +52,15 @@ export const organizationSchema = {
     availableLanguage: 'English',
   },
   sameAs: [
-    'https://twitter.com/premiumsoftware',
-    'https://facebook.com/premiumsoftware',
+    'https://twitter.com/mugsstore',
+    'https://facebook.com/mugsstore',
   ],
 };
 
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Premium Software Store',
+  name: 'MugsStore',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
   potentialAction: {
     '@type': 'SearchAction',
@@ -75,11 +75,11 @@ export const websiteSchema = {
 export const storeSchema = {
   '@context': 'https://schema.org',
   '@type': 'Store',
-  name: 'Premium Software Store',
-  description: 'Digital software store specializing in genuine Microsoft products',
+  name: 'MugsStore',
+  description: 'Premium mug store specializing in high-quality coffee mugs and drinkware',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com',
   image: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://yourdomain.com'}/images/store-image.jpg`,
-  priceRange: '$19 - $499',
+  priceRange: '$1 - $25',
   paymentAccepted: ['Credit Card', 'PayPal', 'Bitcoin'],
   currenciesAccepted: 'USD',
   openingHoursSpecification: {

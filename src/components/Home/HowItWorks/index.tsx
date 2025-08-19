@@ -5,7 +5,7 @@ const HowItWorks = () => {
     {
       number: "1",
       title: "Add a product to the shopping cart",
-      description: "Use the quick browsing function to search for the software you need. Make your selection and add to your cart.",
+      description: "Use the quick browsing function to search for the perfect mug. Make your selection and add to your cart.",
       icon: (
         <svg className="w-12 h-12 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17M17 13v4a2 2 0 01-2 2H9a2 2 0 01-2-2v-4m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01" />
@@ -26,8 +26,8 @@ const HowItWorks = () => {
     },
     {
       number: "3",
-      title: "Receive activation key & download link in mailbox", 
-      description: "No frustrating shipping delays. Instead, get a download link in your mailbox. Install and start using your product right away.",
+      title: "Receive your mug with fast shipping", 
+      description: "Fast and secure shipping to your door. Track your order and receive your premium mug ready to enjoy.",
       icon: (
         <svg className="w-12 h-12 text-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -42,10 +42,10 @@ const HowItWorks = () => {
       <div className="max-w-[1200px] w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="font-bold text-dark text-2xl lg:text-3xl xl:text-4xl mb-4">
-            Download your software in seconds
+            Get your perfect mug in days
           </h2>
           <p className="text-dark-3 text-lg max-w-2xl mx-auto">
-            All Good Keys has made the process of software download as easy as 1-2-3
+            MugsStore has made the process of mug shopping as easy as 1-2-3
           </p>
         </div>
 
@@ -103,7 +103,7 @@ const HowItWorks = () => {
               href="/shop-without-sidebar"
               className="inline-flex items-center px-6 py-3 bg-blue hover:bg-blue-dark text-white rounded-lg font-medium transition-all duration-300 hover:scale-105"
             >
-              Browse Software
+              Browse Mugs
               <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>

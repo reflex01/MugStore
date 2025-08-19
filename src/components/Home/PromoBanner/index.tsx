@@ -16,15 +16,15 @@ const PromoBanner = () => {
             </h2>
 
             <p className="max-w-[400px]">
-              All Good Keys aims to simplify the software licensing process and provide customers of all needs,
-              businesses and individuals alike, a comprehensive collection of software from major manufacturers. In
-              our software shop, you can order general PC/MAC software, antivirus programs, Microsoft Office and
-              servers with the corresponding license at excellent and affordable prices.
+              MugsStore aims to simplify the mug shopping process and provide customers of all needs,
+              businesses and individuals alike, a comprehensive collection of mugs from major manufacturers. In
+              our mug shop, you can order ceramic mugs, coffee cups, tea mugs, and drinkware
+              with excellent quality at affordable prices.
             </p>
 
             <p className="mt-4 max-w-[400px]">
-              We also know our products inside out as we are highly experienced technicians who can solve any
-              software related issue in a quick timely manner simply contact our friendly technical support team
+              We also know our products inside out as we are highly experienced professionals who can solve any
+              mug-related question in a quick timely manner simply contact our friendly customer support team
               anytime via chat or email.
             </p>
 

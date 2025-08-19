@@ -605,7 +605,7 @@ const ActivateOfficeByPhone = () => {
                     <h4 className="text-lg font-bold text-dark">100% Activation Guarantee</h4>
                   </div>
                   <p className="text-gray-6 max-w-2xl mx-auto">
-                    We guarantee successful activation of your Office software or provide a full refund. 
+                    We guarantee successful delivery of your premium mugs or provide a full refund. 
                     Your satisfaction and productivity are our top priorities.
                   </p>
                 </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const actionData = [
   {
-    title: "Browse All Software",
+    title: "Browse All Mugs",
     description: "200+ products available",
     icon: (
       <svg className="w-8 h-8 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -96,7 +96,7 @@ const HeroFeature = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <span className="text-sm font-medium text-dark">
-              Get your software keys instantly after purchase
+              Get your mugs shipped fast after purchase
             </span>
           </div>
         </div>

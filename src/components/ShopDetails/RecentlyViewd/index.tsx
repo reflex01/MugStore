@@ -113,7 +113,17 @@ const RecentlyViewdItems = () => {
           >
             {products.data.map((item, key) => (
               <SwiperSlide key={key}>
-                <ProductItem item={item} />
+                <ProductItem 
+                  item={{ 
+                    title: item.title,
+                    name: item.name,
+                    price: item.price_before, 
+                    discountedPrice: item.price_after, 
+                    id: key, 
+                    category: "default", 
+                    description: item.description
+                  }} 
+                />
               </SwiperSlide>
             ))}
           </Swiper>

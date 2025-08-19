@@ -9,7 +9,7 @@ const TrustBadges = () => {
         </svg>
       ),
       title: "100% Authentic",
-      description: "Genuine software licenses from official manufacturers",
+      description: "Premium quality mugs from trusted manufacturers",
       bgColor: "bg-green-light-6"
     },
     {
@@ -61,7 +61,7 @@ const TrustBadges = () => {
               Why Choose Us?
             </h2>
             <p className="text-dark-3 text-lg max-w-2xl mx-auto">
-              Join thousands of satisfied customers who trust us for their software needs
+              Join thousands of satisfied customers who trust us for their drinkware needs
             </p>
           </div>
 

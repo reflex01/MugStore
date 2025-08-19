@@ -39,8 +39,8 @@ const Hero = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-dark text-lg sm:text-xl mb-3 leading-tight">
                       <a href="#" className="hover:text-blue transition-colors"> 
-                        Windows 11 Pro<br />
-                        <span className="text-base font-normal text-dark-4">(5 PC License)</span>
+                        Corporate Mug<br />
+                        <span className="text-base font-normal text-dark-4">(Tall Profile Design)</span>
                       </a>
                     </h3>
 
@@ -50,13 +50,13 @@ const Hero = () => {
                       </p>
                       <div className="flex items-center gap-3">
                         <span className="font-bold text-2xl text-red">
-                          $89
+                          $1.91
                         </span>
                         <span className="font-medium text-lg text-dark-4 line-through">
-                          $199
+                          $1.59
                         </span>
                         <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-light-6 text-green text-xs font-bold">
-                          55% OFF
+                          20% OFF
                         </span>
                       </div>
                     </div>
@@ -64,8 +64,8 @@ const Hero = () => {
 
                   <div className="flex-shrink-0">
                     <Image
-                      src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
-                      alt="Windows 11 Pro"
+                      src="https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/2/f/2fe7507b8530e128119d53112ad06300ac28f1dc_Corporate_Black_black.jpg"
+                      alt="Corporate Mug"
                       width={80}
                       height={100}
                       className="object-contain"
@@ -88,8 +88,8 @@ const Hero = () => {
                   <div className="flex-1">
                     <h3 className="font-bold text-dark text-lg sm:text-xl mb-3 leading-tight">
                       <a href="#" className="hover:text-blue transition-colors"> 
-                        Microsoft Office 2021<br />
-                        <span className="text-base font-normal text-dark-4">Professional Plus</span>
+                        Atlantic Mug<br />
+                        <span className="text-base font-normal text-dark-4">Earthenware Premium</span>
                       </a>
                     </h3>
 
@@ -99,13 +99,13 @@ const Hero = () => {
                       </p>
                       <div className="flex items-center gap-3">
                         <span className="font-bold text-2xl text-red">
-                          $59
+                          $1.99
                         </span>
                         <span className="font-medium text-lg text-dark-4 line-through">
-                          $149
+                          $1.66
                         </span>
                         <span className="inline-flex items-center px-2 py-1 rounded-md bg-green-light-6 text-green text-xs font-bold">
-                          60% OFF
+                          20% OFF
                         </span>
                       </div>
                     </div>
@@ -113,8 +113,8 @@ const Hero = () => {
 
                   <div className="flex-shrink-0">
                     <Image
-                      src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/office-21-pro-plus-100x100_qpykty.png"
-                      alt="Microsoft Office"
+                      src="https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/e/5/e5f4e7d6967c6fe5965d5a1436227422159a798e_Atlantic_White_white.jpg"
+                      alt="Atlantic Mug"
                       width={80}
                       height={100}
                       className="object-contain"

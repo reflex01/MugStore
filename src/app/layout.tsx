@@ -1,16 +1,16 @@
 "use client";
 import { useState, useEffect } from "react";
-import "../css/euclid-circular-a-font.css";
-import "../css/style.css";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import "./css/euclid-circular-a-font.css";
+import "./css/style.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-import { ModalProvider } from "../context/QuickViewModalContext";
-import { CartModalProvider } from "../context/CartSidebarModalContext";
+import { ModalProvider } from "./context/QuickViewModalContext";
+import { CartModalProvider } from "./context/CartSidebarModalContext";
 import { ReduxProvider } from "@/redux/provider";
 import QuickViewModal from "@/components/Common/QuickViewModal";
 import CartSidebarModal from "@/components/Common/CartSidebarModal";
-import { PreviewSliderProvider } from "../context/PreviewSliderContext";
+import { PreviewSliderProvider } from "./context/PreviewSliderContext";
 import PreviewSliderModal from "@/components/Common/PreviewSlider";
 
 import ScrollToTop from "@/components/Common/ScrollToTop";
@@ -51,13 +51,13 @@ export default function RootLayout({
         />
         
         {/* DNS Prefetch for external resources */}
-        <link rel="dns-prefetch" href="//res.cloudinary.com" />
-        <link rel="preconnect" href="https://res.cloudinary.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//www.mugstore.co.uk" />
+        <link rel="preconnect" href="https://www.mugstore.co.uk" crossOrigin="anonymous" />
         
         {/* Preload LCP Image */}
         <link
           rel="preload"
-          href="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
+          href="https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/b/f/bff9b66227ca7b813a56389057645728a1c34c01_Cambridge_Midnight_Blue_midnight_blue.jpg"
           as="image"
           fetchPriority="high"
         />

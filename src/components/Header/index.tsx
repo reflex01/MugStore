@@ -86,7 +86,7 @@ const Header = () => {
                     type="search"
                     name="search"
                     id="search"
-                    placeholder="Search for software, licenses, and more..."
+                    placeholder="Search for mugs, coffee cups, and more..."
                     autoComplete="off"
                     className="w-full rounded-lg bg-gray-1 border border-gray-3 py-3 pl-4 pr-12 outline-none focus:border-blue focus:bg-white transition-all duration-200 text-sm"
                   />

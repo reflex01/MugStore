@@ -3,198 +3,192 @@ import { Product } from "@/types/product";
 const shopData: Product[] = [
   {
     id: 1,
-    name: "windows-10-home",
-    title: "Windows 10 Home",
-    price: 119.99,
-    discountedPrice: 99.99,
-    reviews: 4.5,
-    category: "Windows",
-    description: "Windows 10 Home is a genuine Microsoft Windows license key that provides you with a legitimate copy of the Windows operating system. Features include digital download link, instant email delivery, and lifetime activation for 1 PC.",
+    name: "cambridge-mug",
+    title: "Cambridge Mug",
+    price: 1.99,
+    discountedPrice: 1.66,
+    reviews: 4.8,
+    averageRating: 4.8,
+    totalReviews: 127,
+    category: "mugs",
+    description: "Straight-sided office mug with generous print area. Capacity 330 ml; height 93 mm; diameter 80 mm; dishwasher safe; approx. unit weight 295 g; 36 units per carton; typical print area 185 × 70 mm.",
+    customerReviews: [
+      { reviewer: "Sarah M.", rating: 5, comment: "Perfect for my morning coffee! The midnight blue color is gorgeous and it holds the perfect amount. Very sturdy construction." },
+      { reviewer: "Michael T.", rating: 5, comment: "Excellent quality mug. The print area is generous and the straight sides make it perfect for our company logo. Fast shipping too!" },
+      { reviewer: "Emma K.", rating: 4, comment: "Really nice mug, good weight and feel. Only slight complaint is it gets quite hot to hold with very hot beverages, but that's minor." },
+      { reviewer: "David L.", rating: 5, comment: "Great value for money. Dishwasher safe and the color hasn't faded after months of daily use. Highly recommend!" }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648636/Windows-10-Home-Activation-key_ctb4uu.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/b/f/bff9b66227ca7b813a56389057645728a1c34c01_Cambridge_Midnight_Blue_midnight_blue.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/b/f/bff9b66227ca7b813a56389057645728a1c34c01_Cambridge_Midnight_Blue_midnight_blue.jpg"]
     }
   },
   {
     id: 2,
-    name: "windows-11-pro-5pc",
-    title: "Windows 11 Pro 5PC",
-    price: 299.99,
-    discountedPrice: 249.99,
+    name: "bell-mug",
+    title: "Bell Mug",
+    price: 1.64,
+    discountedPrice: 1.37,
     reviews: 4.7,
-    category: "Windows",
-    description: "Windows 11 Pro 5PC license includes all the features of Windows 11 Pro with activation for up to 5 computers. Perfect for small businesses and families with multiple computers.",
+    averageRating: 4.7,
+    totalReviews: 89,
+    category: "mugs",
+    description: "Compact, bell-shaped ceramic mug suited to daily office use. Capacity 280 ml; height 93 mm; diameter 80 mm; dishwasher safe; approx. unit weight 240 g; 36 units per carton; print area about 185 × 40 mm.",
+    customerReviews: [
+      { reviewer: "Lisa R.", rating: 5, comment: "Love the compact size! Fits perfectly in my hands and the bell shape is so unique. Perfect for tea breaks at the office." },
+      { reviewer: "James W.", rating: 4, comment: "Good quality mug, nice weight. The white finish is clean and professional looking. Slightly smaller than I expected but still great." },
+      { reviewer: "Maria S.", rating: 5, comment: "Excellent for daily use. The shape is comfortable to hold and it cleans easily. Great price for the quality you get." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/0/f/0f43c9a877d5ea2f1d85af9a33f71bc8ce9943e0_Bell_White_white.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/0/f/0f43c9a877d5ea2f1d85af9a33f71bc8ce9943e0_Bell_White_white.jpg"]
     }
   },
   {
     id: 3,
-    name: "windows-10-home-5pc",
-    title: "Windows 10 Home 5PC",
-    price: 199.99,
-    discountedPrice: 179.99,
+    name: "corporate-mug",
+    title: "Corporate Mug",
+    price: 1.91,
+    discountedPrice: 1.59,
     reviews: 4.6,
-    category: "Windows",
-    description: "Windows 10 Home 5PC provides all the essential features of Windows 10 Home with activation for up to 5 devices. Perfect for family use and home networks.",
+    averageRating: 4.6,
+    totalReviews: 156,
+    category: "mugs",
+    description: "Tall profile with angular handle—great for bold branding. Capacity 330 ml; height 116 mm; diameter 70 mm; dishwasher safe; approx. unit weight 307 g; 36 per carton; print area about 185 × 55 mm.",
+    customerReviews: [
+      { reviewer: "Robert H.", rating: 5, comment: "Perfect for corporate branding! The angular handle gives it a modern look and the print area is excellent for logos. Very professional." },
+      { reviewer: "Jennifer L.", rating: 4, comment: "Great mug for the office. The tall profile makes it feel substantial and the black color looks sleek. Handle is comfortable to grip." },
+      { reviewer: "Tom B.", rating: 5, comment: "Ordered these for our company and everyone loves them. High quality ceramic and the branding turned out perfectly. Will order again!" }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-home-5-pc-1_jnpmwl.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/2/f/2fe7507b8530e128119d53112ad06300ac28f1dc_Corporate_Black_black.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/2/f/2fe7507b8530e128119d53112ad06300ac28f1dc_Corporate_Black_black.jpg"]
     }
   },
   {
     id: 4,
-    name: "windows-11-home-5pc",
-    title: "Windows 11 Home 5PC",
-    price: 249.99,
-    discountedPrice: 219.99,
-    reviews: 4.4,
-    category: "Windows",
-    description: "Windows 11 Home 5PC includes the latest Windows 11 operating system with a clean interface and enhanced productivity features for up to 5 computers. Includes digital delivery and lifetime support.",
+    name: "atlantic-mug",
+    title: "Atlantic Mug",
+    price: 1.99,
+    discountedPrice: 1.66,
+    reviews: 4.5,
+    averageRating: 4.5,
+    totalReviews: 203,
+    category: "mugs",
+    description: "Earthenware mug with large print area and everyday durability. Capacity 370 ml; height 93 mm; diameter 81 mm; dishwasher safe; approx. unit weight 275 g; 36 per carton; print area about 185 × 70 mm.",
+    customerReviews: [
+      { reviewer: "Nancy P.", rating: 5, comment: "Love the large capacity! Perfect for my morning coffee routine. The earthenware construction feels durable and the white finish is beautiful." },
+      { reviewer: "Chris D.", rating: 4, comment: "Good everyday mug. The large print area is great and it's very durable. Slightly heavier than expected but that adds to the quality feel." },
+      { reviewer: "Kate M.", rating: 4, comment: "Nice mug with good capacity. The earthenware material keeps drinks warm longer. Great for both hot and cold beverages." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-5-pc-1_xclkim.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/e/5/e5f4e7d6967c6fe5965d5a1436227422159a798e_Atlantic_White_white.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/e/5/e5f4e7d6967c6fe5965d5a1436227422159a798e_Atlantic_White_white.jpg"]
     }
   },
   {
     id: 5,
-    name: "windows-10-pro-5pc",
-    title: "Windows 10 Pro 5PC",
-    price: 279.99,
-    discountedPrice: 239.99,
-    reviews: 4.8,
-    category: "Windows",
-    description: "Windows 10 Pro 5PC offers business-class features including BitLocker, Remote Desktop, and Domain Join for up to 5 computers. Ideal for small offices and professional environments.",
+    name: "sparta-mug",
+    title: "Sparta Mug",
+    price: 1.99,
+    discountedPrice: 1.66,
+    reviews: 4.4,
+    averageRating: 4.4,
+    totalReviews: 78,
+    category: "mugs",
+    description: "Value staple with classic shape and strong handle. Capacity 300 ml; height 93 mm; diameter 80 mm; dishwasher safe; approx. unit weight 295 g; 36 per carton; print area around 185 × 70 mm.",
+    customerReviews: [
+      { reviewer: "Paul R.", rating: 5, comment: "Classic mug design that never goes out of style. The reflex blue color is vibrant and the handle is very comfortable. Great value!" },
+      { reviewer: "Sandra J.", rating: 4, comment: "Solid, dependable mug. Good weight and the classic shape feels familiar and comfortable. Color is exactly as pictured." },
+      { reviewer: "Mike K.", rating: 4, comment: "Good basic mug for everyday use. The handle is strong and well-attached. Great for the price point." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-10-pro-5-pc_qv7tfj.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/0/c/0c1f4bdedca113d125f2952c71ac7f5fd18c50df_Sparta_Reflex_Blue_reflex_blue.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/0/c/0c1f4bdedca113d125f2952c71ac7f5fd18c50df_Sparta_Reflex_Blue_reflex_blue.jpg"]
     }
   },
   {
     id: 6,
-    name: "windows-11-home",
-    title: "Windows 11 Home",
-    price: 139.99,
-    discountedPrice: 119.99,
-    reviews: 4.5,
-    category: "Windows",
-    description: "Windows 11 Home delivers a clean, refreshed interface and intelligent features to enhance your productivity and creativity. Includes instant digital delivery and lifetime activation for 1 PC.",
+    name: "can-mug",
+    title: "Can Mug",
+    price: 1.81,
+    discountedPrice: 1.51,
+    reviews: 4.3,
+    averageRating: 4.3,
+    totalReviews: 94,
+    category: "mugs",
+    description: "Simple, straight-walled mug offering a large branding canvas. Capacity 350 ml; height 105 mm; diameter 80 mm; dishwasher safe; approx. unit weight 295 g; 36 per carton; print area about 185 × 70 mm.",
+    customerReviews: [
+      { reviewer: "Angela T.", rating: 4, comment: "Simple and functional design. The straight walls make it easy to clean and the large capacity is perfect for long coffee sessions." },
+      { reviewer: "Steve W.", rating: 5, comment: "Great for custom printing! The large flat surface area is perfect for designs. Good quality ceramic and very affordable." },
+      { reviewer: "Helen C.", rating: 4, comment: "Nice basic mug. Good size and weight. The simple design makes it versatile for any kitchen or office setting." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-home-2_wnhlwm.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/4/8/4886b1b7367a757ace3b3ce1529faa78fee13e15_Can_White_white.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/4/8/4886b1b7367a757ace3b3ce1529faa78fee13e15_Can_White_white.jpg"]
     }
   },
   {
     id: 7,
-    name: "windows-10-enterprise-ltsb-2016",
-    title: "Windows 10 Enterprise LTSB 2016",
-    price: 399.99,
-    discountedPrice: 349.99,
+    name: "balmoral-bone-china-mug",
+    title: "Balmoral Bone China Mug",
+    price: 2.95,
+    discountedPrice: 2.46,
     reviews: 4.9,
-    category: "Windows",
-    description: "Windows 10 Enterprise LTSB 2016 provides long-term stability with 10 years of security updates and no feature updates, making it ideal for critical systems and specialized workstations.",
+    averageRating: 4.9,
+    totalReviews: 145,
+    category: "mugs",
+    description: "Fine bone china—lightweight with bright white finish. Capacity 330 ml; height 85 mm; diameter 77 mm; dishwasher safe; approx. unit weight 176 g; 36 per carton; print area roughly 180 × 70 mm.",
+    customerReviews: [
+      { reviewer: "Caroline F.", rating: 5, comment: "Absolutely beautiful bone china mug! So lightweight yet feels premium. The bright white finish is elegant and perfect for special occasions." },
+      { reviewer: "Richard M.", rating: 5, comment: "Exceptional quality! The bone china material is noticeably different from regular ceramic. Definitely worth the extra cost for the elegance." },
+      { reviewer: "Julia B.", rating: 5, comment: "Stunning mug that makes every cup of tea feel special. The craftsmanship is excellent and it's surprisingly dishwasher safe for bone china." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/Windows-10-Enterprise-LTSB-2016-Activation-key_m5zlrk.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/f/4/f45d5d8c29b9f547772d2adb56ebadac0ff98ac1_Balmoral_Bone_China_Mug_white.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/f/4/f45d5d8c29b9f547772d2adb56ebadac0ff98ac1_Balmoral_Bone_China_Mug_white.jpg"]
     }
   },
   {
     id: 8,
-    name: "windows-10-pro",
-    title: "Windows 10 Pro",
-    price: 169.99,
-    discountedPrice: 149.99,
-    reviews: 4.6,
-    category: "Windows",
-    description: "Windows 10 Pro includes advanced features for business professionals, like BitLocker encryption, Remote Desktop, and business update controls. Includes instant digital delivery for 1 PC.",
+    name: "ash-bone-china-mug",
+    title: "Ash Bone China Mug",
+    price: 3.40,
+    discountedPrice: 2.83,
+    reviews: 4.8,
+    averageRating: 4.8,
+    totalReviews: 112,
+    category: "mugs",
+    description: "Classic bone china shape—tough yet refined. Capacity 390 ml; height 89 mm; diameter 85 mm; dishwasher safe; approx. unit weight 218 g; 48 per carton; print area about 220 × 80 mm.",
+    customerReviews: [
+      { reviewer: "Margaret W.", rating: 5, comment: "The most refined mug I own! Classic bone china with excellent capacity. The larger print area is perfect for detailed designs." },
+      { reviewer: "Alexander P.", rating: 5, comment: "Top-tier quality bone china. The classic shape is timeless and the larger capacity makes it practical for daily use. Worth every penny!" },
+      { reviewer: "Victoria S.", rating: 4, comment: "Beautiful mug with excellent craftsmanship. Slightly more expensive but the quality difference is noticeable. Very satisfied with the purchase." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/9/3/93a61eb01b702e6cccc7b394b2134566d8b0bebe_Ash_Bone_China_Mug_white.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/9/3/93a61eb01b702e6cccc7b394b2134566d8b0bebe_Ash_Bone_China_Mug_white.jpg"]
     }
   },
   {
     id: 9,
-    name: "windows-10-enterprise-ltsb-2019",
-    title: "Windows 10 Enterprise LTSB 2019",
-    price: 449.99,
-    discountedPrice: 399.99,
-    reviews: 4.8,
-    category: "Windows",
-    description: "Windows 10 Enterprise LTSB 2019 offers extended stability and security updates with minimal feature changes, ideal for mission-critical systems and industrial equipment.",
+    name: "marrow-mug",
+    title: "Marrow Mug",
+    price: 2.11,
+    discountedPrice: 1.76,
+    reviews: 4.6,
+    averageRating: 4.6,
+    totalReviews: 167,
+    category: "mugs",
+    description: "Best-selling tall mug with curved profile and large capacity. Capacity 400 ml; height 107 mm; diameter 85 mm; dishwasher safe; approx. unit weight 293 g; 36 per carton; print area around 185 × 40 mm.",
+    customerReviews: [
+      { reviewer: "Oliver G.", rating: 5, comment: "My favorite mug! The curved profile feels perfect in your hands and the large capacity means fewer refills. The red color is striking." },
+      { reviewer: "Sophie L.", rating: 4, comment: "Great tall mug with excellent capacity. The curved shape is comfortable to hold and it looks stylish on any desk or kitchen counter." },
+      { reviewer: "Daniel K.", rating: 5, comment: "Best-selling for a reason! Perfect size, comfortable grip, and the duo red color is exactly as shown. Highly recommend this one." }
+    ],
     imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-10-enterprise-ltcs-2019_jbovys.png"]
-    }
-  },
-  {
-    id: 10,
-    name: "windows-8-1-pro",
-    title: "Windows 8.1 Pro",
-    price: 149.99,
-    discountedPrice: 129.99,
-    reviews: 4.3,
-    category: "Windows",
-    description: "Windows 8.1 Pro remains a reliable choice for legacy systems and specific compatibility requirements. Includes all enterprise features of Windows 8.1 with digital delivery.",
-    imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/windows-8.1-pro-2_wyepds.png"]
-    }
-  },
-  {
-    id: 11,
-    name: "windows-10-enterprise",
-    title: "Windows 10 Enterprise",
-    price: 299.99,
-    discountedPrice: 259.99,
-    reviews: 4.7,
-    category: "Windows",
-    description: "Windows 10 Enterprise offers the highest level of security and management features for organizations, including AppLocker, Credential Guard, and advanced threat protection.",
-    imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/Windows-10-Enterprise-Activation-key_ii235p.png"]
-    }
-  },
-  {
-    id: 12,
-    name: "windows-10-pro-n",
-    title: "Windows 10 Pro N",
-    price: 189.99,
-    discountedPrice: 169.99,
-    reviews: 4.5,
-    category: "Windows",
-    description: "Windows 10 Pro N is identical to Windows 10 Pro but without Windows Media Player and related technologies. Designed for European markets and specialized requirements.",
-    imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-pro-n_sxvneu.png"]
-    }
-  },
-  {
-    id: 13,
-    name: "windows-10-enterprise-ltsb-2021",
-    title: "Windows 10 Enterprise LTSB 2021",
-    price: 499.99,
-    discountedPrice: 449.99,
-    reviews: 4.8,
-    category: "Windows",
-    description: "Windows 10 Enterprise LTSB 2021 is the latest Long-Term Servicing Branch release, providing maximum stability and security for mission-critical systems with 10 years of support.",
-    imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648633/windows-10-enterprise-ltcs-2021_zjbeu5.png"]
-    }
-  },
-  {
-    id: 14,
-    name: "windows-11-pro",
-    title: "Windows 11 Pro",
-    price: 189.99,
-    discountedPrice: 159.99,
-    reviews: 4.7,
-    category: "Windows",
-    description: "Windows 11 Pro provides enhanced security, management, and productivity features with a modern interface. Perfect for professionals and businesses needing advanced Windows capabilities.",
-    imgs: {
-      thumbnails: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"],
-      previews: ["https://res.cloudinary.com/dxrerwrjk/image/upload/v1739479685/p6i69blvzvuvgfeazgw0.png"]
+      thumbnails: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/6/8/681be3bfc0fa203d7989314d4cd83032d585d39c_Marrow_Duo_Red_red_duo.jpg"],
+      previews: ["https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/6/8/681be3bfc0fa203d7989314d4cd83032d585d39c_Marrow_Duo_Red_red_duo.jpg"]
     }
   }
 ];

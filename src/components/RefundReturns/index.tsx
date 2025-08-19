@@ -25,7 +25,7 @@ const RefundReturns = () => {
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              At AllKeysSale, we want to ensure that you are 100% happy with your purchase. 
+              At MugsStore, we want to ensure that you are 100% happy with your purchase. 
               Our comprehensive refund policy protects your investment and guarantees your satisfaction.
             </p>
 
@@ -110,12 +110,12 @@ const RefundReturns = () => {
                   <div className="border-l-4 border-green pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-3">How to Exercise Your Right to Cancel</h4>
                     <p className="text-gray-6 mb-4">
-                      To exercise the right to cancel, you must inform us at AllKeysSale of your decision to cancel this contract by a clear statement. You can contact us via:
+                      To exercise the right to cancel, you must inform us at MugsStore of your decision to cancel this contract by a clear statement. You can contact us via:
                     </p>
                     <ul className="list-disc list-inside text-gray-6 space-y-2 ml-4">
-                      <li><strong>Email:</strong> support@allkeyssale.com</li>
+                      <li><strong>Email:</strong> support@mugsstore.com</li>
                       <li><strong>Phone:</strong> +1 (202) 552-0420</li>
-                      <li><strong>Mail:</strong> AllKeysSale Ltd, 71-75 Shelton Street, WC2H 9JQ, London</li>
+                      <li><strong>Mail:</strong> MugsStore Ltd, 123 Ceramic Avenue, Los Angeles, CA 90210</li>
                       <li><strong>Contact Form:</strong> Available on our website</li>
                     </ul>
                   </div>
@@ -146,7 +146,7 @@ const RefundReturns = () => {
                 <div className="bg-yellow-light-4 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">⚠️ Common Delivery Issues</h3>
                   <p className="text-gray-6">
-                    In rare cases, mailing issues from your e-mail provider or your mail server might prevent you from receiving delivery emails from us, or the mail may end up in spam or junk folders.
+                    In rare cases, shipping delays or damage during transit may occur. We work with reliable shipping partners to ensure your mugs arrive safely and on time.
                   </p>
                 </div>
 
@@ -156,9 +156,9 @@ const RefundReturns = () => {
                       <h4 className="font-semibold text-dark mb-3">First Steps to Take</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2 text-sm">
                         <li>Check your spam/junk folder thoroughly</li>
-                        <li>Search for emails from @allkeyssale.com</li>
-                        <li>Add our domain to your safe sender list</li>
-                        <li>Contact us for assistance or email resend</li>
+                        <li>Check shipping tracking information</li>
+                        <li>Contact carrier for delivery updates</li>
+                        <li>Contact us for assistance or replacement</li>
                       </ul>
                     </div>
 
@@ -176,7 +176,7 @@ const RefundReturns = () => {
                   <div className="border-l-4 border-red pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-3">Important Notice</h4>
                     <p className="text-gray-6">
-                      Claims for non-delivery must be submitted to our customer service department in writing within 7 days from the order placing date. Otherwise, the product will be considered received and downloaded. If you do not properly contact us during this period, you agree that we may consider this as a successful download of the product with no further right of return for a &apos;non-receipt&apos; reason.
+                      Claims for non-delivery must be submitted to our customer service department in writing within 7 days from the expected delivery date. Otherwise, the product will be considered delivered. If you do not properly contact us during this period, you agree that we may consider this as a successful delivery with no further right of return for a &apos;non-receipt&apos; reason.
                     </p>
                   </div>
                 </div>
@@ -200,11 +200,11 @@ const RefundReturns = () => {
                   <div className="border-l-4 border-yellow pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-3">What Constitutes a Major Defect</h4>
                     <ul className="list-disc list-inside text-gray-6 space-y-2 ml-4">
-                      <li>Software license key fails to activate properly</li>
-                      <li>Key has been previously used or is invalid</li>
-                      <li>Software download links are broken or corrupted</li>
-                      <li>Product completely fails to function as intended</li>
-                      <li>Critical compatibility issues not disclosed</li>
+                      <li>Mug arrives damaged or broken during shipping</li>
+                      <li>Manufacturing defects affecting functionality</li>
+                      <li>Incorrect mug design or color shipped</li>
+                      <li>Material quality significantly below standards</li>
+                      <li>Size or capacity differs from specifications</li>
                     </ul>
                   </div>
 
@@ -263,22 +263,22 @@ const RefundReturns = () => {
                     <div className="bg-green-light-6 rounded-lg p-6">
                       <h4 className="font-semibold text-dark mb-3">Valid Claims Include</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2 text-sm">
-                        <li>Wrong software version or edition</li>
-                        <li>Different licensing terms than described</li>
-                        <li>Missing features clearly advertised</li>
-                        <li>Incorrect system requirements</li>
-                        <li>Language or regional differences not disclosed</li>
+                        <li>Wrong mug design or color shipped</li>
+                        <li>Different size or capacity than described</li>
+                        <li>Missing design elements clearly advertised</li>
+                        <li>Incorrect material or finish</li>
+                        <li>Print quality issues not disclosed</li>
                       </ul>
                     </div>
 
                     <div className="bg-red-light-6 rounded-lg p-6">
                       <h4 className="font-semibold text-dark mb-3">Invalid Claims</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2 text-sm">
-                        <li>Personal preferences or expectations</li>
+                        <li>Personal preferences or style choices</li>
                         <li>Buyer&apos;s remorse or change of mind</li>
-                        <li>Misunderstanding of product capabilities</li>
-                        <li>Compatibility issues clearly disclosed</li>
-                        <li>User error or improper installation</li>
+                        <li>Misunderstanding of mug dimensions</li>
+                        <li>Care instructions clearly provided</li>
+                        <li>Damage due to improper care or use</li>
                       </ul>
                     </div>
                   </div>
@@ -382,7 +382,7 @@ const RefundReturns = () => {
                 <div className="bg-red-light-6 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">Professional Support Team</h3>
                   <p className="text-gray-6">
-                    Our Technical Support Team is always eager to assist you and deliver highly professional support in a timely manner. Thank you for your interest in AllKeysSale.
+                    Our Customer Service Team is always eager to assist you and deliver highly professional support in a timely manner. Thank you for your interest in MugsStore.
                   </p>
                 </div>
 
@@ -395,7 +395,7 @@ const RefundReturns = () => {
                           <svg className="w-5 h-5 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          <span className="text-gray-6">support@allkeyssale.com</span>
+                          <span className="text-gray-6">support@mugsstore.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <svg className="w-5 h-5 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -409,10 +409,10 @@ const RefundReturns = () => {
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
                           <div className="text-gray-6">
-                            <div>AllKeysSale Ltd</div>
-                            <div>71-75 Shelton Street</div>
-                            <div>WC2H 9JQ, London</div>
-                            <div>United Kingdom</div>
+                            <div>MugsStore Ltd</div>
+                            <div>123 Ceramic Avenue</div>
+                            <div>Los Angeles, CA 90210</div>
+                            <div>United States</div>
                           </div>
                         </div>
                       </div>

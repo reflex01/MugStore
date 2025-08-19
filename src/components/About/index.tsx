@@ -21,12 +21,12 @@ const About = () => {
               </div>
               
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark mb-6 leading-tight">
-                Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-red">AllKeysSale</span>
+                Welcome to <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-red">MugsStore</span>
               </h1>
               
               <p className="text-lg text-gray-6 mb-8 leading-relaxed">
-                Your trusted partner for authentic software licenses. We provide genuine, 
-                cost-effective software solutions to individuals and businesses worldwide, 
+                Your trusted partner for premium coffee mugs. We provide high-quality, 
+                cost-effective drinkware solutions to coffee lovers and businesses worldwide, 
                 ensuring you get the best value without compromising on quality.
               </p>
               
@@ -103,8 +103,8 @@ const About = () => {
               Our Mission & Vision
             </h2>
             <p className="text-lg text-gray-6 max-w-3xl mx-auto">
-              We believe everyone deserves access to legitimate software at affordable prices. 
-              Our mission is to bridge the gap between software manufacturers and end-users.
+              We believe everyone deserves access to premium mugs at affordable prices. 
+              Our mission is to bridge the gap between mug manufacturers and coffee enthusiasts.
             </p>
           </div>
 
@@ -117,7 +117,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-dark mb-4">Our Mission</h3>
               <p className="text-gray-6 leading-relaxed">
-                To democratize access to premium software by providing authentic licenses at 
+                To democratize access to premium mugs by providing quality drinkware at 
                 competitive prices, enabling individuals and businesses to achieve their digital 
                 goals without breaking the bank.
               </p>
@@ -132,7 +132,7 @@ const About = () => {
               </div>
               <h3 className="text-2xl font-bold text-dark mb-4">Our Vision</h3>
               <p className="text-gray-6 leading-relaxed">
-                To become the world&apos;s most trusted marketplace for software licenses, 
+                To become the world&apos;s most trusted marketplace for premium mugs, 
                 known for our integrity, customer service, and commitment to making 
                 technology accessible to everyone.
               </p>
@@ -163,7 +163,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-dark mb-4">100% Authentic</h3>
               <p className="text-gray-6 leading-relaxed">
-                All our software licenses are genuine and sourced directly from authorized 
+                All our mugs are genuine and sourced directly from authorized 
                 distributors. No pirated or counterfeit products.
               </p>
             </div>
@@ -228,7 +228,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-bold text-dark mb-4">Best Prices</h3>
               <p className="text-gray-6 leading-relaxed">
-                We offer competitive pricing on all software licenses, helping you save 
+                We offer competitive pricing on all mugs, helping you save 
                 money without compromising on quality.
               </p>
             </div>
@@ -244,7 +244,7 @@ const About = () => {
               Trusted by Thousands
             </h2>
             <p className="text-lg text-gray-6 max-w-3xl mx-auto">
-              Join over 100,000 satisfied customers who have chosen AllKeysSale for their software needs.
+              Join over 100,000 satisfied customers who have chosen MugsStore for their drinkware needs.
             </p>
           </div>
 
@@ -309,7 +309,7 @@ const About = () => {
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
               Join thousands of satisfied customers and discover why AllKeysSale 
-              is the trusted choice for software licenses.
+              is the trusted choice for premium mugs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/shop-without-sidebar" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-100 transition-colors duration-200">

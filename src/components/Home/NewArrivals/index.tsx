@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProductItem from "@/components/Common/ProductItem";
-import products from "@/contents/products.json";
+import { getTransformedProducts } from "@/utils/productTransform";
 import { ArrowRight, Sparkles, TrendingUp, Star, Heart, Zap, Gift, Crown } from "lucide-react";
 
 const NewArrival = () => {
@@ -99,7 +99,7 @@ const NewArrival = () => {
           </h2>
           
           <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-            Discover our latest collection of premium Windows software and licenses, carefully curated for modern users.
+            Discover our latest collection of premium mugs, carefully curated for coffee and tea enthusiasts.
           </p>
           
           <Link
@@ -113,9 +113,9 @@ const NewArrival = () => {
 
         {/* Products Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {products.data.slice(0, 8).map((item, index) => (
+          {getTransformedProducts().slice(0, 8).map((item, index) => (
             <div
-              key={item.id}
+              key={item.id || index}
               className="animate-fade-in-up"
               style={{
                 animationDelay: `${index * 100}ms`,

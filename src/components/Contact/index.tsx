@@ -18,11 +18,11 @@ const Contact = () => {
             </div>
             
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-dark mb-6 leading-tight">
-              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">AllKeysSale</span>
+              Contact <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue to-green">MugsStore</span>
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Have a question about our software licenses? Need technical support? 
+              Have a question about our premium mugs? Need customer support? 
               We&apos;re here to help! Reach out to our expert team and get the assistance you need.
             </p>
 
@@ -163,7 +163,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-dark mb-1">Address</h4>
-                      <p className="text-gray-6">123 Software Lane<br />Las Vegas, NV 89128<br />United States</p>
+                      <p className="text-gray-6">123 Ceramic Avenue<br />Los Angeles, CA 90210<br />United States</p>
                     </div>
                   </div>
 
@@ -358,7 +358,7 @@ const Contact = () => {
             </div>
 
             <div className="bg-gradient-to-br from-red-light-6 to-red-light-5 p-6 rounded-xl">
-              <h4 className="font-bold text-dark mb-3">Can I get help with software installation?</h4>
+              <h4 className="font-bold text-dark mb-3">Can I get help with mug care instructions?</h4>
               <p className="text-gray-6">Absolutely! Our technical team can guide you through the installation process and help troubleshoot any issues.</p>
             </div>
           </div>

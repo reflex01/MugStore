@@ -25,7 +25,7 @@ const TermsAndConditions = () => {
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Please read these Terms and Conditions carefully before using AllKeysSale&apos;s services. 
+              Please read these Terms and Conditions carefully before using MugsStore&apos;s services. 
               By accessing our platform, you agree to be bound by these terms.
             </p>
 
@@ -59,7 +59,7 @@ const TermsAndConditions = () => {
                 </svg>
               </div>
               <h3 className="font-bold text-dark mb-2">Legal Agreement</h3>
-              <p className="text-gray-6 text-sm">Binding contract between you and AllKeysSale</p>
+              <p className="text-gray-6 text-sm">Binding contract between you and MugsStore</p>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-green-light-6 to-green-light-5 rounded-xl">
@@ -78,8 +78,8 @@ const TermsAndConditions = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h8a2 2 0 002-2v-2M7 13h10m-5-5v5" />
                 </svg>
               </div>
-              <h3 className="font-bold text-dark mb-2">License Terms</h3>
-              <p className="text-gray-6 text-sm">Software licensing terms and restrictions</p>
+              <h3 className="font-bold text-dark mb-2">Product Terms</h3>
+              <p className="text-gray-6 text-sm">Mug product terms and warranty information</p>
             </div>
 
             <div className="text-center p-6 bg-gradient-to-br from-red-light-6 to-red-light-5 rounded-xl">
@@ -109,7 +109,7 @@ const TermsAndConditions = () => {
                   <a href="#definitions" className="text-blue hover:text-blue-dark transition-colors">2. Definitions</a>
                   <a href="#services" className="text-blue hover:text-blue-dark transition-colors">3. Services Description</a>
                   <a href="#user-accounts" className="text-blue hover:text-blue-dark transition-colors">4. User Accounts</a>
-                  <a href="#license-terms" className="text-blue hover:text-blue-dark transition-colors">5. Software License Terms</a>
+                  <a href="#license-terms" className="text-blue hover:text-blue-dark transition-colors">5. Product Warranty Terms</a>
                   <a href="#payment-terms" className="text-blue hover:text-blue-dark transition-colors">6. Payment and Billing</a>
                   <a href="#user-conduct" className="text-blue hover:text-blue-dark transition-colors">7. User Conduct</a>
                   <a href="#intellectual-property" className="text-blue hover:text-blue-dark transition-colors">8. Intellectual Property</a>
@@ -133,13 +133,13 @@ const TermsAndConditions = () => {
                 <div className="bg-blue-light-5 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">Agreement to Terms</h3>
                   <p className="text-gray-6">
-                    By accessing and using AllKeysSale&apos;s website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy.
+                    By accessing and using MugsStore&apos;s website and services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <p className="text-gray-6">
-                    These Terms and Conditions (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;User&quot;, &quot;you&quot;, or &quot;your&quot;) and AllKeysSale (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) regarding your use of our website, services, and software license marketplace.
+                    These Terms and Conditions (&quot;Terms&quot;) constitute a legally binding agreement between you (&quot;User&quot;, &quot;you&quot;, or &quot;your&quot;) and MugsStore (&quot;Company&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) regarding your use of our website, services, and online mug store.
                   </p>
                   <p className="text-gray-6">
                     If you do not agree with these Terms, you must not access or use our services. Your continued use of our services following any changes to these Terms constitutes acceptance of those changes.
@@ -161,9 +161,9 @@ const TermsAndConditions = () => {
                   <div className="bg-green-light-6 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Key Terms</h3>
                     <div className="space-y-3 text-gray-6">
-                      <div><strong>&quot;Services&quot;:</strong> AllKeysSale&apos;s software license marketplace platform and related services</div>
-                      <div><strong>&quot;Software&quot;:</strong> Computer programs, applications, and digital products offered through our platform</div>
-                      <div><strong>&quot;License&quot;:</strong> Legal permission to use software granted by software publishers</div>
+                      <div><strong>&quot;Services&quot;:</strong> MugsStore&apos;s online mug store platform and related services</div>
+                      <div><strong>&quot;Products&quot;:</strong> Mugs, drinkware, and related items offered through our platform</div>
+                      <div><strong>&quot;Order&quot;:</strong> A purchase request for mugs or other products from our store</div>
                       <div><strong>&quot;User Account&quot;:</strong> Your registered account on our platform</div>
                     </div>
                   </div>
@@ -172,9 +172,9 @@ const TermsAndConditions = () => {
                     <h3 className="text-lg font-semibold text-dark mb-3">Service Terms</h3>
                     <div className="space-y-3 text-gray-6">
                       <div><strong>&quot;Content&quot;:</strong> All text, graphics, data, and materials on our website</div>
-                      <div><strong>&quot;Third Party&quot;:</strong> Software publishers, developers, and other service providers</div>
-                      <div><strong>&quot;Activation Key&quot;:</strong> Unique code provided to activate licensed software</div>
-                      <div><strong>&quot;End User&quot;:</strong> The final user of the software license purchased through our platform</div>
+                      <div><strong>&quot;Third Party&quot;:</strong> Manufacturers, suppliers, and other service providers</div>
+                      <div><strong>&quot;Shipping&quot;:</strong> Physical delivery of products to your specified address</div>
+                      <div><strong>&quot;Customer&quot;:</strong> The person purchasing mugs through our platform</div>
                     </div>
                   </div>
                 </div>
@@ -190,29 +190,29 @@ const TermsAndConditions = () => {
                 <div className="bg-yellow-light-4 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">Our Services</h3>
                   <p className="text-gray-6">
-                    AllKeysSale operates as a digital marketplace for software licenses, connecting customers with legitimate software products from authorized publishers and distributors.
+                    MugsStore operates as an online retailer of premium mugs and drinkware, connecting customers with high-quality ceramic and porcelain products.
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="border-l-4 border-blue pl-6">
-                    <h4 className="text-lg font-semibold text-dark mb-2">License Marketplace</h4>
-                    <p className="text-gray-6">We provide a platform for purchasing authentic software licenses from various publishers including Microsoft, Adobe, Autodesk, and other major software companies.</p>
+                    <h4 className="text-lg font-semibold text-dark mb-2">Product Catalog</h4>
+                    <p className="text-gray-6">We provide an online platform for purchasing premium mugs and drinkware from various manufacturers and artisans.</p>
                   </div>
 
                   <div className="border-l-4 border-green pl-6">
-                    <h4 className="text-lg font-semibold text-dark mb-2">Digital Delivery</h4>
-                    <p className="text-gray-6">Upon successful payment, we deliver activation keys and download links electronically to your registered email address.</p>
+                    <h4 className="text-lg font-semibold text-dark mb-2">Physical Delivery</h4>
+                    <p className="text-gray-6">Upon successful payment, we carefully package and ship your mugs to your specified delivery address.</p>
                   </div>
 
                   <div className="border-l-4 border-red pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-2">Customer Support</h4>
-                    <p className="text-gray-6">We provide technical support for license activation and general inquiries about our services.</p>
+                    <p className="text-gray-6">We provide customer support for order tracking, product care instructions, and general inquiries about our services.</p>
                   </div>
 
                   <div className="border-l-4 border-yellow pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-2">Service Limitations</h4>
-                    <p className="text-gray-6">We are a reseller and marketplace. We do not develop, manufacture, or provide technical support for the software products themselves.</p>
+                    <p className="text-gray-6">We are a retailer. While we carefully select our products, we rely on manufacturers for quality control and may have limited control over product defects.</p>
                   </div>
                 </div>
               </section>
@@ -303,17 +303,17 @@ const TermsAndConditions = () => {
                 </div>
               </section>
 
-              {/* 5. Software License Terms */}
+              {/* 5. Product Warranty Terms */}
               <section id="license-terms" className="mb-12">
                 <h2 className="text-2xl font-bold text-dark mb-6 flex items-center gap-3">
                   <span className="w-8 h-8 bg-blue rounded-full flex items-center justify-center text-white text-sm font-bold">5</span>
-                  Software License Terms
+                  Product Warranty Terms
                 </h2>
                 
                 <div className="bg-blue-light-5 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">⚠️ Important Notice</h3>
                   <p className="text-gray-6">
-                    <strong>AllKeysSale is a reseller of software licenses.</strong> All software licenses are subject to the original publisher&apos;s End User License Agreement (EULA). We do not modify or override the original license terms.
+                    <strong>MugsStore is a retailer of premium mugs and drinkware.</strong> All products come with our standard warranty against manufacturing defects. We stand behind the quality of our products.
                   </p>
                 </div>
 
@@ -322,39 +322,39 @@ const TermsAndConditions = () => {
                     <div className="bg-green-light-6 rounded-lg p-6">
                       <h4 className="font-semibold text-dark mb-3">What You Receive</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2">
-                        <li>Genuine software activation key</li>
-                        <li>Download instructions or links</li>
-                        <li>License documentation</li>
-                        <li>Basic activation support</li>
+                        <li>High-quality ceramic or porcelain mug</li>
+                        <li>Care and maintenance instructions</li>
+                        <li>Warranty documentation</li>
+                        <li>Customer support for product issues</li>
                       </ul>
                     </div>
 
                     <div className="bg-yellow-light-4 rounded-lg p-6">
-                      <h4 className="font-semibold text-dark mb-3">License Restrictions</h4>
+                      <h4 className="font-semibold text-dark mb-3">Product Care</h4>
                       <ul className="list-disc list-inside text-gray-6 space-y-2">
-                        <li>One license per activation key</li>
-                        <li>Subject to publisher&apos;s EULA</li>
-                        <li>No resale or redistribution</li>
-                        <li>Commercial use restrictions may apply</li>
+                        <li>Dishwasher safe (top rack recommended)</li>
+                        <li>Microwave safe for reheating beverages</li>
+                        <li>Avoid extreme temperature changes</li>
+                        <li>Handle with care to prevent chips or cracks</li>
                       </ul>
                     </div>
                   </div>
 
                   <div className="border-l-4 border-red pl-6">
-                    <h4 className="text-lg font-semibold text-dark mb-3">License Validity and Authenticity</h4>
-                    <p className="text-gray-6 mb-3">We guarantee that all software licenses sold through our platform are:</p>
+                    <h4 className="text-lg font-semibold text-dark mb-3">Product Quality and Authenticity</h4>
+                    <p className="text-gray-6 mb-3">We guarantee that all mugs sold through our platform are:</p>
                     <ul className="list-disc list-inside text-gray-6 space-y-1 ml-4">
-                      <li>Genuine and authentic from authorized sources</li>
-                      <li>Valid for activation and use according to publisher terms</li>
-                      <li>Not previously activated or used</li>
-                      <li>Accompanied by proper documentation when required</li>
+                      <li>Made from genuine ceramic or porcelain materials</li>
+                      <li>Free from manufacturing defects at time of sale</li>
+                      <li>Brand new and unused condition</li>
+                      <li>Accompanied by proper care instructions</li>
                     </ul>
                   </div>
 
                   <div className="border-l-4 border-blue pl-6">
                     <h4 className="text-lg font-semibold text-dark mb-3">Support Limitations</h4>
                     <p className="text-gray-6">
-                      Our support covers license activation and delivery issues. For software-specific technical support, feature questions, or bug reports, you must contact the software publisher directly.
+                      Our support covers order processing, shipping issues, and product defects. For care instructions and warranty claims, please contact us within 30 days of purchase.
                     </p>
                   </div>
                 </div>
@@ -417,18 +417,18 @@ const TermsAndConditions = () => {
                       <div>
                         <h5 className="font-medium text-dark mb-2">Eligible for Refund:</h5>
                         <ul className="list-disc list-inside text-gray-6 text-sm space-y-1">
-                          <li>Invalid or non-functional activation keys</li>
+                          <li>Damaged products received in poor condition</li>
                           <li>Duplicate purchases made in error</li>
-                          <li>Technical issues preventing activation</li>
+                          <li>Manufacturing defects or quality issues</li>
                           <li>Billing errors or unauthorized charges</li>
                         </ul>
                       </div>
                       <div>
                         <h5 className="font-medium text-dark mb-2">Not Eligible for Refund:</h5>
                         <ul className="list-disc list-inside text-gray-6 text-sm space-y-1">
-                          <li>Successfully activated licenses</li>
-                          <li>Change of mind after activation</li>
-                          <li>Compatibility issues with user&apos;s system</li>
+                          <li>Products used and showing normal wear</li>
+                          <li>Change of mind after 14 days</li>
+                          <li>Damage due to misuse or accidents</li>
                           <li>Purchases older than 30 days</li>
                         </ul>
                       </div>
@@ -462,7 +462,7 @@ const TermsAndConditions = () => {
                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-6">Reselling or redistributing purchased licenses</p>
+                        <p className="text-gray-6">Reselling products as new after use</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-5 h-5 bg-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -478,7 +478,7 @@ const TermsAndConditions = () => {
                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-6">Attempting to circumvent license restrictions</p>
+                        <p className="text-gray-6">Attempting to return damaged items as defective</p>
                       </div>
                       <div className="flex items-start gap-3">
                         <div className="w-5 h-5 bg-red rounded-full flex items-center justify-center flex-shrink-0 mt-1">
@@ -486,7 +486,7 @@ const TermsAndConditions = () => {
                             <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
                           </svg>
                         </div>
-                        <p className="text-gray-6">Sharing activation keys publicly</p>
+                        <p className="text-gray-6">Filing false warranty claims</p>
                       </div>
                     </div>
                   </div>
@@ -558,7 +558,7 @@ const TermsAndConditions = () => {
                       <ul className="list-disc list-inside text-gray-6 space-y-1 text-sm">
                         <li>Website design and functionality</li>
                         <li>AllKeysSale brand and trademarks</li>
-                        <li>Proprietary software and systems</li>
+                        <li>Proprietary designs and systems</li>
                         <li>Content, text, and graphics</li>
                         <li>Marketing materials and documentation</li>
                       </ul>
@@ -566,9 +566,9 @@ const TermsAndConditions = () => {
 
                     <div className="bg-green-light-6 rounded-lg p-6">
                       <h4 className="font-semibold text-dark mb-3">Third-Party IP</h4>
-                      <p className="text-gray-6 mb-3">Software publishers retain rights to:</p>
+                      <p className="text-gray-6 mb-3">Mug manufacturers retain rights to:</p>
                       <ul className="list-disc list-inside text-gray-6 space-y-1 text-sm">
-                        <li>Software applications and programs</li>
+                        <li>Mug designs and patterns</li>
                         <li>Product names and trademarks</li>
                         <li>Documentation and user guides</li>
                         <li>Updates and modifications</li>
@@ -627,18 +627,18 @@ const TermsAndConditions = () => {
                   </div>
 
                   <div className="bg-gray-1 rounded-lg p-6">
-                    <h4 className="text-lg font-semibold text-dark mb-3">Software Compatibility</h4>
+                    <h4 className="text-lg font-semibold text-dark mb-3">Product Suitability</h4>
                     <p className="text-gray-6">
-                      We are not responsible for software compatibility with your specific hardware, operating system, 
-                      or other software. Users must verify compatibility before purchase.
+                      We are not responsible for product suitability for specific beverage preferences or personal taste. 
+                      Users should review product descriptions and specifications before purchase.
                     </p>
                   </div>
 
                   <div className="bg-gray-1 rounded-lg p-6">
                     <h4 className="text-lg font-semibold text-dark mb-3">Third-Party Services</h4>
                     <p className="text-gray-6">
-                      We disclaim all responsibility for third-party services, including software publishers, 
-                      payment processors, and other service providers integrated with our platform.
+                      We disclaim all responsibility for third-party services, including manufacturers, 
+                      payment processors, and shipping carriers integrated with our platform.
                     </p>
                   </div>
                 </div>
@@ -654,7 +654,7 @@ const TermsAndConditions = () => {
                 <div className="bg-red-light-6 rounded-lg p-6 mb-6">
                   <h3 className="text-lg font-semibold text-dark mb-3">🛡️ Liability Limitations</h3>
                   <p className="text-gray-6">
-                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, ALLKEYSSALE&apos;S LIABILITY IS LIMITED AS DESCRIBED BELOW.
+                    TO THE MAXIMUM EXTENT PERMITTED BY LAW, MUGSSTORE&apos;S LIABILITY IS LIMITED AS DESCRIBED BELOW.
                   </p>
                 </div>
 
@@ -695,7 +695,7 @@ const TermsAndConditions = () => {
                 
                 <div className="bg-yellow-light-4 rounded-lg p-6">
                   <p className="text-gray-6">
-                    You agree to indemnify and hold harmless AllKeysSale from any claims, damages, losses, or expenses 
+                    You agree to indemnify and hold harmless MugsStore from any claims, damages, losses, or expenses 
                     arising from your violation of these Terms, misuse of our services, or violation of any third-party rights.
                   </p>
                 </div>
@@ -771,7 +771,7 @@ const TermsAndConditions = () => {
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          legal@allkeyssale.com
+                          legal@mugsstore.com
                         </p>
                         <p className="flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -785,9 +785,9 @@ const TermsAndConditions = () => {
                     <div>
                       <h4 className="font-semibold text-dark mb-3">Mailing Address</h4>
                       <div className="text-gray-6">
-                        <p>AllKeysSale Legal Department</p>
-                        <p>123 Software Lane</p>
-                        <p>Las Vegas, NV 89128</p>
+                        <p>MugsStore Legal Department</p>
+                        <p>123 Ceramic Avenue</p>
+                        <p>Los Angeles, CA 90210</p>
                         <p>United States</p>
                       </div>
                     </div>
@@ -808,14 +808,14 @@ const TermsAndConditions = () => {
               Ready to Shop with Confidence?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Now that you understand our terms, explore our extensive collection of authentic software licenses.
+              Now that you understand our terms, explore our extensive collection of premium mugs and drinkware.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/" className="inline-flex items-center justify-center gap-2 bg-white text-blue px-8 py-4 rounded-lg font-medium hover:bg-gray-1 transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                 </svg>
-                Browse Products
+                Browse Mugs
               </Link>
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

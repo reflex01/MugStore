@@ -24,7 +24,7 @@ const PrivacyPolicy = () => {
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              At AllKeysSale, we are committed to protecting your privacy and ensuring the security of your personal information. 
+              At MugsStore, we are committed to protecting your privacy and ensuring the security of your personal information. 
               This policy explains how we collect, use, and safeguard your data.
             </p>
 
@@ -140,9 +140,9 @@ const PrivacyPolicy = () => {
                     <h3 className="text-lg font-semibold text-dark mb-3">Transaction Information</h3>
                     <p className="text-gray-6 mb-4">For each purchase, we collect:</p>
                     <ul className="list-disc list-inside text-gray-6 space-y-2 ml-4">
-                      <li>Product details and license keys issued</li>
+                      <li>Product details and mug specifications</li>
                       <li>Payment method and transaction history</li>
-                      <li>Download and activation records</li>
+                      <li>Order and shipping records</li>
                       <li>Support tickets and communications</li>
                     </ul>
                   </div>
@@ -171,7 +171,7 @@ const PrivacyPolicy = () => {
                   <div className="bg-green-light-6 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Service Delivery</h3>
                     <ul className="list-disc list-inside text-gray-6 space-y-2">
-                      <li>Process orders and deliver software licenses</li>
+                      <li>Process orders and deliver premium mugs</li>
                       <li>Provide customer support and technical assistance</li>
                       <li>Send transaction confirmations and receipts</li>
                       <li>Manage your account and preferences</li>
@@ -191,7 +191,7 @@ const PrivacyPolicy = () => {
                   <div className="bg-yellow-light-4 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Marketing (With Consent)</h3>
                     <ul className="list-disc list-inside text-gray-6 space-y-2">
-                      <li>Send promotional emails about new products</li>
+                      <li>Send promotional emails about new mug collections</li>
                       <li>Provide special offers and discounts</li>
                       <li>Share product updates and news</li>
                       <li>Conduct surveys and gather feedback</li>
@@ -398,11 +398,11 @@ const PrivacyPolicy = () => {
                   <h3 className="text-lg font-semibold text-dark mb-3">How to Exercise Your Rights</h3>
                   <p className="text-gray-6 mb-4">To exercise any of these rights, please contact us at:</p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a href="mailto:privacy@allkeyssale.com" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
+                    <a href="mailto:privacy@mugsstore.com" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      privacy@allkeyssale.com
+                      privacy@mugsstore.com
                     </a>
                     <span className="text-gray-6">or</span>
                     <a href="/contact" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
@@ -492,7 +492,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <p className="text-gray-6">
                     If you are a parent or guardian and believe your child has provided us with personal information, 
-                    please contact us at <a href="mailto:privacy@allkeyssale.com" className="text-red hover:text-red-dark">privacy@allkeyssale.com</a>.
+                    please contact us at <a href="mailto:privacy@mugsstore.com" className="text-red hover:text-red-dark">privacy@mugsstore.com</a>.
                   </p>
                 </div>
               </section>
@@ -508,7 +508,7 @@ const PrivacyPolicy = () => {
                   <div className="bg-blue-light-5 rounded-lg p-6">
                     <h3 className="text-lg font-semibold text-dark mb-3">Global Operations</h3>
                     <p className="text-gray-6">
-                      AllKeysSale operates globally and may transfer your personal information to countries other than your own. 
+                      MugsStore operates globally and may transfer your personal information to countries other than your own. 
                       We ensure that such transfers comply with applicable data protection laws and provide adequate protection for your information.
                     </p>
                   </div>
@@ -572,7 +572,7 @@ const PrivacyPolicy = () => {
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          privacy@allkeyssale.com
+                          privacy@mugsstore.com
                         </p>
                         <p className="flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -586,8 +586,8 @@ const PrivacyPolicy = () => {
                     <div>
                       <h4 className="font-semibold text-dark mb-3">Mailing Address</h4>
                       <div className="text-gray-6">
-                        <p>AllKeysSale Privacy Department</p>
-                        <p>123 Software Lane</p>
+                        <p>MugsStore Privacy Department</p>
+                        <p>123 Ceramic Avenue</p>
                         <p>Las Vegas, NV 89128</p>
                         <p>United States</p>
                       </div>
@@ -625,7 +625,7 @@ const PrivacyPolicy = () => {
                 </svg>
                 Contact Privacy Team
               </a>
-              <a href="mailto:privacy@allkeyssale.com" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
+              <a href="mailto:privacy@mugsstore.com" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>

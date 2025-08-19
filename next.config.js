@@ -1,19 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['res.cloudinary.com'],
     minimumCacheTTL: 60,
     dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'res.cloudinary.com',
+        hostname: 'www.mugstore.co.uk',
         port: '',
-        pathname: '/**',
+        pathname: '/media/**',
       },
       {
         protocol: 'https',
-        hostname: 'allgoodkeys.com',
+        hostname: 'www.mugstore.co.uk',
         port: '',
         pathname: '/**',
       },

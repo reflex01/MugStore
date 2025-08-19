@@ -211,10 +211,10 @@ const ProductItem = ({ item }: { item: Product }) => {
           </button>
         </div>
 
-        {/* Features */}
+        {/* Stock Status */}
         <div className="mt-4 flex items-center gap-2 text-sm font-medium">
-          <div className="flex items-center gap-2 px-3 py-1 rounded-lg" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
-            <span style={{ color: '#1d4ed8' }}>Digital License</span>
+          <div className="flex items-center gap-2 px-3 py-1 rounded-lg" style={{ backgroundColor: '#ecfdf5', border: '1px solid #a7f3d0' }}>
+            <span style={{ color: '#059669' }}>In Stock</span>
           </div>
         </div>
       </div>

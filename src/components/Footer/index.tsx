@@ -33,7 +33,7 @@ const Footer = () => {
                     />
                   </svg>
                 </span>
-                685 Market Street,Las Vegas, LA 95820,United States.
+                123 Ceramic Avenue, Los Angeles, CA 90210, United States.
               </li>
 
               <li>
@@ -82,7 +82,7 @@ const Footer = () => {
                       fill="#3C50E0"
                     />
                   </svg>
-                  support@example.com
+                  support@mugsstore.com
                 </a>
               </li>
             </ul>
@@ -263,18 +263,18 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a className="ease-out duration-200 hover:text-blue" href="/microsoft-phone-numbers">
-                  Microsoft Phone Numbers Worldwide
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="/activate-office-by-phone">
-                  How to activate Office by Phone? Activation Guide
+                <a className="ease-out duration-200 hover:text-blue" href="#">
+                  Mug Care Instructions
                 </a>
               </li>
               <li>
                 <a className="ease-out duration-200 hover:text-blue" href="#">
-                  How to activate Windows by phone? Activation Guide
+                  Shipping & Handling Guide
+                </a>
+              </li>
+              <li>
+                <a className="ease-out duration-200 hover:text-blue" href="#">
+                  Product Size Guide
                 </a>
               </li>
             </ul>
@@ -289,7 +289,7 @@ const Footer = () => {
         <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex gap-5 flex-wrap items-center justify-between">
             <p className="text-dark font-medium">
-              &copy; {year}. All rights reserved by Allkeyssale.
+              &copy; {year}. All rights reserved by MugsStore.
             </p>
 
             <div className="flex flex-wrap items-center gap-4">

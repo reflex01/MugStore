@@ -26,7 +26,7 @@ const ProductSEO: React.FC<ProductSEOProps> = ({
       "name": "Microsoft",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/512px-Microsoft_logo.svg.png"
     },
-    "category": "Software",
+    "category": "Drinkware",
     "productID": product.id?.toString() || product.title.replace(/\s+/g, '-').toLowerCase(),
     "mpn": product.id?.toString() || product.title.replace(/\s+/g, '-').toLowerCase(),
     "sku": product.id?.toString() || product.title.replace(/\s+/g, '-').toLowerCase(),
@@ -38,8 +38,8 @@ const ProductSEO: React.FC<ProductSEOProps> = ({
           "name": "Customer Review"
         },
         "datePublished": new Date().toISOString(),
-        "reviewBody": "Excellent product with instant delivery. Highly recommended!",
-        "name": "Great Product",
+        "reviewBody": "Beautiful mug with excellent quality ceramic. Perfect size and ships fast. The color is exactly as shown and it's completely dishwasher safe. Highly recommend!",
+        "name": "High Quality Mug",
         "reviewRating": {
           "@type": "Rating",
           "bestRating": "5",
@@ -63,7 +63,7 @@ const ProductSEO: React.FC<ProductSEOProps> = ({
       "url": `${baseUrl}/shop-details?name=${encodeURIComponent(product.name || product.title)}`,
       "seller": {
         "@type": "Organization",
-        "name": "Premium Software Store"
+        "name": "MugsStore"
       }
     }
   };

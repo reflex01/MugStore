@@ -8,7 +8,7 @@ import GenderDropdown from "./GenderDropdown";
 import SizeDropdown from "./SizeDropdown";
 import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
-import products from "@/contents/products.json";
+import shopData from "@/components/Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
 import ProductSkeleton from "../Common/ProductSkeleton";
@@ -20,11 +20,14 @@ const ShopWithSidebar = () => {
   const categoryParam = searchParams.get('category');
   const pageParam = searchParams.get('page');
   
+  // Get products from shopData (already has correct format)
+  const allProducts = shopData;
+  
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>(categoryParam ? [categoryParam] : []);
   const [currentPage, setCurrentPage] = useState(parseInt(pageParam || '1'));
-  const [filteredProducts, setFilteredProducts] = useState(products.data);
+  const [filteredProducts, setFilteredProducts] = useState(allProducts);
   const [paginatedProducts, setPaginatedProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -35,9 +38,9 @@ const ShopWithSidebar = () => {
     const timer = setTimeout(() => {
       if (categoryParam) {
         setSelectedCategories([categoryParam]);
-        setFilteredProducts(products.data.filter((product: any) => product.category.toLowerCase() === categoryParam.toLowerCase()));
+        setFilteredProducts(allProducts.filter((product: any) => product.category.toLowerCase() === categoryParam.toLowerCase()));
       } else {
-        setFilteredProducts(products.data);
+        setFilteredProducts(allProducts);
       }
       setIsLoading(false);
     }, 50);
@@ -75,10 +78,10 @@ const ShopWithSidebar = () => {
       
       // Filter products based on selected categories
       if (newCategories.length === 0) {
-        setFilteredProducts(products.data);
+        setFilteredProducts(allProducts);
       } else {
         setFilteredProducts(
-          products.data.filter((product: any) => 
+          allProducts.filter((product: any) => 
             newCategories.includes(product.category)
           )
         );
@@ -99,7 +102,7 @@ const ShopWithSidebar = () => {
   const generateCategories = () => {
     const categoryMap = new Map();
     
-    products.data.forEach((product: any) => {
+    allProducts.forEach((product: any) => {
       const category = product.category;
       if (categoryMap.has(category)) {
         categoryMap.set(category, categoryMap.get(category) + 1);
@@ -181,7 +184,7 @@ const ShopWithSidebar = () => {
                 minHeight: '3.5rem'
               }}
             >
-              Premium Software Collection
+              Premium Mug Collection
             </h1>
             <p 
               className="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
@@ -247,7 +250,7 @@ const ShopWithSidebar = () => {
 
               {/* Sidebar Header - Desktop Only */}
               <div className="mb-8 hidden xl:block">
-                <h2 className="text-xl font-bold text-gray-900 mb-2">🔍 Find Your Perfect Software</h2>
+                <h2 className="text-xl font-bold text-gray-900 mb-2">🔍 Find Your Perfect Mug</h2>
                 <p className="text-sm text-gray-600">Filter by category and price to discover the ideal solution</p>
               </div>
 
@@ -263,7 +266,7 @@ const ShopWithSidebar = () => {
                       <button 
                         onClick={() => {
                           setSelectedCategories([]);
-                          setFilteredProducts(products.data);
+                          setFilteredProducts(allProducts);
                           setCurrentPage(1);
                         }}
                         className="text-blue-600 hover:text-blue-700 font-medium text-sm transition-colors"
@@ -378,7 +381,7 @@ const ShopWithSidebar = () => {
                     <div className="flex items-center gap-2 text-sm">
                       <span className="text-gray-600">Showing</span>
                       <span className="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
-                        {filteredProducts.length} of {products.data.length}
+                        {filteredProducts.length} of {allProducts.length}
                       </span>
                       <span className="text-gray-600">products</span>
                     </div>

@@ -224,7 +224,7 @@ const SingleItem = ({ item }: { item: Product }) => {
         <div className="flex items-center justify-center gap-2 text-sm font-medium">
           <div className="flex items-center gap-2 px-3 py-1 bg-gradient-to-r from-green-100 to-emerald-100 rounded-full">
             <Zap style={{width: '14px', height: '14px', color: '#059669', fill: '#059669'}} />
-            <span className="text-green-700">Instant Download</span>
+            <span className="text-green-700">Premium Quality</span>
           </div>
         </div>
       </div>

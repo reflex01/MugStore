@@ -14,7 +14,7 @@ const HeroCarousal = () => {
   const router = useRouter();
 
   const handleCategoryClick = () => {
-    router.push('/shop-with-sidebar?category=windows');
+    router.push('/shop-with-sidebar?category=mugs');
   };
 
   return (
@@ -58,19 +58,19 @@ const HeroCarousal = () => {
               </div>
 
               <h1 className="font-bold text-dark text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-4 leading-tight">
-                <span className="block">Windows 11 Pro</span>
+                <span className="block">Cambridge Mug</span>
                 <span className="block text-blue-dark text-lg lg:text-xl font-medium">
-                  Genuine Activation Key
+                  Premium Ceramic Collection
                 </span>
               </h1>
 
               <p className="text-dark-3 text-base lg:text-lg mb-8 leading-relaxed max-w-md">
-                Experience the latest Windows operating system with enhanced security features, improved performance, and a modern interface designed for productivity.
+                Enjoy your morning coffee with our premium Cambridge mug. Straight-sided office design with generous print area and dishwasher-safe convenience.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/shop-with-sidebar?category=windows"
+                  href="/shop-with-sidebar?category=mugs"
                   className="inline-flex items-center justify-center font-bold text-white text-base bg-gradient-to-r from-blue to-blue-dark py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +83,7 @@ const HeroCarousal = () => {
                   onClick={handleCategoryClick}
                   className="inline-flex items-center justify-center font-semibold text-gray-800 text-base border-2 border-gray-400 bg-white py-4 px-6 rounded-xl hover:border-blue hover:text-white hover:bg-blue shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <span>View All Windows</span>
+                  <span>View All Mugs</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -95,8 +95,8 @@ const HeroCarousal = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-light-5 to-blue-light-4 rounded-3xl transform rotate-3"></div>
                 <Image
-                  src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648635/windows-11-pro-5-pc-1_fxkjzp.png"
-                  alt="Windows 11 Pro"
+                  src="https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/b/f/bff9b66227ca7b813a56389057645728a1c34c01_Cambridge_Midnight_Blue_midnight_blue.jpg"
+                  alt="Cambridge Mug"
                   width={320}
                   height={320}
                   priority={true}
@@ -130,19 +130,19 @@ const HeroCarousal = () => {
               </div>
 
               <h1 className="font-bold text-dark text-2xl sm:text-3xl lg:text-4xl xl:text-5xl mb-4 leading-tight">
-                <span className="block">Windows 10 Pro</span>
+                <span className="block">Bell Mug</span>
                 <span className="block text-blue-dark text-lg lg:text-xl font-medium">
-                  Genuine License
+                  Compact & Stylish Design
                 </span>
               </h1>
 
               <p className="text-dark-3 text-base lg:text-lg mb-8 leading-relaxed max-w-md">
-                Reliable and secure Windows 10 Pro with all the essential features for business and personal computing needs. Trusted by millions worldwide.
+                Perfect for daily office use with its compact, bell-shaped design. Dishwasher safe and trusted by coffee lovers worldwide.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="/shop-with-sidebar?category=windows"
+                  href="/shop-with-sidebar?category=mugs"
                   className="inline-flex items-center justify-center font-bold text-white text-base bg-gradient-to-r from-blue to-blue-dark py-4 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -155,7 +155,7 @@ const HeroCarousal = () => {
                   onClick={handleCategoryClick}
                   className="inline-flex items-center justify-center font-medium text-dark text-base border-2 border-gray-3 py-4 px-6 rounded-xl hover:border-blue hover:text-blue hover:bg-blue-light-5 transition-all duration-300"
                 >
-                  <span>View All Windows</span>
+                  <span>View All Mugs</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -167,8 +167,8 @@ const HeroCarousal = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-light-4 to-yellow-light-2 rounded-3xl transform rotate-3"></div>
                 <Image
-                  src="https://res.cloudinary.com/dxrerwrjk/image/upload/v1739648634/Windows-10-Professional-Activation-key-250x310_nucmwv.png"
-                  alt="Windows 10 Pro"
+                  src="https://www.mugstore.co.uk/media/catalog/product/cache/1/image/305x305/9b8548dfcc6170cf14ba05473309d653/0/f/0f43c9a877d5ea2f1d85af9a33f71bc8ce9943e0_Bell_White_white.jpg"
+                  alt="Bell Mug"
                   width={320}
                   height={320}
                   className="relative z-10 object-contain drop-shadow-2xl"
