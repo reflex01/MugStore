@@ -1,8 +1,6 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
-import { menuData } from "./menuData";
-import Dropdown from "./Dropdown";
 import { useAppSelector } from "@/redux/store";
 import { useSelector } from "react-redux";
 import { selectTotalPrice } from "@/redux/features/cart-slice";
@@ -302,29 +300,76 @@ const Header = () => {
               {/* <!-- Main Nav Start --> */}
               <nav>
                 <ul className="flex xl:items-center flex-col xl:flex-row gap-5 xl:gap-6">
-                  {menuData.map((menuItem, i) =>
-                    menuItem.submenu ? (
-                      <Dropdown
-                        key={i}
-                        menuItem={menuItem}
-                        stickyMenu={stickyMenu}
-                      />
-                    ) : (
-                      <li
-                        key={i}
-                        className="group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full "
-                      >
-                        <Link
-                          href={menuItem.path}
-                          className={`hover:text-blue text-custom-sm font-medium text-dark flex ${
-                            stickyMenu ? "xl:py-4" : "xl:py-6"
-                          }`}
-                        >
-                          {menuItem.title}
-                        </Link>
-                      </li>
-                    )
-                  )}
+                  {/* Popular/Home */}
+                  <li className="group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full">
+                    <Link
+                      href="/"
+                      className={`hover:text-blue text-custom-sm font-medium text-dark flex ${
+                        stickyMenu ? "xl:py-4" : "xl:py-6"
+                      }`}
+                    >
+                      Popular
+                    </Link>
+                  </li>
+
+                  {/* Shop */}
+                  <li className="group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full">
+                    <Link
+                      href="/shop-with-sidebar"
+                      className={`hover:text-blue text-custom-sm font-medium text-dark flex ${
+                        stickyMenu ? "xl:py-4" : "xl:py-6"
+                      }`}
+                    >
+                      Shop
+                    </Link>
+                  </li>
+
+                  {/* Contact */}
+                  <li className="group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full">
+                    <Link
+                      href="/contact"
+                      className={`hover:text-blue text-custom-sm font-medium text-dark flex ${
+                        stickyMenu ? "xl:py-4" : "xl:py-6"
+                      }`}
+                    >
+                      Contact
+                    </Link>
+                  </li>
+
+                  {/* Pages Dropdown */}
+                  <li className="group relative">
+                    <span className={`hover:text-blue text-custom-sm font-medium text-dark flex items-center cursor-pointer ${
+                      stickyMenu ? "xl:py-4" : "xl:py-6"
+                    }`}>
+                      Pages
+                      <svg className="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </span>
+                    {/* Dropdown menu */}
+                    <div className="absolute left-0 top-full mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                      <div className="py-2">
+                        <Link href="/checkout" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Checkout</Link>
+                        <Link href="/cart" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Cart</Link>
+                        <Link href="/wishlist" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Wishlist</Link>
+                        <Link href="/signin" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Sign in</Link>
+                        <Link href="/signup" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">Sign up</Link>
+                        <Link href="/my-account" className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700">My Account</Link>
+                      </div>
+                    </div>
+                  </li>
+
+                  {/* Blogs */}
+                  <li className="group relative before:w-0 before:h-[3px] before:bg-blue before:absolute before:left-0 before:top-0 before:rounded-b-[3px] before:ease-out before:duration-200 hover:before:w-full">
+                    <Link
+                      href="/blogs"
+                      className={`hover:text-blue text-custom-sm font-medium text-dark flex ${
+                        stickyMenu ? "xl:py-4" : "xl:py-6"
+                      }`}
+                    >
+                      Blogs
+                    </Link>
+                  </li>
                 </ul>
               </nav>
               {/* //   <!-- Main Nav End --> */}
