@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import path from "path";
 
 const Footer = () => {
   // Use static year to avoid hydration mismatch
@@ -33,7 +34,7 @@ const Footer = () => {
                     />
                   </svg>
                 </span>
-                123 Ceramic Avenue, Los Angeles, CA 90210, United States.
+                71-75 Shelton Street WC2H 9JQ, London, United Kingdom
               </li>
 
               <li>
@@ -62,7 +63,7 @@ const Footer = () => {
                       fill="#3C50E0"
                     />
                   </svg>
-                  (+099) 532-786-9843
+                  (+44) 532-786-9843
                 </a>
               </li>
 
@@ -214,11 +215,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Become Affiliate
-                </a>
-              </li>
-              <li>
                 <a className="ease-out duration-200 hover:text-blue" href="/privacy-policy">
                   Privacy Policy
                 </a>
@@ -253,30 +249,11 @@ const Footer = () => {
 
             <ul className="flex flex-col gap-3">
               <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
+                <a className="ease-out duration-200 hover:text-blue" href="/faq">
                   FAQs
                 </a>
               </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="/contact">
-                  Help Center
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Mug Care Instructions
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Shipping & Handling Guide
-                </a>
-              </li>
-              <li>
-                <a className="ease-out duration-200 hover:text-blue" href="#">
-                  Product Size Guide
-                </a>
-              </li>
+            
             </ul>
           </div>
 
