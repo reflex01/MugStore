@@ -46,7 +46,7 @@ const ShopWithSidebar = () => {
     }, 50);
     
     return () => clearTimeout(timer);
-  }, [categoryParam]);
+  }, [categoryParam, allProducts]);
 
   useEffect(() => {
     setIsLoading(true);

@@ -1,5 +1,6 @@
 import React from "react";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | MugsStore",
@@ -77,9 +78,9 @@ const FAQPage = () => {
       <section className="bg-gray-1 py-8 xl:py-12">
         <div className="max-w-[1170px] mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex items-center gap-2.5">
-            <a href="/" className="text-dark hover:text-blue ease-out duration-200">
+            <Link href="/" className="text-dark hover:text-blue ease-out duration-200">
               Home
-            </a>
+            </Link>
             <span className="text-gray-4">/</span>
             <span className="text-blue">FAQ</span>
           </div>
@@ -95,7 +96,7 @@ const FAQPage = () => {
             </h1>
             <p className="text-gray-5 max-w-2xl mx-auto">
               Have questions about our mugs? Find answers to the most commonly asked questions below. 
-              If you can't find what you're looking for, feel free to contact our customer service team.
+              If you can&apos;t find what you&apos;re looking for, feel free to contact our customer service team.
             </p>
           </div>
 
@@ -145,10 +146,10 @@ const FAQPage = () => {
                 Still have questions?
               </h2>
               <p className="text-gray-5 mb-6">
-                Our customer service team is here to help. Get in touch and we'll respond as soon as possible.
+                Our customer service team is here to help. Get in touch and we&apos;ll respond as soon as possible.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
-                <a
+                <Link
                   href="/contact"
                   className="inline-flex items-center gap-2 bg-blue text-white py-3 px-6 rounded-md hover:bg-blue-dark transition-colors duration-200"
                 >
@@ -166,7 +167,7 @@ const FAQPage = () => {
                       d="M17 8l4 4m0 0l-4 4m4-4H3"
                     />
                   </svg>
-                </a>
+                </Link>
                 <a
                   href="mailto:support@mugsstore.com"
                   className="inline-flex items-center gap-2 bg-white text-blue py-3 px-6 rounded-md border-2 border-blue hover:bg-blue hover:text-white transition-colors duration-200"
