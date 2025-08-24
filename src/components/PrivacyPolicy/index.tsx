@@ -398,11 +398,11 @@ const PrivacyPolicy = () => {
                   <h3 className="text-lg font-semibold text-dark mb-3">How to Exercise Your Rights</h3>
                   <p className="text-gray-6 mb-4">To exercise any of these rights, please contact us at:</p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <a href="mailto:privacy@mugsstore.com" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
+                    <a href="mailto:privacy@mugsstore.org" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
-                      privacy@mugsstore.com
+                      privacy@mugsstore.org
                     </a>
                     <span className="text-gray-6">or</span>
                     <a href="/contact" className="inline-flex items-center gap-2 text-blue hover:text-blue-dark">
@@ -492,7 +492,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <p className="text-gray-6">
                     If you are a parent or guardian and believe your child has provided us with personal information, 
-                    please contact us at <a href="mailto:privacy@mugsstore.com" className="text-red hover:text-red-dark">privacy@mugsstore.com</a>.
+                    please contact us at <a href="mailto:privacy@mugsstore.org" className="text-red hover:text-red-dark">privacy@mugsstore.org</a>.
                   </p>
                 </div>
               </section>
@@ -572,7 +572,7 @@ const PrivacyPolicy = () => {
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          privacy@mugsstore.com
+                          privacy@mugsstore.org
                         </p>
                         <p className="flex items-center gap-2">
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -625,7 +625,7 @@ const PrivacyPolicy = () => {
                 </svg>
                 Contact Privacy Team
               </a>
-              <a href="mailto:privacy@mugsstore.com" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
+              <a href="mailto:privacy@mugsstore.org" className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-blue transition-colors duration-200">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>

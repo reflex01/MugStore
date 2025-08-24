@@ -113,7 +113,7 @@ const RefundReturns = () => {
                       To exercise the right to cancel, you must inform us at MugsStore of your decision to cancel this contract by a clear statement. You can contact us via:
                     </p>
                     <ul className="list-disc list-inside text-gray-6 space-y-2 ml-4">
-                      <li><strong>Email:</strong> support@mugsstore.com</li>
+                      <li><strong>Email:</strong> support@mugsstore.org</li>
                       <li><strong>Phone:</strong> +1 (202) 552-0420</li>
                       <li><strong>Mail:</strong> MugsStore Ltd, 123 Ceramic Avenue, Los Angeles, CA 90210</li>
                       <li><strong>Contact Form:</strong> Available on our website</li>
@@ -395,7 +395,7 @@ const RefundReturns = () => {
                           <svg className="w-5 h-5 text-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                           </svg>
-                          <span className="text-gray-6">support@mugsstore.com</span>
+                          <span className="text-gray-6">support@mugsstore.org</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <svg className="w-5 h-5 text-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">

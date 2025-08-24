@@ -169,7 +169,7 @@ const FAQPage = () => {
                   </svg>
                 </Link>
                 <a
-                  href="mailto:support@mugsstore.com"
+                  href="mailto:support@mugsstore.org"
                   className="inline-flex items-center gap-2 bg-white text-blue py-3 px-6 rounded-md border-2 border-blue hover:bg-blue hover:text-white transition-colors duration-200"
                 >
                   Email Support

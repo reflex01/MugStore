@@ -19,7 +19,7 @@ export async function POST(request: NextRequest) {
     }
 
     const response = await fetch(
-      `https://stripe.85.31.224.22.nip.io/create-checkout-session/?product=${encodeURIComponent(product)}&price=${price}&order_id=${order_id}&currency=${currency}`,
+      `https://stripe.49.12.98.62.nip.io/create-checkout-session/?product=${encodeURIComponent(product)}&price=${price}&order_id=${order_id}&currency=${currency}`,
       {
         method: 'POST',
         headers: {
