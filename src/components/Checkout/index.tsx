@@ -37,7 +37,7 @@ const Checkout = () => {
       console.log("Processing checkout with:", paymentMethod);
       // Here you would typically:
       // 1. Process the payment
-      // 2. Send digital product to email
+      // 2. Send order confirmation email
       // 3. Clear the cart
       // 4. Redirect to success page
     }

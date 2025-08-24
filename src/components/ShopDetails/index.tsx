@@ -121,28 +121,26 @@ const ShopDetails = () => {
 
   // Enhanced product description with better formatting
   const getProductDescription = () => {
-    if (product?.category === "Windows") {
-      return {
-        overview: `${product.title} is a premium Microsoft Windows license that provides you with a genuine, fully-activated copy of the Windows operating system. Experience the latest features, enhanced security, and optimal performance.`,
-        features: [
-          "Genuine Microsoft product key with lifetime activation",
-          "Instant digital delivery via email within minutes",
-          "Full version license (not upgrade) - no existing Windows required",
-          "Compatible with both new and existing PCs",
-          "Official Microsoft support and all future updates included",
-          "Multi-language support available",
-          "Safe and secure transaction with money-back guarantee"
-        ],
-        requirements: {
-          processor: "1 GHz or faster processor or SoC",
-          memory: "2 GB for 64-bit OS",
-          storage: "20 GB for 64-bit OS",
-          graphics: "DirectX 9 or later with WDDM 1.0 driver",
-          display: "800x600 resolution minimum"
-        }
-      };
-    }
-    return null;
+    // For mugs and other physical products
+    return {
+      overview: `${product.title} is a high-quality ceramic mug perfect for your daily coffee, tea, or any hot beverage. Crafted with durable materials and designed for both home and office use.`,
+      features: [
+        "High-quality ceramic construction for durability",
+        "Fast shipping - delivered within 3-5 business days",
+        "Dishwasher safe for easy cleaning",
+        "Perfect size for daily use",
+        "Comfortable handle design",
+        "Professional printing quality",
+        "Safe and secure transaction with money-back guarantee"
+      ],
+      requirements: {
+        capacity: product.description?.match(/Capacity (\d+) ml/)?.[1] + " ml" || "Various sizes available",
+        material: "Ceramic",
+        care: "Dishwasher safe",
+        weight: product.description?.match(/weight (\d+) g/)?.[1] + " g" || "Lightweight design",
+        dimensions: "Optimized for comfort and daily use"
+      }
+    };
   };
 
   const customerReviews = product?.customerReviews || [];
@@ -168,7 +166,7 @@ const ShopDetails = () => {
     "description": getProductDescription()?.overview || product.title,
     "brand": {
       "@type": "Brand",
-      "name": "Microsoft"
+      "name": "MugsStore"
     },
     "offers": {
       "@type": "Offer",
@@ -178,7 +176,7 @@ const ShopDetails = () => {
       "availability": "https://schema.org/InStock",
       "seller": {
         "@type": "Organization",
-        "name": "Windows License Store"
+        "name": "MugsStore"
       }
     },
     "aggregateRating": {
@@ -191,11 +189,11 @@ const ShopDetails = () => {
   return (
     <>
       <Head>
-        <title>{product.title} - Buy Genuine Windows License | Best Price</title>
-        <meta name="description" content={`Buy ${product.title} at the best price. Genuine Microsoft license with instant delivery. ${discountPercentage}% off - Save $${(product.price - product.discountedPrice).toFixed(2)} today!`} />
-        <meta name="keywords" content={`${product.title}, Windows license, Microsoft, genuine, instant delivery, discount`} />
+        <title>{product.title} - Premium Quality Mug | Best Price</title>
+        <meta name="description" content={`Buy ${product.title} at the best price. High-quality ceramic mug with fast shipping. ${discountPercentage}% off - Save $${(product.price - product.discountedPrice).toFixed(2)} today!`} />
+        <meta name="keywords" content={`${product.title}, ceramic mug, coffee mug, tea mug, office mug, dishwasher safe, discount`} />
         <meta property="og:title" content={`${product.title} - Best Price Guaranteed`} />
-        <meta property="og:description" content={`Get ${product.title} with ${discountPercentage}% discount. Instant delivery, genuine license, lifetime activation.`} />
+        <meta property="og:description" content={`Get ${product.title} with ${discountPercentage}% discount. Fast shipping, high-quality ceramic, dishwasher safe.`} />
         <meta property="og:image" content={product.imgs?.previews[0]} />
         <meta property="og:type" content="product" />
         <script
@@ -345,19 +343,19 @@ const ShopDetails = () => {
                   {/* Trust Badge */}
                   <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#eff6ff', border: '1px solid #bfdbfe' }}>
                     <Shield className="w-4 h-4" style={{ color: '#2563eb' }} />
-                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Genuine License</span>
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Quality Product</span>
                   </div>
                   
                   {/* Delivery Badge */}
                   <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#f0fdf4', border: '1px solid #bbf7d0' }}>
-                    <Download className="w-4 h-4" style={{ color: '#16a34a' }} />
-                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Digital Delivery</span>
+                    <Clock className="w-4 h-4" style={{ color: '#16a34a' }} />
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Fast Shipping</span>
                   </div>
                   
                   {/* Support Badge */}
                   <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg" style={{ backgroundColor: '#faf5ff', border: '1px solid #d8b4fe' }}>
                     <Award className="w-4 h-4" style={{ color: '#9333ea' }} />
-                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Lifetime Support</span>
+                    <span className="font-medium text-sm" style={{ color: '#1f2937' }}>Customer Support</span>
                   </div>
                 </div>
               </div>
@@ -407,7 +405,7 @@ const ShopDetails = () => {
                     </div>
                     <div className="flex items-center gap-2">
                       <Clock className="w-4 h-4 text-blue-600" />
-                      <span>Ships Today</span>
+                      <span>Ships Within 24h</span>
                     </div>
                   </div>
                 </div>

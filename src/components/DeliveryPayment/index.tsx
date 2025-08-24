@@ -23,23 +23,23 @@ const DeliveryPayment = () => {
             </h1>
             
             <p className="text-lg text-gray-6 mb-8 leading-relaxed max-w-3xl mx-auto">
-              Experience lightning-fast digital delivery and secure payment processing. 
+              Experience fast and secure shipping with reliable payment processing. 
               Get your premium mugs delivered directly to your door with fast shipping!
             </p>
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-2xl font-bold text-green mb-1">5 Min</div>
-                <div className="text-sm text-gray-6">Average Delivery</div>
+                <div className="text-2xl font-bold text-green mb-1">3-5</div>
+                <div className="text-sm text-gray-6">Business Days</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue mb-1">8 Hrs</div>
-                <div className="text-sm text-gray-6">Maximum Wait</div>
+                <div className="text-2xl font-bold text-blue mb-1">24 Hrs</div>
+                <div className="text-sm text-gray-6">Processing Time</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-yellow mb-1">100%</div>
-                <div className="text-sm text-gray-6">Digital Delivery</div>
+                <div className="text-sm text-gray-6">Physical Delivery</div>
               </div>
               <div className="text-center">
                 <div className="text-2xl font-bold text-red mb-1">SSL</div>
