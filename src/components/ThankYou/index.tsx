@@ -65,13 +65,7 @@ const ThankYou = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link
-                href="/my-account"
-                className="inline-flex items-center justify-center gap-2 bg-blue hover:bg-blue-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 hover:shadow-lg"
-              >
-                <FileText className="w-5 h-5" />
-                View My Orders
-              </Link>
+             
               
               <Link
                 href="https://www.keyhubonline.com/shop"
