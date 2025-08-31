@@ -22,14 +22,9 @@ import {
 
 const ThankYou = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
+  
   const [orderNumber] = useState(`WIN${Date.now().toString().slice(-8)}`);
   
-  // Get success details from URL params
-  const sessionId = searchParams.get("session_id");
-  const amount = searchParams.get("amount");
-  const productName = searchParams.get("product");
-  const customerEmail = searchParams.get("email");
 
   const handleCopyOrderNumber = () => {
     navigator.clipboard.writeText(orderNumber);
@@ -94,7 +89,7 @@ const ThankYou = () => {
                 <div className="text-left">
                   <h4 className="font-semibold text-green-dark mb-1">Your Purchase is Secure</h4>
                   <p className="text-sm text-green-dark">
-                    Your payment has been processed securely. You'll receive your genuine license key via email shortly.
+                    Your payment has been processed securely. You&apos;ll receive your genuine license key via email shortly.
                   </p>
                 </div>
               </div>
@@ -109,7 +104,7 @@ const ThankYou = () => {
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-dark mb-4">What Happens Next?</h2>
             <p className="text-lg text-gray-6 max-w-2xl mx-auto">
-              Your order is being processed and you'll receive everything you need to get started.
+              Your order is being processed and you&apos;ll receive everything you need to get started.
             </p>
           </div>
 
@@ -121,7 +116,7 @@ const ThankYou = () => {
               </div>
               <h3 className="font-bold text-dark mb-2">1. Check Your Email</h3>
               <p className="text-gray-6 mb-4 text-sm">
-                You'll receive your product key and installation instructions within 5-10 minutes
+                You&apos;ll receive your product key and installation instructions within 5-10 minutes
               </p>
               <div className="bg-blue-light-5 border border-blue-light-3 rounded-lg p-3">
                 <div className="flex items-center justify-center gap-2 text-blue-dark">
@@ -249,7 +244,7 @@ const ThankYou = () => {
               </h3>
               <ul className="list-disc list-inside text-gray-6 space-y-1 text-sm">
                 <li>Your product key will be delivered via email within 5-10 minutes</li>
-                <li>Check your spam/junk folder if you don't see the email</li>
+                <li>Check your spam/junk folder if you don&apos;t see the email</li>
                 <li>The email will include installation instructions and download links</li>
                 <li>Keep the email safe as it contains your license information</li>
               </ul>

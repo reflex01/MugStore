@@ -10,12 +10,9 @@ import {
 
 const Cancel = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [countdown, setCountdown] = useState(5);
   
-  // Get payment details from URL params if available
-  const amount = searchParams.get("amount");
-  const productName = searchParams.get("product");
+
 
 
   // Auto redirect countdown
@@ -58,30 +55,7 @@ const Cancel = () => {
               Your payment has been cancelled. No charges have been made to your account.
             </p>
 
-            {/* Payment Details if available */}
-            {(productName || amount) && (
-              <div className="bg-gray-1 rounded-xl p-4 sm:p-6 mb-8 max-w-md mx-auto">
-                <h3 className="font-semibold text-dark mb-3">Payment Details</h3>
-                {productName && (
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-6">Product:</span>
-                    <span className="font-medium text-dark">{decodeURIComponent(productName)}</span>
-                  </div>
-                )}
-                {amount && (
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-6">Amount:</span>
-                    <span className="font-medium text-dark">${amount}</span>
-                  </div>
-                )}
-                <div className="flex justify-between items-center">
-                  <span className="text-gray-6">Status:</span>
-                  <span className="font-medium text-red">
-                    Cancelled
-                  </span>
-                </div>
-              </div>
-            )}
+            
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
